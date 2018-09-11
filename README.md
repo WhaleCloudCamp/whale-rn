@@ -11,6 +11,7 @@
 ├── /docs/                 # 使用文档 [.vuepress](https://github.com/vuejs/vuepress) 
 ├── /script/               # 执行脚本，编译或其他
 ├── /tests/                # 通用的测试文件
+├── /themes/               # 通用的样式配置
 ├── /rn/                   # rn demo
 ├── /web-example/          # web预览demo 预计通过rn-web runtimes实现
 ├── .gitignore             # git忽略文件
@@ -43,6 +44,9 @@
 还有文件操作等。
 ### tests 通用测试脚本
 使用jest编写测试文件。
+
+### themes 通用的样式配置
+皮肤和主色调什么的在这里
 
 ### rn demo
 组件在rn中的演示应用，因为只做效果展示，没有太多的数据流，暂时考虑使用[react-native-cli](https://github.com/facebook/react-native)新建的项目做初始化项目，如果后续涉及到数据流，网络请求等复杂化情况，则考虑用[whale-oss-cli](https://github.com/react-native-examples/whale-oss-cli)脚手架项目替换。

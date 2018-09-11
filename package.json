@@ -1,0 +1,37 @@
+{
+  "name": "whale-rn",
+  "version": "0.0.1",
+  "description": "yes! this is a react-native components",
+  "main": "index.js",
+  "directories": {
+    "components": "components"
+  },
+  "scripts": {
+    "test": "jest",
+    "prettier": "prettier --write --single-quote --no-semi --trailing-comma es5 --print-width 80 \"components/**/*.js\"",
+    "lint": "eslint components",
+    "format": "yarn prettier && yarn lint --fix",
+    "precommit": "yarn format"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaohuoni/whale.git"
+  },
+  "keywords": [
+    "ui",
+    "ui-component",
+    "component",
+    "react",
+    "react-native",
+    "react-native-component"
+  ],
+  "files": ["components"],
+  "authors": [
+    "xiaohuoni <448627663@qq.com> (https://github.com/xiaohuoni)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xiaohuoni/whale/issues"
+  },
+  "homepage": "https://github.com/xiaohuoni/whale#readme"
+}
