@@ -25,7 +25,9 @@
     "react-native",
     "react-native-component"
   ],
-  "files": ["components"],
+  "files": [
+    "components"
+  ],
   "authors": [
     "xiaohuoni <448627663@qq.com> (https://github.com/xiaohuoni)"
   ],
@@ -33,5 +35,28 @@
   "bugs": {
     "url": "https://github.com/xiaohuoni/whale/issues"
   },
-  "homepage": "https://github.com/xiaohuoni/whale#readme"
+  "homepage": "https://github.com/xiaohuoni/whale#readme",
+  "devDependencies": {
+    "babel-eslint": "9.0.0",
+    "babel-jest": "23.6.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-react-native": "4.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-babel": "^5.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.2",
+    "react-test-renderer": "^16.5.0"
+  },
+  "dependencies": {
+    "react": "^16.5.0",
+    "react-native": "^0.56.1",
+    "prop-types": "^15.6.2"
+  }
 }
