@@ -7,7 +7,6 @@
     "components": "components"
   },
   "scripts": {
-    "test": "jest",
     "prettier": "prettier --write --single-quote --no-semi --trailing-comma es5 --print-width 80 \"components/**/*.js\"",
     "lint": "eslint components",
     "format": "yarn prettier && yarn lint --fix",
