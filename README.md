@@ -1,4 +1,5 @@
 # Whale-RN
+[![Build Status](https://travis-ci.org/xiaohuoni/whale-rn.svg?branch=master)](https://travis-ci.org/xiaohuoni/whale-rn)
 
 此文件为设计内容，后续移动到开发人员文档中。
 
