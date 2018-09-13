@@ -2,12 +2,12 @@
 
 import constants from "./constants";
 
-var Whale = {
+var Theme = {
   set: function(theme) {
     Object.assign(this, theme);
   }
 };
 
-Whale.set(constants);
+Theme.set(constants);
 
-module.exports = Whale;
+module.exports = Theme;

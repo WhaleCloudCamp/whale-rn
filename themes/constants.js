@@ -144,4 +144,16 @@ export default {
     action_sheet_zindex: 1000,
     popup_zindex: 999,
     modal_zindex: 999,
+
+
+    //add
+    btnPaddingVertical: 6,
+  btnPaddingHorizontal: 12,
+  btnBorderRadius: 3,
+  btnBackgroundColor: "#fff",
+  btnAignItems: "center",
+  btnJustifyContent: "center",
+  btnBorderColor: "#037aff",
+  btnTextFontSize: 16,
+  btnTextColor: "#037aff"
 };
