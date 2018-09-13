@@ -3,7 +3,8 @@ import { StyleSheet, Text } from "react-native";
 import Touchable from "./Touchable";
 import Theme from '../../themes';
 
-const Button = ({ text, children, style, textStyle, ...rest }) => (
+
+export default Button = ({ text, children, style, textStyle, ...rest }) => (
   <Touchable style={[styles.button, style]} {...rest}>
     <Text style={[styles.text, textStyle]}>{text || children}</Text>
   </Touchable>
@@ -25,5 +26,3 @@ const styles = StyleSheet.create({
     color: Theme.btnTextColor
   }
 });
-
-export default Button;
