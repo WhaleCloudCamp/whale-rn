@@ -1,13 +1,13 @@
-import React from 'react'
-import { StyleSheet, Text } from 'react-native'
-import Touchable from './Touchable'
-import Theme from '../../themes'
+import React from "react";
+import { StyleSheet, Text } from "react-native";
+import Touchable from "./Touchable";
+import Theme from '../../themes';
 
 const Button = ({ text, children, style, textStyle, ...rest }) => (
   <Touchable style={[styles.button, style]} {...rest}>
     <Text style={[styles.text, textStyle]}>{text || children}</Text>
   </Touchable>
-)
+);
 
 const styles = StyleSheet.create({
   button: {
@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
     alignItems: Theme.alignItems,
     justifyContent: Theme.btnJustifyContent,
     borderColor: Theme.btnBorderColor,
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: StyleSheet.hairlineWidth
   },
   text: {
     fontSize: Theme.btnTextFontSize,
-    color: Theme.btnTextColor,
-  },
-})
+    color: Theme.btnTextColor
+  }
+});
 
-export default Button
+export default Button;
