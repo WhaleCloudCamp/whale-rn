@@ -12,7 +12,7 @@ const Button = ({ text, children, style, textStyle, ...rest }) => (
 
 const styles = StyleSheet.create({
   button: {
-    // paddingVertical: Theme.btnPaddingVertical,
+    paddingVertical: Theme.btnPaddingVertical,
     paddingHorizontal: Theme.btnPaddingHorizontal,
     borderRadius: Theme.btnBorderRadius,
     backgroundColor: Theme.btnBackgroundColor,
