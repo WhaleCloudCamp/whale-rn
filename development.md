@@ -41,6 +41,10 @@ yarn
 ## 启动项目
 注意是在rn目录执行
 ```bash
+npm start
+```
+或者
+```bash
 npm run ios
 ```
 或者
