@@ -1,0 +1,3 @@
+# ModalTarget 模态目标
+
+要使用modal相关的，Modal,Toast,ActionSheet都要在根组件外围包裹一个ModalTarget。要来做模态框的渲染定位还兼职做了控制器的作用。
