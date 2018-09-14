@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import {
   StyleSheet,
   DeviceEventEmitter,
-  View
+  View,
+  AppRegistry
 } from "react-native";
 import Theme from "../../themes";
 
@@ -10,9 +11,9 @@ let keyValue = 0;
 
 export default class ModalTarget extends Component {
   static add(modal) {
-    let key = ++keyValue;
-    DeviceEventEmitter.emit("addModals", { key, modal });
-    return key;
+    let modalKey = ++keyValue;
+    DeviceEventEmitter.emit("addModals", { modalKey, modal });
+    return modalKey;
   }
   static remove(modalKey) {
     DeviceEventEmitter.emit("removeModals", { modalKey });
@@ -30,7 +31,9 @@ export default class ModalTarget extends Component {
   componentWillMount() {
     DeviceEventEmitter.addListener("addModals", event => this.add(event));
     DeviceEventEmitter.addListener("removeModals", event => this.remove(event));
-    DeviceEventEmitter.addListener("removeAllModals", event => this.removeAll(event));
+    DeviceEventEmitter.addListener("removeAllModals", event =>
+      this.removeAll(event)
+    );
   }
 
   componentWillUnmount() {
@@ -64,10 +67,11 @@ export default class ModalTarget extends Component {
     let { modals } = this.state;
     return (
       <View style={{ backgroundColor: Theme.fill_grey, flex: 1 }}>
+        {this.props.children}
         {modals.map((item, index) => {
           return (
             <View key={"modals" + item.key} style={styles.globalmodal}>
-              {item.element}
+              {item.modal}
             </View>
           );
         })}
@@ -75,10 +79,10 @@ export default class ModalTarget extends Component {
     );
   }
 }
-
+//测试先放了一个设置 真实情况应该是rgba0000
 var styles = StyleSheet.create({
   globalmodal: {
-    backgroundColor: "#000",
+    backgroundColor: "#rgba(255,0,0,0.7)",
     position: "absolute",
     top: 0,
     left: 0,
@@ -86,3 +90,22 @@ var styles = StyleSheet.create({
     bottom: 0
   }
 });
+
+if (!AppRegistry.registerComponentOld) {
+  AppRegistry.registerComponentOld = AppRegistry.registerComponent;
+}
+// by rilyu https://github.com/rilyu/teaset/blob/master/components/Overlay/TopView.js
+AppRegistry.registerComponent = function(appKey, componentProvider) {
+  class RootElement extends Component {
+    render() {
+      let Component = componentProvider();
+      return (
+        <ModalTarget>
+          <Component {...this.props} />
+        </ModalTarget>
+      );
+    }
+  }
+
+  return AppRegistry.registerComponentOld(appKey, () => RootElement);
+};
