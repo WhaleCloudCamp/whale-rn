@@ -15,7 +15,7 @@ export default class ModalTarget extends Component {
     DeviceEventEmitter.emit("addModals", { modalKey, modal });
     return modalKey;
   }
-  static remove(modalKey) {
+  static remove(modalKey) {    
     DeviceEventEmitter.emit("removeModals", { modalKey });
   }
   static removeAll() {
@@ -50,7 +50,7 @@ export default class ModalTarget extends Component {
 
   remove(event) {
     let { modals } = this.state;
-    for (const i = modals.length - 1; i >= 0; --i) {
+    for (let i = modals.length - 1; i >= 0; --i) {
       if (modals[i].modalKey === event.modalKey) {
         modals.splice(i, 1);
         break;

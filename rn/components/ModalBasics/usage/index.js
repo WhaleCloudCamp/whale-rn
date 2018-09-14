@@ -9,7 +9,23 @@ export default class ModalBasicsExample extends Component {
         <Text style={{ color: "#FFF", fontSize: 50 }}>modal work!</Text>
       </View>
     );
-    ModalBasics.show(modalView);
+    let modalView2 = (
+      <View>
+        <Text style={{ color: "#FFF", fontSize: 70 }}>modal work222222!</Text>
+      </View>
+    );
+    let modalKey = ModalBasics.show(modalView);
+    let modalKey2 =ModalBasics.show(modalView2);
+    setTimeout(()=>{
+      console.log('remove');
+      console.log(modalKey);
+      ModalBasics.remove(modalKey);
+    },1000)
+    setTimeout(()=>{
+      console.log('remove');
+      console.log(modalKey2);
+      ModalBasics.remove(modalKey2);
+    },3000)
   }
 
   render() {
