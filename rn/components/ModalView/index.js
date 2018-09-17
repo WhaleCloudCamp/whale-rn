@@ -80,10 +80,17 @@ export default class ModalView extends Component {
     if (onCloseRequest) onCloseRequest(this);
     else if (!modal) this.close();
   }
-
+  buildProps() {
+    let {style, ...others} = this.props;
+    style = [{backgroundColor: 'rgba(0, 0, 0, 0)', flex: 1}].concat(style);
+    this.props = {style, ...others};
+  }
+  renderContent(){
+    return this.props.children;
+  }
   render() {
+    this.buildProps()
     let { style, modalOpacity } = this.props;
-    style = [{ backgroundColor: "rgba(0, 0, 0, 0)", flex: 1 }].concat(style);
     return (
       <View style={styles.globalmodal}>
         <View
@@ -96,9 +103,8 @@ export default class ModalView extends Component {
           ]}
           {...this.panResponder.panHandlers}
         />
-
         <View style={style} pointerEvents="box-none">
-          {this.props.children}
+          {this.renderContent()}
         </View>
       </View>
     );
