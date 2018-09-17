@@ -16,7 +16,9 @@ export default class Demo extends Component {
 
     state = {
         dataSource: [
-            { title: 'Button', routeName: 'button' }
+            { title: 'Button', routeName: 'button' },
+            { title: 'NavBar', routeName: 'navbar' },
+            { title: 'Progress', routeName: 'progress' }
         ]
     }
 
