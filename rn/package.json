@@ -9,16 +9,16 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "16.4.1",
-    "react-native": "0.56.1",
+    "react": "16.5.0",
+    "react-native": "0.57.0",
     "react-navigation": "^2.14.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
     "babel-plugin-import": "^1.8.0",
-    "babel-preset-react-native": "^5",
+    "metro-react-native-babel-preset": "^0.45.0",
     "jest": "23.6.0",
-    "react-test-renderer": "16.4.1"
+    "react-test-renderer": "16.5.0"
   },
   "jest": {
     "preset": "react-native"
