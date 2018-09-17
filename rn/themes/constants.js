@@ -25,7 +25,7 @@ export default {
     color_icon_base: '#cccccc',
     fill_grey: '#f7f7f7',
     // 透明度
-    opacity_disabled: '0.3',
+    opacity_disabled: 0.3,
     // 全局/品牌色
     brand_primary: brandPrimary,
     brand_primary_tap: brandPrimaryTap,
