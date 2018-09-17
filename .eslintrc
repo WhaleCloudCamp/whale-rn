@@ -33,7 +33,15 @@
     "no-else-return":"off",
     "react/sort-comp":"off",
     "class-methods-use-this":"off",
-    "prefer-destructuring":"off"
+    "prefer-destructuring":"off",
+    "spaced-comment":0,
+    "no-return-assign":0,
+    "no-plusplus":0,
+    "react/prefer-stateless-function":0,
+    "react/no-multi-comp":0,
+    "no-unused-vars":0,
+    "react/require-default-props":0,
+    "no-unused-expressions":0
 
   }
 }

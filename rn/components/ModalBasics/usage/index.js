@@ -1,21 +1,21 @@
-import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import React, { Component } from 'react';
+import { View, Text,TouchableOpacity } from 'react-native';
+import { ModalBasics } from '../../index';
 
-import { Button, ModalBasics } from '../../index'
 export default class ModalBasicsExample extends Component {
   showModal() {
-    let modalView = (
+    const modalView = (
       <View>
         <Text style={{ color: '#FFF', fontSize: 50 }}>modal work!</Text>
       </View>
     )
-    let modalView2 = (
+    const modalView2 = (
       <View>
         <Text style={{ color: '#FFF', fontSize: 70 }}>modal work222222!</Text>
       </View>
     )
-    let modalKey = ModalBasics.show(modalView)
-    let modalKey2 = ModalBasics.show(modalView2)
+    const modalKey = ModalBasics.show(modalView)
+    const modalKey2 = ModalBasics.show(modalView2)
     setTimeout(() => {
       console.log('remove')
       console.log(modalKey)
@@ -31,7 +31,7 @@ export default class ModalBasicsExample extends Component {
   render() {
     return (
       <View>
-        <Button onPress={() => this.showModal()}>show modal!</Button>
+        <TouchableOpacity onPress={() => this.showModal()}>show modal!</TouchableOpacity>
       </View>
     )
   }

@@ -9,6 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "16.5.0",
     "react-native": "0.57.0",
     "react-navigation": "^2.14.0"
@@ -16,8 +17,8 @@
   "devDependencies": {
     "babel-jest": "23.6.0",
     "babel-plugin-import": "^1.8.0",
-    "metro-react-native-babel-preset": "^0.45.0",
     "jest": "23.6.0",
+    "metro-react-native-babel-preset": "^0.45.0",
     "react-test-renderer": "16.5.0"
   },
   "jest": {
