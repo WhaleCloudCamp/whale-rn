@@ -12,6 +12,8 @@ let keyValue = 0;
 export default class ModalTarget extends Component {
   static add(modal) {
     let modalKey = ++keyValue;
+    console.log(modal);
+    
     DeviceEventEmitter.emit("addModals", { modalKey, modal });
     return modalKey;
   }

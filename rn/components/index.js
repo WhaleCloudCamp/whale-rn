@@ -4,7 +4,8 @@
 import Button from './Button';
 import ModalTarget from './ModalTarget';
 import ModalBasics from './ModalBasics';
+import ModalView from './ModalView';
 
 export {
-    Button,ModalTarget,ModalBasics
+    Button,ModalTarget,ModalBasics,ModalView
 }
