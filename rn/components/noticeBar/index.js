@@ -4,11 +4,8 @@ import {
     View,
     Text,
     TouchableWithoutFeedback,
-    Dimensions,
-    StyleSheet,
+    StyleSheet
 } from 'react-native'
-
-const window = Dimensions.get('window');
 
 export default class NoticeBar extends React.Component {
 
@@ -22,7 +19,7 @@ export default class NoticeBar extends React.Component {
 
     render() {
 
-        const { title, showClose} = this.props;
+        // const { title, showClose} = this.props;
 
         const main = (
             <View style={styles.noticeBar}>
