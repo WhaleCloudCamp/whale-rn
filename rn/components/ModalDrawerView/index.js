@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { View, ViewPropTypes } from 'react-native'
 
@@ -27,15 +27,17 @@ export default class OverlayPullView extends ModalView {
   }
 
   get marginSize() {
-    let { side } = this.props
+    const { side } = this.props
     if (side === 'left' || side === 'right') return -this.viewLayout.width
     else return -this.viewLayout.height
   }
 
   buildProps() {
     super.buildProps()
-    let { side, style, containerStyle, ...others } = this.props
-    let sideStyle, contentStyle
+    let { style, containerStyle } = this.props;
+    const {side, ...others}=this.props;
+    let sideStyle;
+    let contentStyle;
     switch (side) {
       case 'top':
         sideStyle = {
@@ -78,14 +80,15 @@ export default class OverlayPullView extends ModalView {
       .concat(containerStyle)
       .concat(contentStyle)
 
-    this.props = { side, style, containerStyle, ...others }
+    this.props = {...others,side, style, containerStyle }
   }
 
   renderChildren() {
     return this.props.children
   }
+
   renderContent() {
-    let { containerStyle } = this.props
+    const { containerStyle } = this.props
     return <View style={containerStyle}>{this.renderChildren()}</View>
   }
 }

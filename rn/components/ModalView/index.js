@@ -22,6 +22,7 @@ export default class ModalView extends Component {
 
   static defaultProps = {
     modal: false,
+    modalOpacity:0.3,
   }
 
   constructor(props) {
@@ -31,13 +32,13 @@ export default class ModalView extends Component {
       onPanResponderGrant: (e, gestureState) =>
         (this.touchStateID = gestureState.stateID),
       onPanResponderRelease: (e, gestureState) =>
-        this.touchStateID == gestureState.stateID ? this.closeRequest() : null,
+        this.touchStateID === gestureState.stateID ? this.closeRequest() : null,
     })
   }
 
   componentWillMount() {
     if (Platform.OS === 'android') {
-      let BackHandler = ReactNative.BackHandler
+      const BackHandler = ReactNative.BackHandler
         ? ReactNative.BackHandler
         : ReactNative.BackAndroid
       this.backListener = BackHandler.addEventListener(
@@ -51,7 +52,7 @@ export default class ModalView extends Component {
   }
 
   componentDidMount() {
-    let { onAppearCompleted } = this.props
+    const { onAppearCompleted } = this.props
     onAppearCompleted && onAppearCompleted()
   }
 
@@ -70,27 +71,31 @@ export default class ModalView extends Component {
     if (this.closed) return true
     this.closed = true
     this.removeBackListener()
-    let { onDisappearCompleted } = this.props
+    const { onDisappearCompleted } = this.props
     onDisappearCompleted && onDisappearCompleted()
     return true
   }
 
   closeRequest() {
-    let { modal, onCloseRequest } = this.props
+    const { modal, onCloseRequest } = this.props
     if (onCloseRequest) onCloseRequest(this)
     else if (!modal) this.close()
   }
+
   buildProps() {
     let { style, ...others } = this.props
     style = [{ backgroundColor: 'rgba(0, 0, 0, 0)', flex: 1 }].concat(style)
+    others = [].concat(others);
     this.props = { style, ...others }
   }
+
   renderContent() {
     return this.props.children
   }
+
   render() {
     this.buildProps()
-    let { style, modalOpacity } = this.props
+    const { style, modalOpacity } = this.props
     return (
       <View style={styles.globalmodal}>
         <View
@@ -111,7 +116,7 @@ export default class ModalView extends Component {
   }
 }
 
-var styles = StyleSheet.create({
+let styles = StyleSheet.create({
   globalmodal: {
     backgroundColor: 'rgba(0, 0, 0, 0)',
     position: 'absolute',
