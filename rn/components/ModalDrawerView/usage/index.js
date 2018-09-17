@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { View, TouchableOpacity, Text } from "react-native";
-import { Button, ModalBasics } from "../../index";
-import ModalDrawerView from "../index";
+import React, { Component } from 'react'
+import { View, TouchableOpacity, Text } from 'react-native'
+import { Button, ModalBasics } from '../../index'
+import ModalDrawerView from '../index'
 export default class ModalDrawerViewExample extends Component {
   showModal(side, modal, modalOpacity = 0.7) {
     let modalView = (
@@ -13,11 +13,11 @@ export default class ModalDrawerViewExample extends Component {
       >
         <View
           style={{
-            backgroundColor: "rgba(0,255,0,0.7)",
+            backgroundColor: 'rgba(0,255,0,0.7)',
             minWidth: 300,
             minHeight: 260,
-            justifyContent: "center",
-            alignItems: "center"
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
           {modal ? (
@@ -41,20 +41,20 @@ export default class ModalDrawerViewExample extends Component {
           )}
         </View>
       </ModalDrawerView>
-    );
-    ModalBasics.show(modalView);
+    )
+    ModalBasics.show(modalView)
   }
 
   render() {
     return (
       <View>
-        <Button onPress={() => this.showModal("bottom", false)}>
+        <Button onPress={() => this.showModal('bottom', false)}>
           底部出现
         </Button>
-        <Button onPress={() => this.showModal("top", true)}>顶部出现</Button>
-        <Button onPress={() => this.showModal("right", true)}>右边出现</Button>
-        <Button onPress={() => this.showModal("left", false)}>左边出现</Button>
+        <Button onPress={() => this.showModal('top', true)}>顶部出现</Button>
+        <Button onPress={() => this.showModal('right', true)}>右边出现</Button>
+        <Button onPress={() => this.showModal('left', false)}>左边出现</Button>
       </View>
-    );
+    )
   }
 }
