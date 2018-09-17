@@ -16,10 +16,10 @@ export default class NavbarTest extends React.Component {
                     styleRightText={{ color: 'white' }}//右文本样式
                     styleTitle={{ color: 'white' }}//标题样式
                     rightText={'提交'} //右文本
-                    isShowDel={true}//是否显示左边第二个图标
-                    isShowRightText={true}//是否显示右边文本
-                    isShowFirstRightIcon={true}//是否显示右边第一个图标
-                    isShowLastRightIcon={true}//是否显示右边第二个图标
+                    isShowDel={false}//是否显示左边第二个图标
+                    isShowRightText={false}//是否显示右边文本
+                    isShowFirstRightIcon={false}//是否显示右边第一个图标
+                    isShowLastRightIcon={false}//是否显示右边第二个图标
 
                     // imgBackIcon={require('../img/icon_fh.png')}//左边第一个图标
                     // imgDelIcon={require('../img/icon_fh.png')}//左边第二个图标
