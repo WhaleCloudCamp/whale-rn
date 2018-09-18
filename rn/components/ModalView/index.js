@@ -22,7 +22,7 @@ export default class ModalView extends Component {
 
   static defaultProps = {
     modal: false,
-    modalOpacity:0.3,
+    modalOpacity: 0.3,
   }
 
   constructor(props) {
@@ -85,7 +85,7 @@ export default class ModalView extends Component {
   buildProps() {
     let { style, ...others } = this.props
     style = [{ backgroundColor: 'rgba(0, 0, 0, 0)', flex: 1 }].concat(style)
-    others = [].concat(others);
+    others = [].concat(others)
     this.props = { style, ...others }
   }
 

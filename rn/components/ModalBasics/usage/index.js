@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { View, Text,TouchableOpacity } from 'react-native';
-import { ModalBasics } from '../../index';
+import React, { Component } from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
+import { ModalBasics } from '../../index'
 
 export default class ModalBasicsExample extends Component {
   showModal() {
@@ -31,7 +31,9 @@ export default class ModalBasicsExample extends Component {
   render() {
     return (
       <View>
-        <TouchableOpacity onPress={() => this.showModal()}>show modal!</TouchableOpacity>
+        <TouchableOpacity onPress={() => this.showModal()}>
+          show modal!
+        </TouchableOpacity>
       </View>
     )
   }

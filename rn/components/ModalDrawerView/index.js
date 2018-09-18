@@ -34,10 +34,10 @@ export default class OverlayPullView extends ModalView {
 
   buildProps() {
     super.buildProps()
-    let { style, containerStyle } = this.props;
-    const {side, ...others}=this.props;
-    let sideStyle;
-    let contentStyle;
+    let { style, containerStyle } = this.props
+    const { side, ...others } = this.props
+    let sideStyle
+    let contentStyle
     switch (side) {
       case 'top':
         sideStyle = {
@@ -80,7 +80,7 @@ export default class OverlayPullView extends ModalView {
       .concat(containerStyle)
       .concat(contentStyle)
 
-    this.props = {...others,side, style, containerStyle }
+    this.props = { ...others, side, style, containerStyle }
   }
 
   renderChildren() {
