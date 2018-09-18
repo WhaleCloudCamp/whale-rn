@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
-import Theme from "../../themes";
+import React, { Component } from 'react';
+import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
+import Theme from '../../themes';
 
 export default class FooterButtons extends Component {
   constructor(props) {
     super(props);
-    this.defaultBtns = [{ text: "确定", onPress: () => console.log("确定") }];
+    this.defaultBtns = [{ text: '确定', onPress: () => console.log('确定') }];
   }
 
   render() {
@@ -17,11 +17,11 @@ export default class FooterButtons extends Component {
         >
           <Text
             style={{
-              textAlign: "center",
+              textAlign: 'center',
               color: Theme.color_link,
               fontSize: Theme.modal_button_font_size,
-              backgroundColor: "transparent",
-              paddingHorizontal: 15
+              backgroundColor: 'transparent',
+              paddingHorizontal: 15,
             }}
           >
             {btn.text || `按钮${i}`}
@@ -40,26 +40,26 @@ export default class FooterButtons extends Component {
 let styles = StyleSheet.create({
   buttonGroupH: {
     flexGrow: 1,
-    flexDirection: "row"
+    flexDirection: 'row',
   },
   buttonGroupV: {
     flexGrow: 1,
-    flexDirection: "column"
+    flexDirection: 'column',
   },
   buttonWrapH: {
     height: Theme.modal_button_height,
     flexGrow: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
     borderColor: Theme.border_color_base,
     borderTopWidth: StyleSheet.hairlineWidth,
     borderRightWidth: StyleSheet.hairlineWidth,
     paddingVertical: 11,
-    width: 270 / 2
+    width: 270 / 2,
   },
   buttonWrapV: {
     flexGrow: 1,
     borderTopWidth: StyleSheet.hairlineWidth,
     borderColor: Theme.border_color_base,
-    paddingVertical: 11
-  }
+    paddingVertical: 11,
+  },
 });
