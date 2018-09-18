@@ -3,17 +3,8 @@
   "env": {
     "browser": true
   },
-  "extends": [
-    "airbnb",
-    "prettier",
-    "prettier/react"
-  ],
-  "plugins": [
-    "react",
-    "jsx-a11y",
-    "import",
-    "prettier"
-  ],
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["react", "jsx-a11y", "import", "prettier"],
   "globals": {
     "__DEV__": true
   },
@@ -29,19 +20,20 @@
     "react/jsx-filename-extension": 0,
     "react/prop-types": 0,
     "semi": [0, "never"],
-    "no-underscore-dangle":"off",
-    "no-else-return":"off",
-    "react/sort-comp":"off",
-    "class-methods-use-this":"off",
-    "prefer-destructuring":"off",
-    "spaced-comment":0,
-    "no-return-assign":0,
-    "no-plusplus":0,
-    "react/prefer-stateless-function":0,
-    "react/no-multi-comp":0,
-    "no-unused-vars":0,
-    "react/require-default-props":0,
-    "no-unused-expressions":0,
-    "prefer-const":0
+    "no-underscore-dangle": "off",
+    "no-else-return": "off",
+    "react/sort-comp": "off",
+    "class-methods-use-this": "off",
+    "prefer-destructuring": "off",
+    "spaced-comment": 0,
+    "no-return-assign": 0,
+    "no-plusplus": 0,
+    "react/prefer-stateless-function": 0,
+    "react/no-multi-comp": 0,
+    "no-unused-vars": 0,
+    "react/require-default-props": 0,
+    "no-unused-expressions": 0,
+    "prefer-const": 0,
+    "no-param-reassign": 0
   }
 }
