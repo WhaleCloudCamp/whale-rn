@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import ReactNative, {
-  StyleSheet,
+  StyleSheet,Text,
   View,
   PanResponder,
   Platform,
@@ -83,14 +83,13 @@ export default class ModalView extends Component {
   }
 
   buildProps() {
-    let { style, ...others } = this.props
+    let { style } = this.props
     style = [{ backgroundColor: 'rgba(0, 0, 0, 0)', flex: 1 }].concat(style)
-    others = [].concat(others)
-    this.props = { style, ...others }
+    this.props.style=style;
   }
 
   renderContent() {
-    return this.props.children
+    return this.props.children;
   }
 
   render() {
@@ -109,7 +108,8 @@ export default class ModalView extends Component {
           {...this.panResponder.panHandlers}
         />
         <View style={style} pointerEvents="box-none">
-          {this.renderContent()}
+        <Text>123122321</Text>
+        {this.renderContent()}
         </View>
       </View>
     )

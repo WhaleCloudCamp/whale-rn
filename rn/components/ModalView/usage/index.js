@@ -38,13 +38,13 @@ export default class ModalViewExample extends Component {
     return (
       <View>
         <TouchableOpacity onPress={() => this.showModal(true, 'isModal', 0.5)}>
-          显示自定义弹窗，点击按钮关闭
+        <Text>显示自定义弹窗，点击按钮关闭</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={() => this.showModal(false, 'isNoModal', 0.3)}
         >
-          显示模态窗，点击背景关闭
+        <Text>显示模态窗，点击背景关闭</Text>
         </TouchableOpacity>
       </View>
     )
