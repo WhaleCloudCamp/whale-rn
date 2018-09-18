@@ -1,8 +1,14 @@
-import React from 'react'
-import { Image, View, Text, TouchableHighlight, StyleSheet } from 'react-native'
-import PropTypes from 'prop-types'
-import imgBackIcon from './img/icon_fh.png'
-import imgDelIcon from './img/icon_del.png'
+import React from 'react';
+import {
+  Image,
+  View,
+  Text,
+  TouchableHighlight,
+  StyleSheet,
+} from 'react-native';
+import PropTypes from 'prop-types';
+import imgBackIcon from './img/icon_fh.png';
+import imgDelIcon from './img/icon_del.png';
 
 export default class Navbar extends React.Component {
   static propTypes = {
@@ -18,7 +24,7 @@ export default class Navbar extends React.Component {
     isShowLastRightIcon: PropTypes.bool,
     isShowRightText: PropTypes.bool,
     isUnderlayColor: PropTypes.string,
-  }
+  };
 
   static defaultProps = {
     title: '标题', //当前标题
@@ -29,11 +35,11 @@ export default class Navbar extends React.Component {
     isShowRightText: false, // //右边文本是否展示
 
     isUnderlayColor: '0C83FF',
-  }
+  };
 
   onSelected() {
     if (this.props.onSelected) {
-      this.props.onSelected(this.props.title, this.props.rightText)
+      this.props.onSelected(this.props.title, this.props.rightText);
     }
   }
 
@@ -106,7 +112,7 @@ export default class Navbar extends React.Component {
           ) : null}
         </View>
       </View>
-    )
+    );
   }
 }
 
@@ -146,4 +152,4 @@ const stytles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 13,
   },
-})
+});

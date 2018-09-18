@@ -1,6 +1,6 @@
-import React from 'react'
-import { View } from 'react-native'
-import Navbar from '../index'
+import React from 'react';
+import { View } from 'react-native';
+import Navbar from '../index';
 
 export default class NavbarTest extends React.Component {
   render() {
@@ -24,35 +24,35 @@ export default class NavbarTest extends React.Component {
           onLeftItemPress={
             //返回点击事件
             () => {
-              console.warn('返回点击事件')
+              console.warn('返回点击事件');
             }
           }
           onDelPress={
             //删除事件
             () => {
-              console.warn('删除事件')
+              console.warn('删除事件');
             }
           }
           onRightFirstItemPress={
             //右边第一个图标事件
             () => {
-              console.warn('右边第一个图标事件')
+              console.warn('右边第一个图标事件');
             }
           }
           onRightLastItemPress={
             //右边第二个图标事件
             () => {
-              console.warn('右边第二个图标事件')
+              console.warn('右边第二个图标事件');
             }
           }
           onRightTextPress={
             //右边文本事件
             () => {
-              console.warn('右边文本事件')
+              console.warn('右边文本事件');
             }
           }
         />
       </View>
-    )
+    );
   }
 }

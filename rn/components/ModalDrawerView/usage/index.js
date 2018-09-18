@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { View, TouchableOpacity, Text } from 'react-native'
-import ModalBasics from '../../ModalBasics'
-import ModalDrawerView from '../index'
+import React, { Component } from 'react';
+import { View, TouchableOpacity, Text } from 'react-native';
+import ModalBasics from '../../ModalBasics';
+import ModalDrawerView from '../index';
 
 export default class ModalDrawerViewExample extends Component {
   showModal(side, modal, modalOpacity = 0.7) {
@@ -42,26 +42,26 @@ export default class ModalDrawerViewExample extends Component {
           )}
         </View>
       </ModalDrawerView>
-    )
-    return ModalBasics.show(modalView)
+    );
+    return ModalBasics.show(modalView);
   }
 
   render() {
     return (
       <View>
         <TouchableOpacity onPress={() => this.showModal('bottom', false)}>
-          底部出现
+          <Text>底部出现</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this.showModal('top', true)}>
-          顶部出现
+          <Text>顶部出现</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this.showModal('right', true)}>
-          右边出现
+          <Text>右边出现</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this.showModal('left', false)}>
-          左边出现
+          <Text>左边出现</Text>
         </TouchableOpacity>
       </View>
-    )
+    );
   }
 }

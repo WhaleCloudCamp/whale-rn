@@ -1,14 +1,13 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactNative, {
-  StyleSheet,Text,
+  StyleSheet,
   View,
   PanResponder,
   Platform,
   ViewPropTypes,
-} from 'react-native'
-
-import Theme from '../../themes'
+} from 'react-native';
+import Theme from '../../themes';
 
 export default class ModalView extends Component {
   static propTypes = {
@@ -18,74 +17,73 @@ export default class ModalView extends Component {
     onAppearCompleted: PropTypes.func,
     onDisappearCompleted: PropTypes.func,
     onCloseRequest: PropTypes.func,
-  }
+  };
 
   static defaultProps = {
     modal: false,
-    modalOpacity: 0.3,
-  }
+  };
 
   constructor(props) {
-    super(props)
+    super(props);
     this.panResponder = PanResponder.create({
       onStartShouldSetPanResponder: (e, gestureState) => true,
       onPanResponderGrant: (e, gestureState) =>
         (this.touchStateID = gestureState.stateID),
       onPanResponderRelease: (e, gestureState) =>
         this.touchStateID === gestureState.stateID ? this.closeRequest() : null,
-    })
+    });
   }
 
   componentWillMount() {
     if (Platform.OS === 'android') {
-      const BackHandler = ReactNative.BackHandler
+      let BackHandler = ReactNative.BackHandler
         ? ReactNative.BackHandler
-        : ReactNative.BackAndroid
+        : ReactNative.BackAndroid;
       this.backListener = BackHandler.addEventListener(
         'hardwareBackPress',
         () => {
-          this.closeRequest()
-          return true
+          this.closeRequest();
+          return true;
         }
-      )
+      );
     }
   }
 
   componentDidMount() {
-    const { onAppearCompleted } = this.props
-    onAppearCompleted && onAppearCompleted()
+    let { onAppearCompleted } = this.props;
+    onAppearCompleted && onAppearCompleted();
   }
 
   componentWillUnmount() {
-    this.removeBackListener()
+    this.removeBackListener();
   }
 
   removeBackListener() {
     if (this.backListener) {
-      this.backListener.remove()
-      this.backListener = null
+      this.backListener.remove();
+      this.backListener = null;
     }
   }
 
   close() {
-    if (this.closed) return true
-    this.closed = true
-    this.removeBackListener()
-    const { onDisappearCompleted } = this.props
-    onDisappearCompleted && onDisappearCompleted()
-    return true
+    if (this.closed) return true;
+    this.closed = true;
+    this.removeBackListener();
+    let { onDisappearCompleted } = this.props;
+    onDisappearCompleted && onDisappearCompleted();
+    return true;
   }
 
   closeRequest() {
-    const { modal, onCloseRequest } = this.props
-    if (onCloseRequest) onCloseRequest(this)
-    else if (!modal) this.close()
+    let { modal, onCloseRequest } = this.props;
+    if (onCloseRequest) onCloseRequest(this);
+    else if (!modal) this.close();
   }
 
   buildProps() {
-    let { style } = this.props
-    style = [{ backgroundColor: 'rgba(0, 0, 0, 0)', flex: 1 }].concat(style)
-    this.props.style=style;
+    let { style, ...other } = this.props;
+    style = [{ backgroundColor: 'rgba(0, 0, 0, 0)', flex: 1 }].concat(style);
+    this.props = { style, ...other };
   }
 
   renderContent() {
@@ -93,8 +91,8 @@ export default class ModalView extends Component {
   }
 
   render() {
-    this.buildProps()
-    const { style, modalOpacity } = this.props
+    this.buildProps();
+    let { style, modalOpacity } = this.props;
     return (
       <View style={styles.globalmodal}>
         <View
@@ -108,11 +106,10 @@ export default class ModalView extends Component {
           {...this.panResponder.panHandlers}
         />
         <View style={style} pointerEvents="box-none">
-        <Text>123122321</Text>
-        {this.renderContent()}
+          {this.renderContent()}
         </View>
       </View>
-    )
+    );
   }
 }
 
@@ -125,4 +122,4 @@ let styles = StyleSheet.create({
     right: 0,
     bottom: 0,
   },
-})
+});

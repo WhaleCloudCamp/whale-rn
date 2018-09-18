@@ -1,19 +1,19 @@
-import React from 'react'
+import React from 'react';
 import {
   Image,
   View,
   Text,
   TouchableWithoutFeedback,
   StyleSheet,
-} from 'react-native'
+} from 'react-native';
 
 export default class NoticeBar extends React.Component {
   closeClick() {
-    alert('点击了关闭')
+    alert('点击了关闭');
   }
 
   titleClick() {
-    alert('点击了标题')
+    alert('点击了标题');
   }
 
   render() {
@@ -26,7 +26,7 @@ export default class NoticeBar extends React.Component {
           style={styles.title}
           numberOfLines={1}
           onPress={() => {
-            this.titleClick()
+            this.titleClick();
           }}
         >
           {this.props.title}
@@ -34,7 +34,7 @@ export default class NoticeBar extends React.Component {
         {this.props.showClose && (
           <TouchableWithoutFeedback
             onPress={() => {
-              this.closeClick()
+              this.closeClick();
             }}
           >
             <Image
@@ -44,9 +44,9 @@ export default class NoticeBar extends React.Component {
           </TouchableWithoutFeedback>
         )}
       </View>
-    )
+    );
 
-    return <View>{main}</View>
+    return <View>{main}</View>;
   }
 }
 
@@ -75,4 +75,4 @@ const styles = StyleSheet.create({
     height: 16,
     marginRight: 12,
   },
-})
+});

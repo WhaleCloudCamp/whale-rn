@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prettier": "prettier --write --single-quote --no-semi --trailing-comma es5 --print-width 80 \"rn/components/**/*.js\"",
+    "prettier": "prettier --write --single-quote --semi --trailing-comma es5 --print-width 80 \"rn/components/**/*.js\"",
     "lint": "eslint rn/components",
     "format": "concurrently \"npm run prettier\" \"npm run lint --fix\"",
     "precommit": "npm run format",
