@@ -20,7 +20,7 @@ export default function whaleAlert(modal, title, content, actions) {
   if (actions) {
     actions.map(item => {
       if (!item.onPress) {
-        item.onPress =  () => this.modalViewTag.close();
+        item.onPress = () => this.modalViewTag.close();
       }
       return item;
     });
