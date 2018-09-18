@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { View, StyleSheet, Button, Text } from 'react-native'
+import React from 'react'
+import { View } from 'react-native'
 import Navbar from '../index'
 
 export default class NavbarTest extends React.Component {
@@ -7,11 +7,11 @@ export default class NavbarTest extends React.Component {
     return (
       <View>
         <Navbar
-          title={'cell'} //标题
+          title="cell" //标题
           style={{ backgroundColor: '#0C83FF' }} //主样式
           styleRightText={{ color: 'white' }} //右文本样式
           styleTitle={{ color: 'white' }} //标题样式
-          rightText={'提交'} //右文本
+          rightText="提交" //右文本
           isShowDel={false} //是否显示左边第二个图标
           isShowRightText={false} //是否显示右边文本
           isShowFirstRightIcon={false} //是否显示右边第一个图标
