@@ -13,8 +13,8 @@ export default class Pagination extends Component {
         style: ViewPropTypes.style,
         current: PropTypes.number.isRequired,
         total: PropTypes.number.isRequired,
-        inActiveColor: PropTypes.any,
-        activeColor: PropTypes.any,
+        inActiveColor: PropTypes.string,
+        activeColor: PropTypes.string,
         circleSize: PropTypes.number
     }
 

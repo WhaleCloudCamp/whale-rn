@@ -18,15 +18,15 @@ export default class PaginationDemo extends Component {
     }
 
     onPreviousPress = () => {
-        this.setState({
-            current: Math.max(this.state.current - 1, 0)
-        })
+        this.setState((prevState) => ({
+            current: Math.max(prevState.current - 1, 0)
+        }))
     }
 
     onNextPress = () => {
-        this.setState({
-            current: Math.min(this.state.current + 1, this.state.total - 1)
-        })
+        this.setState((prevState) => ({
+            current: Math.min(prevState.current + 1, prevState.total - 1)
+        }))
     }
 
     render() {
