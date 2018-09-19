@@ -45,7 +45,7 @@ export default class AlertContent extends Component {
           <View
             style={{
               paddingTop: 0,
-              paddingBottom: 15,
+              paddingBottom: 13,
               paddingLeft: 15,
               paddingRight: 15,
               fontSize: 15,

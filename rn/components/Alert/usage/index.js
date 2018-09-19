@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { ModalBasics, ModalView } from '../../index';
 import Alert from '../index';
-import FooterButtons from '../../FooterButtons';
 
-export default class ModalViewExample extends Component {
+export default class AlertExample extends Component {
   showModal(text, content) {
     const defaultBtns = [
-      { text: '取消', onPress: () => console.log('取消'), style: 'default' },
+      { text: '取消', onPress: () => console.log('取消') },
       { text: '确定' },
     ];
     Alert(text, content, defaultBtns);
