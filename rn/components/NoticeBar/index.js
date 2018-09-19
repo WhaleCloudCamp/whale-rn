@@ -6,8 +6,14 @@ import {
   TouchableWithoutFeedback,
   StyleSheet,
 } from 'react-native';
+import PropTypes from 'prop-types';
 
 export default class NoticeBar extends React.Component {
+
+    static propTypes = {
+        showClose: PropTypes.boolean,
+        title: PropTypes.string.isRequired,
+    };
 
     constructor(props) {
         super(props);
@@ -24,7 +30,7 @@ export default class NoticeBar extends React.Component {
         this.setState({ close: true })
     }
 
-  render() {
+     render() {
         const { title, showClose } = this.props;
         const { close } = this.state;
 
@@ -34,9 +40,9 @@ export default class NoticeBar extends React.Component {
                     style={styles.icon}
                     source={require('./assets/horn.png')}
                 />
-                <Text style={styles.title} numberOfLines={1} onPress={() => { this.titleClick() }}>{this.props.title}</Text>
+                <Text style={styles.title} numberOfLines={1} onPress={this.titleClick}>{this.props.title}</Text>
                 {this.props.showClose &&
-                    <TouchableWithoutFeedback onPress={() => { this.closeClick() }}>
+                    <TouchableWithoutFeedback onPress={this.closeClick}>
                         <Image style={styles.close} source={require('./assets/dark_close.png')} />
                     </TouchableWithoutFeedback>
                 }
