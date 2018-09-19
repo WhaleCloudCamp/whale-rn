@@ -8,7 +8,9 @@ function screenHeight() {
 export default class PopupView extends Component {
   constructor(props) {
     super(props);
-    this.bottom = new Animated.Value(-screenHeight());
+    let { height } = props;
+    height = height === undefined || height === null ? screenHeight() : height;
+    this.bottom = new Animated.Value(-height);
   }
 
   componentDidMount() {

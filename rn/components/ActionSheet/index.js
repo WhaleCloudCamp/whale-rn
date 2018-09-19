@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Share, StyleSheet } from 'react-native';
 import ActionSheetView from './ActionSheetView';
 import { ModalBasics } from '..';
 import Themes from '../../themes';
 import PopupView from './PopupView';
+import ShareActionSheetView from './ShareActionSheetView';
 
 function maskButton(onPress) {
   return <TouchableOpacity style={styles.maskButton} onPress={onPress} />;
@@ -40,6 +41,28 @@ function showActionSheet(params) {
   modalView = ModalBasics.show(element);
 }
 
+function showShareActionSheet(params) {
+  const { shareItems, toolItems, onCancelPress } = params;
+  let modalView = null;
+  const cancel = () => {
+    dismissModal(modalView);
+    onCancelPress && onCancelPress();
+  };
+  let element = (
+    <View style={{ flex: 1 }}>
+      {maskButton(cancel)}
+      <PopupView height={290}>
+        <ShareActionSheetView
+          shareItems={shareItems}
+          toolItems={toolItems}
+          onCancelPress={cancel}
+        />
+      </PopupView>
+    </View>
+  );
+  modalView = ModalBasics.show(element);
+}
+
 const styles = StyleSheet.create({
   maskButton: {
     backgroundColor: Themes.fill_mask,
@@ -53,4 +76,5 @@ const styles = StyleSheet.create({
 
 export default {
   showActionSheet,
+  showShareActionSheet,
 };
