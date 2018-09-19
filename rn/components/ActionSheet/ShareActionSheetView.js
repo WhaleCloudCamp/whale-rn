@@ -12,8 +12,8 @@ import Themes from '../../themes';
 
 export default class ShareActionSheetView extends Component {
   static propTypes = {
-    shareItems: PropTypes.array,
-    toolsItems: PropTypes.array,
+    shareItems: PropTypes.arrayOf(PropTypes.object),
+    toolItems: PropTypes.arrayOf(PropTypes.object),
     onCancelPress: PropTypes.func,
   };
 
@@ -48,7 +48,7 @@ export default class ShareActionSheetView extends Component {
         data={shareItems}
         keyExtractor={(item, index) => `r-${index}`}
         renderItem={this.renderShareItem}
-        horizontal={true}
+        horizontal
         ItemSeparatorComponent={this.separator}
       />
     );
@@ -67,7 +67,7 @@ export default class ShareActionSheetView extends Component {
         data={toolItems}
         keyExtractor={(item, index) => `r-${index}`}
         renderItem={this.renderToolItem}
-        horizontal={true}
+        horizontal
         ItemSeparatorComponent={this.separator}
       />
     );
