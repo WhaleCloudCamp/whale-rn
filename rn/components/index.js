@@ -1,5 +1,7 @@
-import ModalTarget from './ModalTarget';
-import ModalBasics from './ModalBasics';
-import ModalView from './ModalView';
+import Button from './Button'
+import ModalTarget from './ModalTarget'
+import ModalBasics from './ModalBasics'
+import ModalView from './ModalView'
+import Tag from './Tag'
 
-export { ModalTarget, ModalBasics, ModalView };
+export { Button, ModalTarget, ModalBasics, ModalView, Tag }
