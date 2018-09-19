@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, Share, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import ActionSheetView from './ActionSheetView';
 import { ModalBasics } from '..';
 import Themes from '../../themes';

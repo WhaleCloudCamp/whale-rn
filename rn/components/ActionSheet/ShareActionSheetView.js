@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import {
   View,
   Text,
@@ -23,14 +23,7 @@ export default class ShareActionSheetView extends Component {
   };
 
   renderItem = (title, image, onPress) => (
-    <TouchableOpacity
-      activeOpacity={0.85}
-      style={styles.item}
-      onPress={onPress}
-    >
-      <Image style={styles.itemImage} source={image} />
-      <Text style={styles.itemTitle}>{title}</Text>
-    </TouchableOpacity>
+    <ListItem title={title} image={image} onPress={onPress} />
   );
 
   renderShareItem = ({ item, index }) => {
@@ -101,6 +94,22 @@ export default class ShareActionSheetView extends Component {
         </View>
         {this.cancelButton()}
       </View>
+    );
+  }
+}
+
+class ListItem extends PureComponent {
+  render() {
+    const { title, image, onPress } = this.props;
+    return (
+      <TouchableOpacity
+        activeOpacity={0.85}
+        style={styles.item}
+        onPress={onPress}
+      >
+        <Image style={styles.itemImage} source={image} />
+        <Text style={styles.itemTitle}>{title}</Text>
+      </TouchableOpacity>
     );
   }
 }
