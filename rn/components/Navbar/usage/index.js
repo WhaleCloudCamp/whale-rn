@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import { View, StyleSheet, Button, Text } from 'react-native'
-import Navbar from '../index'
+import React from 'react';
+import { View } from 'react-native';
+import Navbar from '../index';
 
 export default class NavbarTest extends React.Component {
   render() {
     return (
       <View>
         <Navbar
-          title={'cell'} //标题
+          title="cell" //标题
           style={{ backgroundColor: '#0C83FF' }} //主样式
           styleRightText={{ color: 'white' }} //右文本样式
           styleTitle={{ color: 'white' }} //标题样式
-          rightText={'提交'} //右文本
+          rightText="提交" //右文本
           isShowDel={false} //是否显示左边第二个图标
           isShowRightText={false} //是否显示右边文本
           isShowFirstRightIcon={false} //是否显示右边第一个图标
@@ -24,35 +24,35 @@ export default class NavbarTest extends React.Component {
           onLeftItemPress={
             //返回点击事件
             () => {
-              console.warn('返回点击事件')
+              console.warn('返回点击事件');
             }
           }
           onDelPress={
             //删除事件
             () => {
-              console.warn('删除事件')
+              console.warn('删除事件');
             }
           }
           onRightFirstItemPress={
             //右边第一个图标事件
             () => {
-              console.warn('右边第一个图标事件')
+              console.warn('右边第一个图标事件');
             }
           }
           onRightLastItemPress={
             //右边第二个图标事件
             () => {
-              console.warn('右边第二个图标事件')
+              console.warn('右边第二个图标事件');
             }
           }
           onRightTextPress={
             //右边文本事件
             () => {
-              console.warn('右边文本事件')
+              console.warn('右边文本事件');
             }
           }
         />
       </View>
-    )
+    );
   }
 }
