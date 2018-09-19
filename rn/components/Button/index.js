@@ -1,29 +1,136 @@
 import React from 'react'
-import { StyleSheet, Text } from 'react-native'
-import Touchable from './Touchable'
-import Theme from '../../themes'
+import {
+	View,
+	StyleSheet,
+	TouchableWithoutFeedback,
+	Text,
+} from 'react-native'
+import Activityindicator from './Activityindicator/index'
 
-const Button = ({ text, children, style, textStyle, ...rest }) => (
-  <Touchable style={[styles.button, style]} {...rest}>
-    <Text style={[styles.text, textStyle]}>{text || children}</Text>
-  </Touchable>
-)
+export default class Button extends React.Component {
+
+	constructor(props) {
+		super(props);
+
+	}
+
+	render() {
+
+		const { type, size, title, onClick } = this.props
+
+		if (type == 'normal') {
+			if (size == 'big') {	
+				return (
+					<TouchableWithoutFeedback >
+						<View style={styles.normalBig}>
+							<Text style={styles.titleBig}>{title}</Text>
+						</View>
+					</TouchableWithoutFeedback>
+				)
+			}
+			else if (size == 'small') {
+				return (
+					<TouchableWithoutFeedback>
+						<View >
+	
+						</View>
+					</TouchableWithoutFeedback>
+				)
+			}
+		}
+		else if (type == 'loading') {
+			if (size == 'big') {	
+				return (
+					<TouchableWithoutFeedback>
+						<View style={styles.loadingBig}>
+							<Activityindicator/>
+							<Text style={styles.titleBig}>{title}</Text>
+						</View>
+					</TouchableWithoutFeedback>
+				)
+			}
+			else if (size == 'small') {
+				return (
+					<TouchableWithoutFeedback>
+						<View >
+	
+						</View>
+					</TouchableWithoutFeedback>
+				)
+			}
+		}
+		else if (type == 'disabled') {
+			if (size == 'big') {	
+				return (
+					<TouchableWithoutFeedback>
+						<View >
+	
+						</View>
+					</TouchableWithoutFeedback>
+				)
+			}
+			else if (size == 'small') {
+				return (
+					<TouchableWithoutFeedback>
+						<View >
+	
+						</View>
+					</TouchableWithoutFeedback>
+				)
+			}
+		}
+		else 
+			return null
+	}
+}
 
 const styles = StyleSheet.create({
-  button: {
-    paddingVertical: Theme.btnPaddingVertical,
-    paddingHorizontal: Theme.btnPaddingHorizontal,
-    borderRadius: Theme.btnBorderRadius,
-    backgroundColor: Theme.btnBackgroundColor,
-    alignItems: Theme.alignItems,
-    justifyContent: Theme.btnJustifyContent,
-    borderColor: Theme.btnBorderColor,
-    borderWidth: StyleSheet.hairlineWidth,
-  },
-  text: {
-    fontSize: Theme.btnTextFontSize,
-    color: Theme.btnTextColor,
-  },
-})
+	titleBig: {
+		fontSize: 16,
+		color: '#ffffff',
+		marginLeft: 5
+	},
+	titleSmall: {
 
-export default Button
+	},
+
+	normalBig: {
+		height:45,
+        paddingTop: 13,
+        paddingLeft: 20,
+        paddingRight: 20,
+        // alignSelf: 'center',
+        alignItems:'center',
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: '#0084FF',
+        backgroundColor: '#0084FF'
+	},
+	disabledBig: {
+
+	},
+	loadingBig: {
+		flexDirection: 'row',
+		height:45,
+        // paddingTop: 8,
+        paddingLeft: 20,
+        paddingRight: 20,
+        // alignSelf: 'center',
+        alignItems:'center',
+        borderRadius: 5,
+        borderWidth: 1,
+        borderColor: '#0084FF',
+		backgroundColor: '#0084FF',
+		alignSelf: 'center'
+	},
+
+	normalSmall: {
+
+	},
+	disabledSmall: {
+
+	},
+	loadingSmall: {
+
+	}
+})

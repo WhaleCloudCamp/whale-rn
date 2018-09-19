@@ -1,4 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import {View} from 'react-native'
 import Button from '../index'
 
-export default () => <Button>点击</Button>
+export default () => {
+    return (
+        <View>  
+            <Button type='normal' size='big' title='正常按钮'></Button>
+            <Button type='loading' size='big' title='加载按钮'></Button>
+        </View>
+    )
+}
