@@ -20,6 +20,7 @@ export default class Demo extends Component {
             { title: 'NavBar', routeName: 'navbar' },
             { title: 'Progress', routeName: 'progress' },
             { title: 'Tag', routeName:'tag'}
+            { title: 'Pagination', routeName: 'pagination' }
         ]
     }
 

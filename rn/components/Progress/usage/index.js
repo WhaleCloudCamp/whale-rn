@@ -1,17 +1,20 @@
-import React, { Component } from 'react'
-import { View, StyleSheet, Button } from 'react-native'
-import Progress from '../index'
+import React from 'react';
+import { View, StyleSheet, Button } from 'react-native';
+import Progress from '../index';
+
 export default class ProgressTest extends React.Component {
   constructor(props) {
-    super(props)
-    this.currProgress = 0
+    super(props);
+    this.currProgress = 0;
   }
 
   render() {
     return (
       <View style={styles.main}>
         <Progress
-          ref="progressBar"
+          ref={c => {
+            this.progressBar = c;
+          }}
           style={{
             marginTop: 10,
           }}
@@ -24,26 +27,28 @@ export default class ProgressTest extends React.Component {
             alignItems: 'center',
           }}
         >
-          <Button title={'减掉'} onPress={this.remove} />
-          <Button title={'增加'} onPress={this.add} />
+          <Button title="减掉" onPress={this.remove} />
+          <Button title="增加" onPress={this.add} />
         </View>
       </View>
-    )
+    );
   }
+
   add = () => {
-    let self = this
-    self.currProgress += 1
-    self.refs.progressBar.progress = self.currProgress / 10
-  }
+    const self = this;
+    self.currProgress += 1;
+    self.progressBar.progress = self.currProgress / 10;
+  };
+
   remove = () => {
-    let self = this
-    self.currProgress -= 1
-    self.refs.progressBar.progress = self.currProgress / 10
-  }
+    const self = this;
+    self.currProgress -= 1;
+    self.progressBar.progress = self.currProgress / 10;
+  };
 }
 
 const styles = StyleSheet.create({
   main: {
     flex: 1,
   },
-})
+});

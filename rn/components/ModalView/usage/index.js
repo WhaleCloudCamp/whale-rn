@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
-import { Button, ModalBasics, ModalView } from '../../index'
+import React, { Component } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { ModalBasics, ModalView } from '../../index';
 
 export default class ModalViewExample extends Component {
   showModal(modal, text, modalOpacity = 0.7) {
-    let modalView = (
+    const modalView = (
       <ModalView
         style={{ alignItems: 'center', justifyContent: 'center' }}
         modal={modal}
@@ -30,21 +30,23 @@ export default class ModalViewExample extends Component {
           )}
         </View>
       </ModalView>
-    )
-    ModalBasics.show(modalView)
+    );
+    return ModalBasics.show(modalView);
   }
 
   render() {
     return (
       <View>
-        <Button onPress={() => this.showModal(true, 'isModal', 0.5)}>
-          显示自定义弹窗，点击按钮关闭
-        </Button>
+        <TouchableOpacity onPress={() => this.showModal(true, 'isModal', 0.5)}>
+          <Text>显示自定义弹窗，点击按钮关闭</Text>
+        </TouchableOpacity>
 
-        <Button onPress={() => this.showModal(false, 'isNoModal', 0.3)}>
-          显示模态窗，点击背景关闭
-        </Button>
+        <TouchableOpacity
+          onPress={() => this.showModal(false, 'isNoModal', 0.3)}
+        >
+          <Text>显示模态窗，点击背景关闭</Text>
+        </TouchableOpacity>
       </View>
-    )
+    );
   }
 }

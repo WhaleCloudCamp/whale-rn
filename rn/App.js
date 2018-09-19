@@ -8,7 +8,6 @@
 
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import { Button } from './components';
 import { createStackNavigator } from 'react-navigation';
 import routes from './routes';
 
