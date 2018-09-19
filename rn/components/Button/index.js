@@ -2,10 +2,11 @@ import React from 'react'
 import {
 	View,
 	StyleSheet,
-	TouchableWithoutFeedback,
+	TouchableOpacity,
 	Text,
 } from 'react-native'
 import Activityindicator from './Activityindicator/index'
+
 
 export default class Button extends React.Component {
 
@@ -16,66 +17,66 @@ export default class Button extends React.Component {
 
 	render() {
 
-		const { type, size, title, onClick } = this.props
+		const { type, size, title } = this.props
 
 		if (type == 'normal') {
 			if (size == 'big') {	
 				return (
-					<TouchableWithoutFeedback >
+					<TouchableOpacity >
 						<View style={styles.normalBig}>
 							<Text style={styles.titleBig}>{title}</Text>
 						</View>
-					</TouchableWithoutFeedback>
+					</TouchableOpacity>
 				)
 			}
 			else if (size == 'small') {
 				return (
-					<TouchableWithoutFeedback>
+					<TouchableOpacity>
 						<View >
 	
 						</View>
-					</TouchableWithoutFeedback>
+					</TouchableOpacity>
 				)
 			}
 		}
 		else if (type == 'loading') {
 			if (size == 'big') {	
 				return (
-					<TouchableWithoutFeedback>
+					<TouchableOpacity>
 						<View style={styles.loadingBig}>
 							<Activityindicator/>
 							<Text style={styles.titleBig}>{title}</Text>
 						</View>
-					</TouchableWithoutFeedback>
+					</TouchableOpacity>
 				)
 			}
 			else if (size == 'small') {
 				return (
-					<TouchableWithoutFeedback>
+					<TouchableOpacity>
 						<View >
 	
 						</View>
-					</TouchableWithoutFeedback>
+					</TouchableOpacity>
 				)
 			}
 		}
 		else if (type == 'disabled') {
 			if (size == 'big') {	
 				return (
-					<TouchableWithoutFeedback>
+					<TouchableOpacity>
 						<View >
 	
 						</View>
-					</TouchableWithoutFeedback>
+					</TouchableOpacity>
 				)
 			}
 			else if (size == 'small') {
 				return (
-					<TouchableWithoutFeedback>
+					<TouchableOpacity>
 						<View >
 	
 						</View>
-					</TouchableWithoutFeedback>
+					</TouchableOpacity>
 				)
 			}
 		}
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
         paddingTop: 13,
         paddingLeft: 20,
         paddingRight: 20,
-        // alignSelf: 'center',
+        alignSelf: 'center',
         alignItems:'center',
         borderRadius: 5,
         borderWidth: 1,
@@ -115,13 +116,12 @@ const styles = StyleSheet.create({
         // paddingTop: 8,
         paddingLeft: 20,
         paddingRight: 20,
-        // alignSelf: 'center',
+        alignSelf: 'center',
         alignItems:'center',
         borderRadius: 5,
         borderWidth: 1,
         borderColor: '#0084FF',
 		backgroundColor: '#0084FF',
-		alignSelf: 'center'
 	},
 
 	normalSmall: {
