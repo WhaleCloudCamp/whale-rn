@@ -9,38 +9,46 @@ import {
 
 export default class NoticeBar extends React.Component {
 
-    closeClick (){
-        alert('点击了关闭')
+    constructor(props) {
+        super(props);
+        this.state = {
+            close: false
+        }
     }
 
-    titleClick (){
-        alert('点击了标题')
+    titleClick() {
+        alert('标题被点击')
+    }
+
+    closeClick() {
+        this.setState({ close: true })
     }
 
     render() {
 
-        // const { title, showClose} = this.props;
+        const { title, showClose } = this.props;
+        const { close } = this.state;
 
         const main = (
             <View style={styles.noticeBar}>
                 <Image
                     style={styles.icon}
-                    source={require('./assetc/horn.png')}
+                    source={require('./assets/horn.png')}
                 />
-                <Text style={styles.title} numberOfLines={1} onPress={() => {this.titleClick()}}>{this.props.title}</Text>
-                {this.props.showClose && 
-                    <TouchableWithoutFeedback onPress={()=>{this.closeClick()}}>
-                        <Image style={styles.close} source={require('./assetc/dark_close.png')}/>
+                <Text style={styles.title} numberOfLines={1} onPress={() => { this.titleClick() }}>{this.props.title}</Text>
+                {this.props.showClose &&
+                    <TouchableWithoutFeedback onPress={() => { this.closeClick() }}>
+                        <Image style={styles.close} source={require('./assets/dark_close.png')} />
                     </TouchableWithoutFeedback>
                 }
             </View>
         )
 
-        return (
+        return !close ? (
             <View>
                 {main}
             </View>
-        )
+        ) : null;
     }
 }
 
@@ -65,8 +73,8 @@ const styles = StyleSheet.create({
     },
     close: {
         tintColor: '#F86E21',
-        width: 16,
-        height: 16,
+        width: 12,
+        height: 12,
         marginRight: 12,
     }
 })
