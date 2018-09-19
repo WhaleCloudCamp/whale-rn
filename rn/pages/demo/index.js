@@ -18,7 +18,8 @@ export default class Demo extends Component {
         dataSource: [
             { title: 'Button', routeName: 'button' },
             { title: 'NavBar', routeName: 'navbar' },
-            { title: 'Progress', routeName: 'progress' }
+            { title: 'Progress', routeName: 'progress' },
+            { title: 'Tag', routeName:'tag'}
         ]
     }
 
