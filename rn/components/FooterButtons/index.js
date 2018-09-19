@@ -9,9 +9,14 @@ export default class FooterButtons extends Component {
   }
 
   render() {
-    const { actions = this.defaultBtns } = this.props;
+    const { actions = this.defaultBtns, onCallback } = this.props;
+    let btnKey = 0;
     const footerButtons = actions.map((btn, i) => (
-      <TouchableHighlight underlayColor="#ddd" onPress={btn.onPress}>
+      <TouchableHighlight
+        underlayColor="#ddd"
+        onPress={() => onCallback(btn.onPress)}
+        key={`footerbtn${++btnKey}`}
+      >
         <View
           style={actions.length === 2 ? styles.buttonWrapH : styles.buttonWrapV}
         >

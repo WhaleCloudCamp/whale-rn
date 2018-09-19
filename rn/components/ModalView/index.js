@@ -20,7 +20,7 @@ export default class ModalView extends Component {
   };
 
   static defaultProps = {
-    modal: false,
+    modal: true,
   };
 
   constructor(props) {
