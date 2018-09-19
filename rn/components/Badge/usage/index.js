@@ -8,7 +8,7 @@ export default () => (
       <View style={{ height: 35, width: 35, backgroundColor: '#ddd' }} />
     </Badge>
 
-    <Badge text={'new'} style={{ margin: 30 }} />
+    <Badge text="new" style={{ margin: 30 }} />
 
     <Badge text={103} overflowCount={99} style={{ margin: 30 }} />
 

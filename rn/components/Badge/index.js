@@ -7,9 +7,9 @@ export default class Badge extends React.Component {
   static propTypes = {
     // size: 'large' | 'small',
     overflowCount: PropTypes.number,
-    corner: PropTypes.boolean, // 暂时不实现Corner
-    dot: PropTypes.boolean,
-    text: PropTypes.any,
+    corner: PropTypes.bool, // 暂时不实现Corner
+    dot: PropTypes.bool,
+    text: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   };
 
   static defaultProps = {
@@ -22,11 +22,11 @@ export default class Badge extends React.Component {
   };
 
   render() {
-    let text = this.props.text,
-      overflowCount = this.props.overflowCount,
-      dot = this.props.dot,
-      children = this.props.children,
-      corner = this.props.corner;
+    let text = this.props.text;
+    let overflowCount = this.props.overflowCount;
+    let dot = this.props.dot;
+    let children = this.props.children;
+    let corner = this.props.corner;
     text = typeof text === 'number' && text > overflowCount ? '· · ·' : text;
     // Alert.alert('' + text);
     if (dot) {

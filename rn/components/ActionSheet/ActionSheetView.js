@@ -24,17 +24,11 @@ export default class ActionSheetView extends Component {
     onCancelPress: PropTypes.func, // 取消回调
   };
 
-  renderButton = (text, index, onPress) => {
-    return (
-      <TouchableOpacity
-        key={'r-' + index}
-        style={styles.cell}
-        onPress={onPress}
-      >
-        <Text style={styles.optionText}>{text}</Text>
-      </TouchableOpacity>
-    );
-  };
+  renderButton = (text, index, onPress) => (
+    <TouchableOpacity key={`r-${index}`} style={styles.cell} onPress={onPress}>
+      <Text style={styles.optionText}>{text}</Text>
+    </TouchableOpacity>
+  );
 
   renderItem = ({ item, index }) => {
     const onPress = () => {
@@ -49,17 +43,13 @@ export default class ActionSheetView extends Component {
     onCancelPress && onCancelPress();
   };
 
-  renderCancelButton = () => {
-    return this.renderButton('取消', 0, this.onCancelPress);
-  };
+  renderCancelButton = () => this.renderButton('取消', 0, this.onCancelPress);
 
-  separator = () => {
-    return (
-      <View
-        style={{ height: 2 / PixelRatio.get(), backgroundColor: '#D8D8D8' }}
-      />
-    );
-  };
+  separator = () => (
+    <View
+      style={{ height: 2 / PixelRatio.get(), backgroundColor: '#D8D8D8' }}
+    />
+  );
 
   render() {
     const { title, message, options } = this.props;
@@ -72,7 +62,7 @@ export default class ActionSheetView extends Component {
         <FlatList
           style={{ maxHeight: screenHeight() * 0.7, flexGrow: null }}
           data={options}
-          keyExtractor={(item, index) => 'r-' + index}
+          keyExtractor={(item, index) => `r-${index}`}
           renderItem={this.renderItem}
           ItemSeparatorComponent={this.separator}
         />

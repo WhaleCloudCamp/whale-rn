@@ -10,31 +10,29 @@ export default class ActionSheetDemo extends Component {
     };
   }
 
-  button = (text, onPress) => {
-    return (
-      <TouchableOpacity
-        style={{
-          borderColor: 'blue',
-          borderWidth: 1,
-          padding: 8,
-          borderRadius: 8,
-        }}
-        onPress={onPress}
-      >
-        <Text>{text}</Text>
-      </TouchableOpacity>
-    );
-  };
+  button = (text, onPress) => (
+    <TouchableOpacity
+      style={{
+        borderColor: 'blue',
+        borderWidth: 1,
+        padding: 8,
+        borderRadius: 8,
+      }}
+      onPress={onPress}
+    >
+      <Text>{text}</Text>
+    </TouchableOpacity>
+  );
 
   showActionSheet = () => {
     const options = [];
     for (let i = 0; i < 15; i++) {
-      options.push('选项' + (i + 1));
+      options.push(`选项${i + 1}`);
     }
     ActionSheet.showActionSheet({
       title: 'title',
       message: 'message',
-      options: options,
+      options,
       onOptionSelected: index => {
         this.setState({ selectedItem: options[index] });
       },
