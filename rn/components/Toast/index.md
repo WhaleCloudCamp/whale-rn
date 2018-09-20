@@ -4,7 +4,7 @@
 import { Toast } from './Toast';
 
 ## 显示
-Toast.makeToast(modal, time, pictrue, text);
+Toast.makeToast(time, pictrue, text, size);
 
 ## 关闭
 Toast.close();
