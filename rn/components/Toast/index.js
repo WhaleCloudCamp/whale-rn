@@ -1,10 +1,15 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, Alert } from 'react-native';
 import { ModalBasics, ModalView } from '../index';
 
 class Toast {
 
-    static alert(modal, time, pictrue, text) {
+    static makeToast(modal, time, pictrue, text) {
+        // 参数错误或者不传参数时的默认状态
+        this.path = require('./style/toast_right.png');
+        this.text = '提示';
+        this.time = 2000;
+
         if (typeof time === 'number') {
             this.time = time;
         } else {
@@ -25,7 +30,9 @@ class Toast {
         } else if (pictrue === 'none') {
             this.path = '';
         }
-        this.text = text;
+        if (typeof text === 'string' && text !== '') {
+            this.text = text;
+        }
 
         const modalView = this.path !== '' ? (
             <ModalView
