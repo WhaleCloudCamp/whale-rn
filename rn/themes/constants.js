@@ -1,5 +1,14 @@
+import {PixelRatio} from 'react-native';
+
+
 const brandPrimary = '#108ee9';
 const brandPrimaryTap = '#1284d6';
+const pixelSize = (function() {
+  let pixelRatio = PixelRatio.get();
+  if (pixelRatio >= 3) return 0.333;
+  else if (pixelRatio >= 2) return 0.5;
+  else return 1;
+})();
 export default {
   // 支付宝钱包默认主题
   // https://github.com/ant-design/ant-design-mobile/wiki/设计变量表及命名规范
@@ -160,4 +169,13 @@ export default {
   // pagination
   pagination_inActive_color: '#CCCCCC',
   pagination_active_olor: '#0084FF',
+
+
+   //Popover
+   popoverColor: '#fff',
+   popoverBorderColor: 'rgba(0, 0, 0, 0.15)',
+   popoverBorderRadius: 4,
+   popoverBorderWidth: pixelSize,
+   popoverPaddingCorner: 8,
+
 };
