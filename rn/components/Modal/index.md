@@ -58,6 +58,28 @@ import Modal from "whale-rn";
 const modalKey = Modal.prompt(title, content, defaultBtns);
 ModalBasics.remove(modalKey);
 ```
+## Modal.popover
+### 定点提示 
+
+（只有展示功能，点击其他区域关闭，需要其他功能，可使用Modal.PopoverView）
+
+| 属性 | 说明 | 类型 | 默认值 |
+| :-----: | :----------------------------: | :----: | :----: |
+| content | 弹出窗内容 | React.Element | 无 |
+| view | 弹出窗的定位 | String | 无 |
+| direction | 弹窗窗的方向 | ['down', 'up', 'right', 'left'] | 无 |
+| align | 弹窗窗的方向 | ['start', 'center', 'end'] | down |
+| showArrow | 是否显示箭头 | Array | true |
+| popoverStyle | 弹窗窗的方向 | ViewPropTypes.style | 无 |
+
+```js
+import Modal from "whale-rn";
+
+<TouchableOpacity
+  ref="downstart"
+  onPress={() => Modal.popover(this.refs["downstart"], "down", "start", true)}
+/>;
+```
 
 
 ## Modal.View

@@ -12,6 +12,19 @@ export default class ModalExample extends Component {
     Modal.alert(title, content, actions || defaultBtns);
   }
 
+  showPopover(view, direction, align, showArrow) {
+    const content = (
+      <View
+        style={{ width: 230, height: 300, backgroundColor: 'rgba(0,255,0,1)' }}
+      >
+        <Text>12312</Text>
+      </View>
+    );
+    Modal.popover(content, view, direction, align, showArrow, {
+      backgroundColor: 'rgba(0,0,255,1)',
+    });
+  }
+
   showPrompt(
     title,
     content,
@@ -202,6 +215,14 @@ export default class ModalExample extends Component {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this.showDrawerView('left', false)}>
           <Text>抽屉左边出现</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          ref="downstart"
+          onPress={() =>
+            this.showPopover(this.refs.downstart, 'down', 'start', true)
+          }
+        >
+          <Text>定点提示</Text>
         </TouchableOpacity>
       </View>
     );
