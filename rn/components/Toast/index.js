@@ -4,7 +4,7 @@ import { ModalBasics, ModalView } from '../index';
 
 class Toast {
 
-    static makeToast(modal, time, pictrue, text) {
+    static makeToast(time, pictrue, text, side) {
         // 参数错误或者不传参数时的默认状态
         this.path = require('./style/toast_right.png');
         this.text = '提示';
@@ -34,10 +34,12 @@ class Toast {
             this.text = text;
         }
 
+        const mStyle = side === 'top' ? styles.modalviewTop : side === 'bottom' ? styles.modalviewBottom : styles.modalview;
+
         const modalView = this.path !== '' ? (
             <ModalView
                 style={styles.modalview}
-                modal={modal}
+                modal={true}
                 ref={v => (this.modalViewTag = v)}
             >
                 <View style={styles.viewAround}>
@@ -47,8 +49,8 @@ class Toast {
             </ModalView>
         ) : (
             <ModalView
-                style={styles.modalview}
-                modal={modal}
+                style={mStyle}
+                modal={true}
                 ref={v => (this.modalViewTag = v)}
             >
                 <Text style={styles.textwithoutPic}>{this.text}</Text>
@@ -70,6 +72,15 @@ const styles = StyleSheet.create({
     modalview: {
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    modalviewTop: {
+        alignItems: 'center',
+        paddingTop: 20
+    },
+    modalviewBottom: {
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        paddingBottom: 20
     },
     viewAround: {
         justifyContent: 'center',

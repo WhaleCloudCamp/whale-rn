@@ -6,16 +6,16 @@ import { Toast } from '../index';
 export default class ToastExample extends Component {
   showModal(check) {
       if (check === 1) {// short消失时间为2000ms，long为3500ms
-        Toast.makeToast(true, 'short', 'warn', '警告');
+        Toast.makeToast('short', 'warn', '警告');
       } else if (check === 2) {// 自定义消失时间
-        Toast.makeToast(true, 5000, 'warn', '警告');
+        Toast.makeToast(5000, 'warn', '警告');
       } else if (check === 3) {// 不设置消失时间，主动调用close方法消失
-        Toast.makeToast(true, 'none', 'warn', '警告');
+        Toast.makeToast('none', 'warn', '警告');
         setTimeout(() => Toast.close(), 1000);
       } else if (check === 4) {// 不设置图片只显示文字
-        Toast.makeToast(true, 'long', 'none', '警告警告警告警告警告警告警告警告警告警告');
+        Toast.makeToast('long', 'none', '警告警告警告警告警告警告警告警告警告警告', 'bottom');
       } else if (check === 5) {
-        Toast.makeToast(true);
+        Toast.makeToast();
       }
   }
 
