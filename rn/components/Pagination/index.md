@@ -4,7 +4,7 @@
 
 ## 属性
 | 属性 | 说明 | 类型 | 默认值 |
-| -- | -- | -- | -- | -- |
+| --- | --- | --- | --- |
 | style | 设置样式 | ViewPropTypes.style | 无 |
 | current | 当前页号,从0开始 | number | 0 |
 | total | 总页数 | number | 无 |
