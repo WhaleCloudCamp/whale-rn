@@ -7,7 +7,7 @@
 
 | 方法   | 参数                  | 返回值   | 说明                            |
 | ------ | --------------------- | -------- | ------------------------------- |
-| show   | overlayView           | modalKey | 显示弹出窗, 返回唯一的 modalKey |
+| show   | modalView           | modalKey | 显示弹出窗, 返回唯一的 modalKey |
 | remove | modalKey              |          | 移除弹出窗, 输入参数 modalKey   |
 | alert  | [详见](#Modal.alert)  | modalKey | 警告弹窗                        |
 | prompt | [详见](#Modal.prompt) | modalKey | 输入弹窗                        |
@@ -89,7 +89,7 @@ import Modal from "whale-rn";
 |---|---|---|---|
 | style | 同View.style |  | 浮层样式。
 | modal | bool | true | 值为true，需要手动关闭。false时，点击其他空白区域关闭。
-| overlayOpacity | number |  | 浮层非内容区域透明度, 值从 0 到 1, 透明度从全透明到不透明。默认值在 Theme 中设置。
+| modalOpacity | number |  | 浮层非内容区域透明度, 值从 0 到 1, 透明度从全透明到不透明。默认值在 Theme 中设置。
 
 | 事件 | 返回值 | 说明 |
 |---|---|---|
