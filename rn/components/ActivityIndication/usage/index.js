@@ -8,16 +8,19 @@ export default class ActiveDemo extends React.Component {
     let modalKey;
     switch (check) {
       case 1:
-        modalKey = ModalBasics.show(<ActivityIndication box/>);
+        modalKey = ModalBasics.show(<ActivityIndication color="white" />);
         break;
       case 2:
-        modalKey = ModalBasics.show(<ActivityIndication notext/>);
+        modalKey = ModalBasics.show(<ActivityIndication size="large" />);
         break;
       case 3:
-        modalKey = ModalBasics.show(<ActivityIndication textside={'right'}/>);
+        modalKey = ModalBasics.show(<ActivityIndication text="正在加载" />);
         break;
       case 4:
-        modalKey = ModalBasics.show(<ActivityIndication />);
+        modalKey = ModalBasics.show(<ActivityIndication toast />);
+        break;
+      case 5:
+        modalKey = ModalBasics.show(<ActivityIndication toast text="正在加载" />);
         break;
     }
 
@@ -38,6 +41,9 @@ export default class ActiveDemo extends React.Component {
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this.showModal(4)} style={{ margin: 10 }}>
           <Text>出现样式4</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.showModal(5)} style={{ margin: 10 }}>
+          <Text>出现样式5</Text>
         </TouchableOpacity>
       </View>
     );
