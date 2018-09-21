@@ -226,9 +226,8 @@ export default class ModalPopoverView extends ModalView {
     //in react native 0.49, this.props will not reset at rerender, then move opacity=0 to here
     let { popoverWidth, popoverHeight } = this.state;
     if (popoverWidth === null || popoverHeight === null) {
-      popoverStyle = popoverStyle.concat({ opacity: 0 });
+      popoverStyle = popoverStyle.concat({ opacity: 1 });
     }
-
     return (
       <Popover
         style={popoverStyle}

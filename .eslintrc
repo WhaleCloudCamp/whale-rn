@@ -37,6 +37,7 @@
     "no-param-reassign": 0,
     "react/no-string-refs":0,
     "linebreak-style":0,
-    "no-alert":0
+    "no-alert":0,
+    "react/no-array-index-key":0
   }
 }

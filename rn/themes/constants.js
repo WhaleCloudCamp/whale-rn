@@ -1,6 +1,13 @@
 import {PixelRatio} from 'react-native';
 
-
+//primary color
+const primaryColor = '#337ab7';
+//secondary color
+const secondaryColor = '#5bc0de';
+//default color
+const defaultColor = '#fff';
+//default text color
+const defaultTextColor = '#333';
 const brandPrimary = '#108ee9';
 const brandPrimaryTap = '#1284d6';
 const pixelSize = (function() {
@@ -177,5 +184,27 @@ export default {
    popoverBorderRadius: 4,
    popoverBorderWidth: pixelSize,
    popoverPaddingCorner: 8,
+
+   //PopoverPicker
+  poppColor: '#f8f8f8',
+  poppShadowColor: '#333',
+  poppMinWidth: 120,
+  poppMaxWidth: 260,
+  poppMinHeight: 44,
+  poppMaxHeight: 246,
+  poppDirectionInsets: 4,
+  poppItemColor: defaultColor,
+  poppItemPaddingLeft: 12,
+  poppItemPaddingRight: 12,
+  poppItemPaddingTop: 8,
+  poppItemPaddingBottom: 8,
+  poppItemTitleColor: defaultTextColor,
+  poppItemFontSize: 14,
+  poppItemSeparatorWidth: pixelSize,
+  poppItemSeparatorColor: '#ccc',
+  poppAccessoryWidth: 10,
+  poppAccessoryHeight: 10,
+  poppAccessoryPaddingLeft: 8,
+  poppAccessoryCheckColor: '#007aff',
 
 };

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, ViewPropTypes } from 'react-native';
 import ModalView from '../ModalView';
 
-export default class OverlayPullView extends ModalView {
+export default class ModalPullView extends ModalView {
   static propTypes = {
     ...ModalView.propTypes,
     side: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),

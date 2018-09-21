@@ -1,7 +1,7 @@
 //from https://github.com/rilyu/teaset/blob/master/components/Popover/Popover.js
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View, ViewPropTypes } from 'react-native';
+import { StyleSheet, View, ViewPropTypes, Text } from 'react-native';
 
 import Theme from '../../themes';
 
@@ -443,6 +443,7 @@ export default class Popover extends Component {
       onLayout,
       ...others
     } = this.props;
+
     return (
       <View style={popoverStyle} onLayout={e => this.onLayout(e)} {...others}>
         <View style={contentStyle} activeOpacity={1}>
