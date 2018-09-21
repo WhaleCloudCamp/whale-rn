@@ -1,9 +1,32 @@
 import React from 'react';
-import { View, Text, Image, Animated, Easing, StyleSheet } from 'react-native';
-import { ModalBasics, ModalView } from '../index';
+import { View, Text, Animated, Easing, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
+import { ModalView } from '../index';
 
-class ActivityIndication {
-  static spin() {
+export default class ActivityIndication extends React.Component {
+
+  static propTypes = {
+    box: PropTypes.bool,
+    notext: PropTypes.bool,
+    textside: PropTypes.string,
+  }
+
+  static defaultProps = {
+    box: false,
+    notext: false,
+    textside: '',
+  }
+
+  constructor(props) {
+    super(props);
+    this.spinValue = new Animated.Value(0);
+  }
+
+  componentDidMount() {
+    this.spin();
+  }
+
+  spin() {
     this.spinValue.setValue(0);
     Animated.timing(this.spinValue, {
       toValue: 1,
@@ -12,15 +35,16 @@ class ActivityIndication {
     }).start(() => this.spin());
   }
 
-  static showLoading(isBox, circleOnly, textSide) {
-    this.spinValue = new Animated.Value(0);
+  render() {
+    
+    const { box, notext, textside } = this.props;
     const spin = this.spinValue.interpolate({
       inputRange: [0, 1],
       outputRange: ['0deg', '360deg'],
     });
 
     let loadingView;
-    if (isBox) {
+    if (box) {
       loadingView = (
         <ModalView
           style={styles.centerView}
@@ -40,7 +64,7 @@ class ActivityIndication {
         </ModalView>
       );
     } else {
-      if (circleOnly) {
+      if (notext) {
         loadingView = (
           <ModalView
             style={styles.centerView}
@@ -56,10 +80,10 @@ class ActivityIndication {
           </ModalView>
         );
       } else {
-        if (textSide === 'right') {
+        if (textside === 'right') {
           loadingView = (
             <ModalView
-              style={styles.centerView}
+              style={styles.centerViewRow}
               modal={true}
               ref={v => (this.modalViewTag = v)}
             >
@@ -91,13 +115,12 @@ class ActivityIndication {
         }
       }
     }
-    this.spin();
-    return ModalBasics.show(loadingView);
+    
+    return(
+      loadingView
+    );
   }
 
-  static close() {
-    this.modalViewTag.close();
-  }
 }
 
 const styles = StyleSheet.create({
@@ -138,4 +161,3 @@ const styles = StyleSheet.create({
     margin: 10,
   },
 });
-export { ActivityIndication };
