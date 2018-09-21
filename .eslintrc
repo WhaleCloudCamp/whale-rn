@@ -35,6 +35,8 @@
     "no-unused-expressions": 0,
     "prefer-const": 0,
     "no-param-reassign": 0,
-    "react/no-string-refs":0
+    "react/no-string-refs":0,
+    "linebreak-style":0,
+    "no-alert":0
   }
 }
