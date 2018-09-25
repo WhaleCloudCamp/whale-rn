@@ -38,6 +38,8 @@
     "react/no-string-refs":0,
     "linebreak-style":0,
     "no-alert":0,
-    "react/no-array-index-key":0
+    "react/no-array-index-key":0,
+    "react/forbid-prop-types":0,
+    "react/forbid-foreign-prop-types":0
   }
 }

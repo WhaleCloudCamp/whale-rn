@@ -10,8 +10,8 @@ export default class PopoverPickerView extends Modal.PopoverView {
   // show(fromBounds, data, level,onChange, value,height
   static propTypes = {
     ...Modal.PopoverView.propTypes,
-    data: PropTypes.Array.isRequired,
-    value: PropTypes.Array,
+    data: PropTypes.array.isRequired,
+    value: PropTypes.array,
     level: PropTypes.number,
     height: PropTypes.number,
     width: PropTypes.number,
