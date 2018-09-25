@@ -153,7 +153,7 @@ export default {
   switch_fill: '#4dd865',
   // tag
   tag_height: 25,
-  tag_small_height: 15,
+  tag_border_Color: '#888888',
   // picker
   option_height: 42,
   toast_zindex: 1999,
