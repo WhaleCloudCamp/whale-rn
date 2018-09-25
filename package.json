@@ -65,6 +65,7 @@
     "path": "^0.12.7",
     "prettier": "^1.14.2",
     "react-test-renderer": "16.5.0",
+    "schedule": "0.4.0",
     "through2": "^2.0.3",
     "umi": "^2.0.3",
     "umi-plugin-react": "^1.0.3",
