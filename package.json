@@ -16,7 +16,8 @@
     "copyFile": "node scripts/copyComponents",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "startRn": "node node_modules/react-native/local-cli/cli.js start --projectRoots rn",
-    "ios": "node node_modules/react-native/local-cli/cli.js run-ios"
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android"
   },
   "repository": {
     "type": "git",
