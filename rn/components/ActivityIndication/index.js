@@ -4,108 +4,108 @@ import PropTypes from 'prop-types';
 import { ModalView } from '../index';
 
 export default class ActivityIndication extends React.Component {
+  static propTypes = {
+    animating: PropTypes.bool,
+    toast: PropTypes.bool,
+    size: PropTypes.oneOf(['large', 'small']),
+    text: PropTypes.string,
+    color: PropTypes.string,
+  };
 
-    static propTypes = {
-        animating: PropTypes.bool,
-        toast: PropTypes.bool,
-        size: PropTypes.oneOf(['large', 'small']),
-        text: PropTypes.string,
+  static defaultProps = {
+    animating: true,
+    color: 'gray',
+    size: 'small',
+    toast: false,
+  };
+
+  renderToast() {
+    return (
+      <ModalView
+        style={styles.centerView}
+        modal
+        ref={v => (this.modalViewTag = v)}
+      >
+        <View style={[styles.container]}>
+          <View style={[styles.innerContainer, { height: 89 }]}>
+            <View style={[styles.wrapper]}>
+              <ActivityIndicator color="white" size="large" />
+              {this.props.text && (
+                <Text style={[styles.toast]}>{this.props.text}</Text>
+              )}
+            </View>
+          </View>
+        </View>
+      </ModalView>
+    );
+  }
+
+  renderSpinner() {
+    const { color, size, text } = this.props;
+    const { spinner, tip } = styles;
+    return (
+      <ModalView
+        style={styles.centerView}
+        modal
+        ref={v => (this.modalViewTag = v)}
+      >
+        <View style={spinner}>
+          <ActivityIndicator color={color} size={size} />
+          {text && <Text style={[tip]}>{text}</Text>}
+        </View>
+      </ModalView>
+    );
+  }
+
+  render() {
+    if (this.props.animating) {
+      return this.props.toast ? this.renderToast() : this.renderSpinner();
     }
-
-    static defaultProps = {
-        animating: true,
-        color: 'gray',
-        size: 'small',
-        toast: false,
-    };
-
-    renderToast() {
-        return (
-            <ModalView
-                style={styles.centerView}
-                modal={true}
-                ref={v => (this.modalViewTag = v)}
-            >
-                <View style={[styles.container]}>
-                    <View style={[styles.innerContainer, { height: 89 }]}>
-                        <View style={[styles.wrapper]}>
-                            <ActivityIndicator color="white" size="large" />
-                            {this.props.text && (
-                                <Text style={[styles.toast]}>{this.props.text}</Text>
-                            )}
-                        </View>
-                    </View>
-                </View>
-            </ModalView>
-        );
-    }
-
-    renderSpinner() {
-        const { color, size, text } = this.props;
-        const { spinner, tip } = styles;
-        return (
-            <ModalView
-                style={styles.centerView}
-                modal={true}
-                ref={v => (this.modalViewTag = v)}
-            >
-                <View style={spinner}>
-                    <ActivityIndicator color={color} size={size} />
-                    {text && <Text style={[tip]}>{text}</Text>}
-                </View>
-            </ModalView>
-        );
-    }
-
-    render() {
-        if (this.props.animating) {
-            return this.props.toast ? this.renderToast() : this.renderSpinner();
-        }
-        return null;
-    }
+    return null;
+  }
 }
 
 const styles = StyleSheet.create({
-    centerView: {
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    container: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
-        backgroundColor: 'transparent',
-        zIndex: 1999,
-    },
-    innerContainer: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'transparent',
-    },
-    wrapper: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 89,
-        height: 89,
-        borderRadius: 5,
-        backgroundColor: 'rgba(0, 0, 0, .8)',
-    },
-    tip: {
-        color: '#000000',
-        fontSize: 14,
-        marginLeft: 8,
-    },
-    toast: {
-        color: '#ffffff',
-        fontSize: 14,
-        marginTop: 6,
-    },
-    spinner: {
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
+  centerView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  container: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    backgroundColor: 'transparent',
+    zIndex: 1999,
+  },
+  innerContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+  },
+  wrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 89,
+    height: 89,
+    borderRadius: 5,
+    backgroundColor: 'rgba(0, 0, 0, .8)',
+  },
+  tip: {
+    color: '#000000',
+    fontSize: 14,
+    marginLeft: 8,
+  },
+  toast: {
+    color: '#ffffff',
+    fontSize: 14,
+    marginTop: 6,
+  },
+  spinner: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

@@ -20,7 +20,11 @@ export default class ActiveDemo extends React.Component {
         modalKey = ModalBasics.show(<ActivityIndication toast />);
         break;
       case 5:
-        modalKey = ModalBasics.show(<ActivityIndication toast text="正在加载" />);
+        modalKey = ModalBasics.show(
+          <ActivityIndication toast text="正在加载" />
+        );
+        break;
+      default:
         break;
     }
 
@@ -30,19 +34,34 @@ export default class ActiveDemo extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity onPress={() => this.showModal(1)} style={{ margin: 10 }}>
+        <TouchableOpacity
+          onPress={() => this.showModal(1)}
+          style={{ margin: 10 }}
+        >
           <Text>出现样式1</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showModal(2)} style={{ margin: 10 }}>
+        <TouchableOpacity
+          onPress={() => this.showModal(2)}
+          style={{ margin: 10 }}
+        >
           <Text>出现样式2</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showModal(3)} style={{ margin: 10 }}>
+        <TouchableOpacity
+          onPress={() => this.showModal(3)}
+          style={{ margin: 10 }}
+        >
           <Text>出现样式3</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showModal(4)} style={{ margin: 10 }}>
+        <TouchableOpacity
+          onPress={() => this.showModal(4)}
+          style={{ margin: 10 }}
+        >
           <Text>出现样式4</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showModal(5)} style={{ margin: 10 }}>
+        <TouchableOpacity
+          onPress={() => this.showModal(5)}
+          style={{ margin: 10 }}
+        >
           <Text>出现样式5</Text>
         </TouchableOpacity>
       </View>
