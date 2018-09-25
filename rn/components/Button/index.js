@@ -1,77 +1,110 @@
+// Button组件
+
+// ## API
+// 属性 | 说明 | 类型 | 默认值
+// ----|-----|------|------
+// | type    | 按钮类型，可选值为`normal`、`loading`、`disabled` |   string   |   -  |
+// | size    | 按钮大小，可选值为`big`、`small` | string | `big`|
+// | title   | 按钮标题 | string | - |
+// | disabled| 设置禁用 | boolean | false |
+// | onClick | 点击反馈的自定义类名 | (e: Object): void | - |
+// | style   | 按钮自定义样式 | Object | - |
+// | textStyle | 按钮文字自定义样式 | Object | - |
+
 import React from 'react';
 import {
   View,
   StyleSheet,
+  ViewPropTypes,
   TouchableOpacity,
   TouchableWithoutFeedback,
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import Activityindicator from './Activityindicator/index';
+import Themes from '../../themes';
 
 export default class Button extends React.Component {
   static propTypes = {
     type: PropTypes.string.isRequired,
     size: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
+    onClick: PropTypes.func,
+    style: ViewPropTypes.style,
+    textStyle: Text.propTypes.style,
   };
 
   render() {
-    const { type, size, title } = this.props;
+    const {
+      type = 'normal',
+      size = 'big',
+      disabled = false,
+      title,
+      onClick,
+      style,
+      textStyle,
+    } = this.props;
 
     if (type === 'normal') {
       if (size === 'big') {
         return (
-          <TouchableOpacity>
-            <View style={styles.normalBig}>
-              <Text style={styles.titleBig}>{title}</Text>
-            </View>
+          <TouchableOpacity
+            style={[styles.normalBig, style]}
+            disabled={disabled}
+            onPress={onClick}
+          >
+            <Text style={[styles.titleBig, textStyle]}>{title}</Text>
           </TouchableOpacity>
         );
       } else if (size === 'small') {
         return (
-          <TouchableOpacity>
-            <View style={styles.normalSmall}>
-              <Text style={styles.titleSmall}>{title}</Text>
-            </View>
+          <TouchableOpacity
+            style={[styles.normalSmall, style]}
+            disabled={disabled}
+            onPress={onClick}
+          >
+            <Text style={[styles.titleSmall, textStyle]}>{title}</Text>
           </TouchableOpacity>
         );
       }
     } else if (type === 'loading') {
       if (size === 'big') {
         return (
-          <TouchableWithoutFeedback>
-            <View style={styles.loadingBig}>
-              <Activityindicator
-                image={require('./Activityindicator/assets/style2.png')}
-              />
-              <Text style={styles.titleBig}>{title}</Text>
-            </View>
+          <TouchableWithoutFeedback
+            style={[styles.loadingBig, style]}
+            disabled={disabled}
+          >
+            <Activityindicator
+              image={require('./Activityindicator/assets/style2.png')}
+            />
+            <Text style={[styles.titleBig, textStyle]}>{title}</Text>
           </TouchableWithoutFeedback>
         );
       } else if (size === 'small') {
         return (
-          <TouchableWithoutFeedback>
-            <View style={styles.loadingSmall}>
-              <Activityindicator
-                image={require('./Activityindicator/assets/style2.png')}
-              />
-              <Text style={styles.titleSmall} />
-            </View>
+          <TouchableWithoutFeedback
+            style={[styles.loadingSmall, style]}
+            disabled={disabled}
+          >
+            <Activityindicator
+              image={require('./Activityindicator/assets/style2.png')}
+            />
+            <Text style={[styles.titleSmall, textStyle]} />
           </TouchableWithoutFeedback>
         );
       }
     } else if (type === 'disabled') {
       if (size === 'big') {
         return (
-          <View style={styles.disabledBig}>
-            <Text style={styles.titleBig}>{title}</Text>
+          <View style={[styles.disabledBig, style]} disabled={disabled}>
+            <Text style={[styles.titleBig, textStyle]}>{title}</Text>
           </View>
         );
       } else if (size === 'small') {
         return (
-          <View style={styles.disabledSmall}>
-            <Text style={styles.titleSmall}>{title}</Text>
+          <View style={[styles.disabledSmall, style]} disabled={disabled}>
+            <Text style={[styles.titleSmall, textStyle]}>{title}</Text>
           </View>
         );
       }
@@ -82,17 +115,17 @@ export default class Button extends React.Component {
 
 const styles = StyleSheet.create({
   titleBig: {
-    fontSize: 16,
-    color: '#ffffff',
+    fontSize: Themes.button_font_size,
+    color: Themes.fill_base,
     marginLeft: 2,
   },
   titleSmall: {
-    fontSize: 13,
-    color: '#ffffff',
+    fontSize: Themes.button_font_size_sm,
+    color: Themes.fill_base,
     marginLeft: 2,
   },
   normalBig: {
-    height: 45,
+    height: Themes.button_height,
     paddingTop: 13,
     paddingLeft: 20,
     paddingRight: 20,
@@ -104,7 +137,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0084FF',
   },
   disabledBig: {
-    height: 45,
+    height: Themes.button_height,
     paddingTop: 13,
     paddingLeft: 20,
     paddingRight: 20,
@@ -117,7 +150,7 @@ const styles = StyleSheet.create({
   },
   loadingBig: {
     flexDirection: 'row',
-    height: 45,
+    height: Themes.button_height,
     paddingLeft: 20,
     paddingRight: 20,
     alignSelf: 'center',
@@ -129,7 +162,7 @@ const styles = StyleSheet.create({
   },
 
   normalSmall: {
-    height: 30,
+    height: Themes.button_height_sm,
     paddingTop: 7,
     paddingLeft: 10,
     paddingRight: 10,
@@ -141,7 +174,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0084FF',
   },
   disabledSmall: {
-    height: 30,
+    height: Themes.button_height_sm,
     paddingTop: 7,
     paddingLeft: 10,
     paddingRight: 10,
@@ -154,7 +187,7 @@ const styles = StyleSheet.create({
   },
   loadingSmall: {
     flexDirection: 'row',
-    height: 30,
+    height: Themes.button_height_sm,
     paddingLeft: 12,
     paddingRight: 12,
     alignSelf: 'center',

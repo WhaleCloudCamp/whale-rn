@@ -102,9 +102,9 @@ export default {
   actionsheet_item_height: 50,
   actionsheet_item_font_size: 18,
   // button
-  button_height: 47,
-  button_font_size: 18,
-  button_height_sm: 23,
+  button_height: 45,
+  button_font_size: 16,
+  button_height_sm: 30,
   button_font_size_sm: 12,
   primary_button_fill: brandPrimary,
   primary_button_fill_tap: '#0e80d2',
