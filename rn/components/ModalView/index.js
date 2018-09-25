@@ -20,7 +20,7 @@ export default class ModalView extends Component {
   };
 
   static defaultProps = {
-    modal: false,
+    modal: true,
   };
 
   constructor(props) {
@@ -92,7 +92,8 @@ export default class ModalView extends Component {
 
   render() {
     this.buildProps();
-    let { style, modalOpacity } = this.props;
+    let { style, modalOpacity = Theme.opacity_disabled } = this.props;
+
     return (
       <View style={styles.globalmodal}>
         <View
@@ -100,7 +101,7 @@ export default class ModalView extends Component {
             styles.globalmodal,
             {
               backgroundColor: '#000',
-              opacity: modalOpacity || Theme.opacity_disabled,
+              opacity: modalOpacity,
             },
           ]}
           {...this.panResponder.panHandlers}

@@ -1,5 +1,21 @@
+import {PixelRatio} from 'react-native';
+
+//primary color
+const primaryColor = '#337ab7';
+//secondary color
+const secondaryColor = '#5bc0de';
+//default color
+const defaultColor = '#fff';
+//default text color
+const defaultTextColor = '#333';
 const brandPrimary = '#108ee9';
 const brandPrimaryTap = '#1284d6';
+const pixelSize = (function() {
+  let pixelRatio = PixelRatio.get();
+  if (pixelRatio >= 3) return 0.333;
+  else if (pixelRatio >= 2) return 0.5;
+  else return 1;
+})();
 export default {
   // 支付宝钱包默认主题
   // https://github.com/ant-design/ant-design-mobile/wiki/设计变量表及命名规范
@@ -160,4 +176,35 @@ export default {
   // pagination
   pagination_inActive_color: '#CCCCCC',
   pagination_active_olor: '#0084FF',
+
+
+   //Popover
+   popoverColor: '#fff',
+   popoverBorderColor: 'rgba(0, 0, 0, 0.15)',
+   popoverBorderRadius: 4,
+   popoverBorderWidth: pixelSize,
+   popoverPaddingCorner: 8,
+
+   //PopoverPicker
+  poppColor: '#f8f8f8',
+  poppShadowColor: '#333',
+  poppMinWidth: 120,
+  poppMaxWidth: 260,
+  poppMinHeight: 44,
+  poppMaxHeight: 246,
+  poppDirectionInsets: 4,
+  poppItemColor: defaultColor,
+  poppItemPaddingLeft: 12,
+  poppItemPaddingRight: 12,
+  poppItemPaddingTop: 8,
+  poppItemPaddingBottom: 8,
+  poppItemTitleColor: defaultTextColor,
+  poppItemFontSize: 14,
+  poppItemSeparatorWidth: pixelSize,
+  poppItemSeparatorColor: '#ccc',
+  poppAccessoryWidth: 10,
+  poppAccessoryHeight: 10,
+  poppAccessoryPaddingLeft: 8,
+  poppAccessoryCheckColor: '#007aff',
+
 };
