@@ -147,7 +147,7 @@ export default {
   search_bar_font_size: 15,
   search_color_icon: '#bbbbbb',
   // notice_bar
-  notice_bar_fill: '#fffada',
+  notice_bar_fill: '#fdfcec',
   notice_bar_height: 36,
   // switch
   switch_fill: '#4dd865',

@@ -1,17 +1,35 @@
+// NoticeBar组件
+
+// ## API
+// 属性 | 说明 | 类型 | 默认值
+// ----|-----|------|------
+// | icon    | 通告栏图标 | Image |   -  |
+// | title   | 通告栏标题 | string | - |
+// | showClose | 通告栏是否显示关闭 | boolean | false |
+// | onClick | 点击通告栏反馈的自定义事件 | (e: Object): void | - |
+// | style   | 通告栏背景自定义样式 | Object | - |
+// | textStyle | 通告栏文字自定义样式 | Object | - |
+
 import React from 'react';
 import {
   Image,
   View,
+  ViewPropTypes,
   Text,
   TouchableWithoutFeedback,
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import Themes from '../../themes';
 
 export default class NoticeBar extends React.Component {
   static propTypes = {
-    showClose: PropTypes.bool,
+    icon: Image.propTypes.source,
     title: PropTypes.string.isRequired,
+    showClose: PropTypes.bool,
+    onClick: PropTypes.func,
+    style: ViewPropTypes.style,
+    textStyle: Text.propTypes.style,
   };
 
   constructor(props) {
@@ -21,25 +39,33 @@ export default class NoticeBar extends React.Component {
     };
   }
 
-  titleClick() {
-    alert('标题被点击');
-  }
-
   closeClick() {
     this.setState({ close: true });
   }
 
   render() {
-    const { title, showClose } = this.props;
     const { close } = this.state;
 
-    const main = (
-      <View style={styles.noticeBar}>
-        <Image style={styles.icon} source={require('./assets/horn.png')} />
-        <Text style={styles.title} numberOfLines={1} onPress={this.titleClick}>
-          {this.props.title}
+    const {
+      icon = require('./assets/horn.png'),
+      title,
+      showClose = false,
+      onClick,
+      style,
+      textStyle,
+    } = this.props;
+
+    const main = () => (
+      <View style={[styles.noticeBar, style]}>
+        <Image style={styles.icon} source={icon} />
+        <Text
+          style={[styles.title, textStyle]}
+          numberOfLines={1}
+          onPress={onClick}
+        >
+          {title}
         </Text>
-        {this.props.showClose && (
+        {showClose && (
           <TouchableWithoutFeedback onPress={this.closeClick}>
             <Image
               style={styles.close}
@@ -56,9 +82,9 @@ export default class NoticeBar extends React.Component {
 
 const styles = StyleSheet.create({
   noticeBar: {
-    height: 36,
+    height: Themes.notice_bar_height,
     flexDirection: 'row',
-    backgroundColor: '#FDFCEC',
+    backgroundColor: Themes.notice_bar_fill,
     alignItems: 'center',
   },
   icon: {
