@@ -1,12 +1,23 @@
+// Tag组件
+
+// ## API
+// 属性 | 说明 | 类型 | 默认值
+// ----|-----|------|------
+// | title   | tag标题 | string | - |
+// | selected | tag是否选中 | boolean | false |
+// | disabled | tag是否禁用 | Object | false |
+// | onClick  | 点击tag的自定义事件 | (e: Object): void | - |
+
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
+import Themes from '../../themes';
 
 export default class Tag extends React.Component {
   static propTypes = {
+    title: PropTypes.string.isRequired,
     selected: PropTypes.bool,
     disabled: PropTypes.bool,
-    title: PropTypes.string.isRequired,
     onClick: PropTypes.func,
   };
 
@@ -37,8 +48,9 @@ export default class Tag extends React.Component {
   };
 
   render() {
-    const { disabled, title } = this.props;
     const { selected } = this.state;
+
+    const { disabled = false, title } = this.props;
 
     if (disabled) {
       return (
@@ -48,12 +60,13 @@ export default class Tag extends React.Component {
       );
     } else {
       return (
-        <TouchableOpacity onPress={this.tagClick}>
-          <View style={selected ? styles.selected : styles.normal}>
-            <Text style={selected ? styles.selectedText : styles.notmalText}>
-              {title}
-            </Text>
-          </View>
+        <TouchableOpacity
+          style={selected ? styles.selected : styles.normal}
+          onPress={this.tagClick}
+        >
+          <Text style={selected ? styles.selectedText : styles.notmalText}>
+            {title}
+          </Text>
         </TouchableOpacity>
       );
     }
@@ -62,7 +75,7 @@ export default class Tag extends React.Component {
 
 const styles = StyleSheet.create({
   normal: {
-    height: 25,
+    height: Themes.tag_height,
     paddingTop: 4,
     paddingLeft: 15,
     paddingRight: 15,
@@ -70,15 +83,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#888888',
-    backgroundColor: '#ffffff',
+    borderColor: Themes.tag_border_Color,
+    backgroundColor: Themes.fill_base,
   },
   notmalText: {
-    fontSize: 14,
-    color: '#888888',
+    fontSize: Themes.font_size_base,
+    color: Themes.color_text_caption,
   },
   selected: {
-    height: 25,
+    height: Themes.tag_height,
     paddingTop: 4,
     paddingLeft: 15,
     paddingRight: 15,
@@ -87,14 +100,14 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#0084FF',
-    backgroundColor: '#ffffff',
+    backgroundColor: Themes.fill_base,
   },
   selectedText: {
-    fontSize: 14,
+    fontSize: Themes.font_size_base,
     color: '#0084FF',
   },
   disabled: {
-    height: 25,
+    height: Themes.tag_height,
     paddingTop: 4,
     paddingLeft: 15,
     paddingRight: 15,
@@ -102,11 +115,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#DDDDDD',
-    backgroundColor: '#DDDDDD',
+    borderColor: Themes.fill_disabled,
+    backgroundColor: Themes.fill_disabled,
   },
   disabledText: {
-    fontSize: 14,
-    color: '#888888',
+    fontSize: Themes.font_size_base,
+    color: Themes.color_text_caption,
   },
 });
