@@ -8,7 +8,6 @@ export const Styles = {
     paddingRight: theme.h_spacing_lg,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderBottomColor: theme.border_color_base,
-    paddingVertical: theme.v_spacing_lg,
   },
   label: {
     color: theme.color_text_paragraph,
@@ -20,6 +19,7 @@ export const Styles = {
     fontSize: theme.font_size_base,
     color: theme.color_text_paragraph,
     marginLeft: theme.h_spacing_sm,
+    height: theme.list_item_height,
   },
   errorTip: {
     color: theme.brand_error,

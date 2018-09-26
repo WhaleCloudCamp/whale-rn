@@ -96,28 +96,36 @@ export default class InputItem extends Component {
             <View>{label}</View>
           ))}
         <Input
-          style={[styles.input]}
+          style={[styles.input, inputStyle]}
           keyboardType={keyboardType}
           placeholderTextColor={theme.color_text_placeholder}
           validate={rules}
           validateCallBack={validateCallback}
           {...restProps}
         />
-        {error
-          ? errorTip && <Text style={[styles.errorTip]}>{errorTip}</Text>
-          : extraText && (
+        {error && errorTip && <Text style={[styles.errorTip]}>{errorTip}</Text>}
+        {(extraText || extraImage) && (
+          <TouchableOpacity
+            style={{
+              flexDirection: 'row',
+              alignSelf: 'stretch',
+              alignItems: 'center',
+            }}
+            activeOpacity={1}
+            hitSlop={{ top: 0, right: 15, bottom: 0, left: 10 }}
+            onPress={onExtraClick}
+          >
+            {extraText && (
               <Text style={[styles.extraText, extraTextStyle]}>
                 {extraText}
               </Text>
             )}
-        {extraImage && (
-          <TouchableOpacity
-            style={{ marginLeft: theme.h_spacing_lg }}
-            activeOpacity={1}
-            hitSlop={{ top: 10, right: 10, bottom: 10, left: 10 }}
-            onPress={onExtraClick}
-          >
-            <Image style={[extraImage]} source={extraImage} />
+            {extraImage && (
+              <Image
+                style={[{ marginLeft: theme.h_spacing_md }, extraImage]}
+                source={extraImage}
+              />
+            )}
           </TouchableOpacity>
         )}
       </View>
