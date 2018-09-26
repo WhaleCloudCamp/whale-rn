@@ -1,15 +1,15 @@
-import {PixelRatio} from 'react-native';
+import { PixelRatio } from "react-native";
 
 //primary color
-const primaryColor = '#337ab7';
+const primaryColor = "#337ab7";
 //secondary color
-const secondaryColor = '#5bc0de';
+const secondaryColor = "#5bc0de";
 //default color
-const defaultColor = '#fff';
+const defaultColor = "#fff";
 //default text color
-const defaultTextColor = '#333';
-const brandPrimary = '#108ee9';
-const brandPrimaryTap = '#1284d6';
+const defaultTextColor = "#333";
+const brandPrimary = "#108ee9";
+const brandPrimaryTap = "#1284d6";
 const pixelSize = (function() {
   let pixelRatio = PixelRatio.get();
   if (pixelRatio >= 3) return 0.333;
@@ -24,34 +24,34 @@ export default {
   // 8-digit-hex to 4-digit hex https://css-tricks.com/8-digit-hex-codes/
   // https://www.chromestatus.com/feature/5685348285808640 chrome will support `#RGBA`
   // 文字色
-  color_text_base: '#000000',
-  color_text_base_inverse: '#ffffff',
-  color_text_secondary: '#a4a9b0',
-  color_text_placeholder: '#bbbbbb',
-  color_text_disabled: '#bbbbbb',
-  color_text_caption: '#888888',
-  color_text_paragraph: '#333333',
+  color_text_base: "#000000",
+  color_text_base_inverse: "#ffffff",
+  color_text_secondary: "#a4a9b0",
+  color_text_placeholder: "#bbbbbb",
+  color_text_disabled: "#bbbbbb",
+  color_text_caption: "#888888",
+  color_text_paragraph: "#333333",
   color_link: brandPrimary,
   // 背景色
-  fill_base: '#ffffff',
-  fill_body: '#f5f5f9',
-  fill_tap: '#dddddd',
-  fill_disabled: '#dddddd',
-  fill_mask: 'rgba(0, 0, 0, .4)',
-  color_icon_base: '#cccccc',
-  fill_grey: '#f7f7f7',
+  fill_base: "#ffffff",
+  fill_body: "#f5f5f9",
+  fill_tap: "#dddddd",
+  fill_disabled: "#dddddd",
+  fill_mask: "rgba(0, 0, 0, .4)",
+  color_icon_base: "#cccccc",
+  fill_grey: "#f7f7f7",
   // 透明度
   opacity_disabled: 0.3,
   // 全局/品牌色
   brand_primary: brandPrimary,
   brand_primary_tap: brandPrimaryTap,
-  brand_success: '#6abf47',
-  brand_warning: '#f4333c',
-  brand_error: '#f4333c',
-  brand_important: '#ff5b05',
-  brand_wait: '#108ee9',
+  brand_success: "#6abf47",
+  brand_warning: "#f4333c",
+  brand_error: "#f4333c",
+  brand_important: "#ff5b05",
+  brand_wait: "#108ee9",
   // 边框色
-  border_color_base: '#dddddd',
+  border_color_base: "#dddddd",
   // 字体尺寸
   // ---
   font_size_icontext: 10,
@@ -96,7 +96,7 @@ export default {
   icon_size_lg: 36,
   // 动画缓动
   // ---
-  ease_in_out_quint: 'cubic_bezier(0.86, 0, 0.07, 1)',
+  ease_in_out_quint: "cubic_bezier(0.86, 0, 0.07, 1)",
   // 组件变量
   // ---
   actionsheet_item_height: 50,
@@ -107,12 +107,12 @@ export default {
   button_height_sm: 23,
   button_font_size_sm: 12,
   primary_button_fill: brandPrimary,
-  primary_button_fill_tap: '#0e80d2',
+  primary_button_fill_tap: "#0e80d2",
   ghost_button_color: brandPrimary,
   ghost_button_fill_tap: `${brandPrimary}99`,
-  warning_button_fill: '#e94f4f',
-  warning_button_fill_tap: '#d24747',
-  link_button_fill_tap: '#dddddd',
+  warning_button_fill: "#e94f4f",
+  warning_button_fill_tap: "#d24747",
+  link_button_fill_tap: "#dddddd",
   link_button_font_size: 16,
   // modal
   modal_font_size_heading: 18,
@@ -125,7 +125,7 @@ export default {
   // input
   input_label_width: 17,
   input_font_size: 17,
-  input_color_icon: '#cccccc',
+  input_color_icon: "#cccccc",
   input_color_icon_tap: brandPrimary,
   // tabs
   tabs_color: brandPrimary,
@@ -136,21 +136,21 @@ export default {
   segmented_control_height: 27,
   segmented_control_fill_tap: `${brandPrimary}10`,
   // tab_bar
-  tab_bar_fill: '#ebeeef',
+  tab_bar_fill: "#ebeeef",
   tab_bar_height: 50,
   // toast
-  toast_fill: 'rgba(0, 0, 0, .8)',
+  toast_fill: "rgba(0, 0, 0, .8)",
   // search_bar
-  search_bar_fill: '#efeff4',
+  search_bar_fill: "#efeff4",
   search_bar_height: 44,
   search_bar_input_height: 28,
   search_bar_font_size: 15,
-  search_color_icon: '#bbbbbb',
+  search_color_icon: "#bbbbbb",
   // notice_bar
-  notice_bar_fill: '#fffada',
+  notice_bar_fill: "#fffada",
   notice_bar_height: 36,
   // switch
-  switch_fill: '#4dd865',
+  switch_fill: "#4dd865",
   // tag
   tag_height: 25,
   tag_small_height: 15,
@@ -160,7 +160,6 @@ export default {
   action_sheet_zindex: 1000,
   popup_zindex: 999,
   modal_zindex: 999,
-
 
   //add
   btnPaddingVertical: 6,
@@ -174,20 +173,19 @@ export default {
   btnTextColor: "#037aff",
 
   // pagination
-  pagination_inActive_color: '#CCCCCC',
-  pagination_active_olor: '#0084FF',
+  pagination_inActive_color: "#CCCCCC",
+  pagination_active_olor: "#0084FF",
 
+  //Popover
+  popoverColor: "#fff",
+  popoverBorderColor: "rgba(0, 0, 0, 0.15)",
+  popoverBorderRadius: 4,
+  popoverBorderWidth: pixelSize,
+  popoverPaddingCorner: 8,
 
-   //Popover
-   popoverColor: '#fff',
-   popoverBorderColor: 'rgba(0, 0, 0, 0.15)',
-   popoverBorderRadius: 4,
-   popoverBorderWidth: pixelSize,
-   popoverPaddingCorner: 8,
-
-   //PopoverPicker
-  poppColor: '#f8f8f8',
-  poppShadowColor: '#333',
+  //PopoverPicker
+  poppColor: "#f8f8f8",
+  poppShadowColor: "#333",
   poppMinWidth: 120,
   poppMaxWidth: 260,
   poppMinHeight: 44,
@@ -201,10 +199,39 @@ export default {
   poppItemTitleColor: defaultTextColor,
   poppItemFontSize: 14,
   poppItemSeparatorWidth: pixelSize,
-  poppItemSeparatorColor: '#ccc',
+  poppItemSeparatorColor: "#ccc",
   poppAccessoryWidth: 10,
   poppAccessoryHeight: 10,
   poppAccessoryPaddingLeft: 8,
-  poppAccessoryCheckColor: '#007aff',
+  poppAccessoryCheckColor: "#007aff",
 
+  //ListRow
+  rowColor: defaultColor,
+  rowMinHeight: 44,
+  rowPaddingLeft: 12,
+  rowPaddingRight: 12,
+  rowPaddingTop: 8,
+  rowPaddingBottom: 8,
+  rowIconWidth: 20,
+  rowIconHeight: 20,
+  rowIconPaddingRight: 12,
+  rowAccessoryWidth: 10,
+  rowAccessoryHeight: 10,
+  rowAccessoryPaddingLeft: 8,
+  rowAccessoryCheckColor: "#007aff",
+  rowAccessoryIndicatorColor: "#bebebe",
+  rowSeparatorColor: "#ccc",
+  rowSeparatorLineWidth: pixelSize,
+  rowPaddingTitleDetail: 4,
+  rowDetailLineHeight: 18,
+  rowActionButtonColor: "#c8c7cd",
+  rowActionButtonDangerColor: "#d9534f",
+  rowActionButtonTitleColor: "#fff",
+  rowActionButtonDangerTitleColor: "#fff",
+  rowActionButtonTitleFontSize: 15,
+  rowActionButtonPaddingHorizontal: 12,
+  labelTextColor: defaultTextColor,
+  labelTextTitleColor: "#000",
+  labelTextDetailColor: "#989898",
+  labelTextDangerColor: "#a94442"
 };
