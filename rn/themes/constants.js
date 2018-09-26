@@ -102,9 +102,9 @@ export default {
   actionsheet_item_height: 50,
   actionsheet_item_font_size: 18,
   // button
-  button_height: 47,
-  button_font_size: 18,
-  button_height_sm: 23,
+  button_height: 45,
+  button_font_size: 16,
+  button_height_sm: 30,
   button_font_size_sm: 12,
   primary_button_fill: brandPrimary,
   primary_button_fill_tap: "#0e80d2",
@@ -136,8 +136,8 @@ export default {
   segmented_control_height: 27,
   segmented_control_fill_tap: `${brandPrimary}10`,
   // tab_bar
-  tab_bar_fill: "#ebeeef",
-  tab_bar_height: 50,
+  tab_bar_fill: '#ebeeef',
+  tab_bar_height: 49,
   // toast
   toast_fill: "rgba(0, 0, 0, .8)",
   // search_bar
@@ -147,13 +147,13 @@ export default {
   search_bar_font_size: 15,
   search_color_icon: "#bbbbbb",
   // notice_bar
-  notice_bar_fill: "#fffada",
+  notice_bar_fill: '#fdfcec',
   notice_bar_height: 36,
   // switch
   switch_fill: "#4dd865",
   // tag
   tag_height: 25,
-  tag_small_height: 15,
+  tag_border_Color: '#888888',
   // picker
   option_height: 42,
   toast_zindex: 1999,
