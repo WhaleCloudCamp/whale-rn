@@ -137,7 +137,7 @@ export default {
   segmented_control_fill_tap: `${brandPrimary}10`,
   // tab_bar
   tab_bar_fill: '#ebeeef',
-  tab_bar_height: 50,
+  tab_bar_height: 49,
   // toast
   toast_fill: 'rgba(0, 0, 0, .8)',
   // search_bar
