@@ -6,7 +6,7 @@ import List from '../index';
 export default class ListExample extends Component {
   render() {
     return (
-      <List header="123">
+      <List header="123" lines="inset">
         <Text>1</Text>
         <Text>2</Text>
         <Text>3</Text>
