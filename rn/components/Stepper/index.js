@@ -41,7 +41,7 @@ export default class Stepper extends React.Component {
       <View style={stytles.main}>
         <TouchableHighlight
           disabled={this.props.disable}
-          underlayColor={0.5}
+          activeOpacity={0.5}
           onPress={this.sub}
         >
           <Image
@@ -55,7 +55,7 @@ export default class Stepper extends React.Component {
         </Text>
         <TouchableHighlight
           disabled={this.props.disable}
-          underlayColor={0.5}
+          activeOpacity={0.5}
           onPress={this.add}
         >
           <Image
