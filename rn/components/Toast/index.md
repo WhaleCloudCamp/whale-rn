@@ -4,10 +4,12 @@
 import { Toast } from './Toast';
 
 ## 显示
+```
 Toast.toastSuccess(time, text, side);
 Toast.toastFail(time, text, side);
 Toast.toastWarn(time, text, side);
 Toast.toastText(time, text, side);
+```
 
 ## 关闭
 Toast.close();
