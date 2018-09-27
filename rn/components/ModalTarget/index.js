@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-  AppRegistry,
-} from 'react-native';
+import { StyleSheet, View, AppRegistry } from 'react-native';
 import Theme from '../../themes';
 import DeviceEventEmitter from './EventEmitter';
 
@@ -33,7 +29,7 @@ export default class ModalTarget extends Component {
 
   componentWillMount() {
     console.log(DeviceEventEmitter.addListener);
-    
+
     DeviceEventEmitter.addListener('addModals', event => this.add(event));
     DeviceEventEmitter.addListener('removeModals', event => this.remove(event));
     DeviceEventEmitter.addListener('removeAllModals', event =>

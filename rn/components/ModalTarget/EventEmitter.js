@@ -1,4 +1,5 @@
-import events from "events";
+import events from 'events';
+
 const { EventEmitter } = events;
 const emitter = new EventEmitter();
 
