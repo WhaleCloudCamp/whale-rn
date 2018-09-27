@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, Image, TouchableOpacity } from 'react-native';
+import { Text, View, ViewPropTypes, TouchableOpacity } from 'react-native';
 
 export default class ItemBasics extends Component {
   static propTypes = {
+    ...TouchableOpacity.propTypes,
     leftIcon: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.shape({ uri: PropTypes.string }),
@@ -30,6 +31,7 @@ export default class ItemBasics extends Component {
       PropTypes.string,
       PropTypes.number,
     ]),
+    itemStyle: ViewPropTypes.style,
   };
 
   static defaultProps = {};

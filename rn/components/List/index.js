@@ -77,7 +77,9 @@ export default class List extends Component {
                 </View>
               );
             }
-            return <View style={itemStyle}>{child}</View>;
+            return (
+              <View style={[itemStyle, child.props.itemStyle]}>{child}</View>
+            );
           })}
         </View>
       </View>
