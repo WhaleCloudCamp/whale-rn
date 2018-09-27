@@ -45,7 +45,7 @@ export default class InputItem extends Component {
 
   static defaultProps = {
     clear: true,
-    keyboardType: 'default'
+    keyboardType: 'default',
   };
 
   constructor(props) {
