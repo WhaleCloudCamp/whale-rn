@@ -13,10 +13,12 @@ export default class Item extends ItemBasics {
   };
 
   renderLeftIcon(leftIcon) {
+    let { leftIconStyle } = this.props;
+    leftIconStyle = [{ width: 22, height: 22 }].concat(leftIconStyle);
     if ((leftIcon || leftIcon === 0) && !React.isValidElement(leftIcon)) {
       leftIcon = (
         <View style={{ paddingRight: 12 }}>
-          <Image style={{ width: 22, height: 22 }} source={leftIcon} />
+          <Image style={leftIconStyle} source={leftIcon} />
         </View>
       );
     }

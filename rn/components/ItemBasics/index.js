@@ -10,6 +10,7 @@ export default class ItemBasics extends Component {
       PropTypes.shape({ uri: PropTypes.string }),
       PropTypes.number,
     ]),
+    leftIconStyle: ViewPropTypes.style,
     rightIcon: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.shape({ uri: PropTypes.string }),
@@ -34,7 +35,9 @@ export default class ItemBasics extends Component {
     itemStyle: ViewPropTypes.style,
   };
 
-  static defaultProps = {};
+  static defaultProps = {
+    note: '',
+  };
 
   renderLeftIcon(leftIcon) {
     return null;
@@ -63,9 +66,11 @@ export default class ItemBasics extends Component {
       ...other
     } = this.props;
     const leftIconCont = this.renderLeftIcon(leftIcon);
-    const rightIconCont = this.renderRightIcon(rightIcon);
+    const rightIconCont = this.renderRightIcon(rightIcon) || (
+      <View style={{ width: 23 }} />
+    );
     const titleCont = this.renderTitle(title, details);
-    const noteCont = this.renderNote(note);
+    const noteCont = this.renderNote(note) || <View style={{ width: 52 }} />;
     const contentStyle = {
       overflow: 'hidden',
       flexDirection: 'row',
