@@ -1,67 +1,75 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { ModalBasics, ModalView } from '../../index';
-import { Toast } from '../index';
+import { Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { Toast } from '../../Toast';
 
 export default class ToastExample extends Component {
-  showModal(check) {
+  showModal(check, side) {
     if (check === 1) {
-      // short消失时间为2000ms，long为3500ms
-      Toast.makeToast('short', 'warn', '警告');
+      Toast.toastText('short', '这是一个纯文本Toast', side);
     } else if (check === 2) {
-      // 自定义消失时间
-      Toast.makeToast(5000, 'warn', '警告');
+      Toast.toastSucess('long');
     } else if (check === 3) {
-      // 不设置消失时间，主动调用close方法消失
-      Toast.makeToast('none', 'warn', '警告');
-      setTimeout(() => Toast.close(), 1000);
+      Toast.toastSucess('short');
     } else if (check === 4) {
-      // 不设置图片只显示文字
-      Toast.makeToast(
-        'long',
-        'none',
-        '警告警告警告警告警告警告警告警告警告警告',
-        'bottom'
-      );
+      Toast.toastSucess(5000);
     } else if (check === 5) {
-      Toast.makeToast();
+      Toast.toastSucess('none');
+      setTimeout(() => Toast.close(), 5000);
+    } else if (check === 6) {
+      Toast.toastFail('short');
+    } else if (check === 7) {
+      Toast.toastWarn('short');
     }
   }
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity
-          onPress={() => this.showModal(1)}
-          style={{ margin: 10 }}
-        >
-          <Text>使用预设消失时间</Text>
+      <ScrollView contentContainerStyle={{ alignItems: 'center' }} >
+        <Text style={{ margin: 10, fontSize: 19 }}>纯文本</Text>
+        <TouchableOpacity style={styles.button} onPress={() => this.showModal(1, 'top')}>
+          <Text style={{ fontSize: 19 }}>顶部Toast</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.showModal(2)}
-          style={{ margin: 10 }}
-        >
-          <Text>使用自定义消失时间5s</Text>
+        <TouchableOpacity style={styles.button} onPress={() => this.showModal(1)}>
+          <Text style={{ fontSize: 19 }}>中间Toast</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.showModal(3)}
-          style={{ margin: 10 }}
-        >
-          <Text>使用主动消失</Text>
+        <TouchableOpacity style={styles.button} onPress={() => this.showModal(1, 'bottom')}>
+          <Text style={{ fontSize: 19 }}>底部Toast</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.showModal(4)}
-          style={{ margin: 10 }}
-        >
-          <Text>只显示文字</Text>
+        <Text style={{ margin: 10, fontSize: 19 }}>成功提示</Text>
+        <TouchableOpacity style={styles.button} onPress={() => this.showModal(2)}>
+          <Text style={{ fontSize: 19 }}>默认时间long</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.showModal(5)}
-          style={{ margin: 10 }}
-        >
-          <Text>不传参数使用默认</Text>
+        <TouchableOpacity style={styles.button} onPress={() => this.showModal(3)}>
+          <Text style={{ fontSize: 19 }}>默认时间short</Text>
         </TouchableOpacity>
-      </View>
+        <TouchableOpacity style={styles.button} onPress={() => this.showModal(4)}>
+          <Text style={{ fontSize: 19 }}>自定义时间5秒</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={() => this.showModal(5)}>
+          <Text style={{ fontSize: 19 }}>不定义时间</Text>
+        </TouchableOpacity>
+        <Text style={{ margin: 10, fontSize: 19 }}>失败提示</Text>
+        <TouchableOpacity style={styles.button} onPress={() => this.showModal(6)}>
+          <Text style={{ fontSize: 19 }}>失败提示</Text>
+        </TouchableOpacity>
+        <Text style={{ margin: 10, fontSize: 19 }}>警告提示</Text>
+        <TouchableOpacity style={styles.button} onPress={() => this.showModal(7)}>
+          <Text style={{ fontSize: 19 }}>警告提示</Text>
+        </TouchableOpacity>
+      </ScrollView>
     );
   }
 }
+const styles = StyleSheet.create({
+  button: {
+    height: 42,
+    width: 260,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#333333',
+    borderRadius: 3,
+    margin: 5,
+  },
+});

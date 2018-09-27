@@ -17,7 +17,7 @@ export default class Badge extends React.Component {
     overflowCount: 99,
     dot: false,
     corner: false,
-    text: '100',
+    text: 'new',
     // styles: BadgeStyles
   };
 
@@ -31,6 +31,9 @@ export default class Badge extends React.Component {
     // Alert.alert('' + text);
     if (dot) {
       this.props.text = '';
+    }
+    if (text === 0) {
+      return null;
     }
     let view = dot ? (
       <View style={[styles.wrap, this.props.style]}>
