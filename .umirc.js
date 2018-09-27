@@ -15,7 +15,11 @@ export default {
   routes:[
     {
         path: '/',
-        component: '../../rn/components/Button/usage'
-    },
+        component: '../layouts',
+        routes: [
+        { path: '/', redirect: '/modal' },
+          { path: '/modal', component: '../../rn/components/Modal/usage' },
+        ],
+    }
   ]
 };

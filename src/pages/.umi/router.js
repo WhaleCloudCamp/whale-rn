@@ -9,11 +9,25 @@ let Router = require('dva/router').routerRedux.ConnectedRouter;
 let routes = [
   {
     "path": "/",
-    "component": require('../../../rn/components/Button/usage').default,
+    "redirect": "/modal",
     "exact": true
   },
   {
-    "component": () => React.createElement(require('/Users/xiaohuoni/whale-rn/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+    "path": "/",
+    "component": require('../../layouts').default,
+    "routes": [
+      {
+        "path": "/modal",
+        "component": require('../../../rn/components/Modal/usage').default,
+        "exact": true
+      },
+      {
+        "component": () => React.createElement(require('/Users/xiaohuoni/Documents/GitHub/whale-rn/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
+      }
+    ]
+  },
+  {
+    "component": () => React.createElement(require('/Users/xiaohuoni/Documents/GitHub/whale-rn/node_modules/umi-build-dev/lib/plugins/404/NotFound.js').default, { pagesPath: 'src/pages', hasRoutesInConfig: true })
   }
 ];
 
