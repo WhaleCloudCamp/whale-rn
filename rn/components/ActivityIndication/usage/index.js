@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import ActivityIndication from '../../ActivityIndication';
+import ActivityIndication from '..';
 import { ModalBasics } from '../../index';
 
 export default class ActiveDemo extends React.Component {
@@ -38,31 +38,31 @@ export default class ActiveDemo extends React.Component {
           onPress={() => this.showModal(1)}
           style={styles.button}
         >
-          <Text>color="white"</Text>
+          <Text>color white</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(2)}
           style={styles.button}
         >
-          <Text>size="large"</Text>
+          <Text>size large</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(3)}
           style={styles.button}
         >
-          <Text>text="正在加载"</Text>
+          <Text>text 正在加载</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(4)}
           style={styles.button}
         >
-          <Text>toast=true</Text>
+          <Text>toast true</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(5)}
           style={styles.button}
         >
-          <Text>toast=true text="正在加载"</Text>
+          <Text>toast true,text 正在加载</Text>
         </TouchableOpacity>
       </View>
     );

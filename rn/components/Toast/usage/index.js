@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
-import { Toast } from '../../Toast';
+import { Toast } from '..';
 
 export default class ToastExample extends Component {
   showModal(check, side) {
@@ -24,36 +24,63 @@ export default class ToastExample extends Component {
 
   render() {
     return (
-      <ScrollView contentContainerStyle={{ alignItems: 'center' }} >
+      <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
         <Text style={{ margin: 10, fontSize: 19 }}>纯文本</Text>
-        <TouchableOpacity style={styles.button} onPress={() => this.showModal(1, 'top')}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(1, 'top')}
+        >
           <Text style={{ fontSize: 19 }}>顶部Toast</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => this.showModal(1)}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(1)}
+        >
           <Text style={{ fontSize: 19 }}>中间Toast</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => this.showModal(1, 'bottom')}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(1, 'bottom')}
+        >
           <Text style={{ fontSize: 19 }}>底部Toast</Text>
         </TouchableOpacity>
         <Text style={{ margin: 10, fontSize: 19 }}>成功提示</Text>
-        <TouchableOpacity style={styles.button} onPress={() => this.showModal(2)}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(2)}
+        >
           <Text style={{ fontSize: 19 }}>默认时间long</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => this.showModal(3)}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(3)}
+        >
           <Text style={{ fontSize: 19 }}>默认时间short</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => this.showModal(4)}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(4)}
+        >
           <Text style={{ fontSize: 19 }}>自定义时间5秒</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => this.showModal(5)}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(5)}
+        >
           <Text style={{ fontSize: 19 }}>不定义时间</Text>
         </TouchableOpacity>
         <Text style={{ margin: 10, fontSize: 19 }}>失败提示</Text>
-        <TouchableOpacity style={styles.button} onPress={() => this.showModal(6)}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(6)}
+        >
           <Text style={{ fontSize: 19 }}>失败提示</Text>
         </TouchableOpacity>
         <Text style={{ margin: 10, fontSize: 19 }}>警告提示</Text>
-        <TouchableOpacity style={styles.button} onPress={() => this.showModal(7)}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(7)}
+        >
           <Text style={{ fontSize: 19 }}>警告提示</Text>
         </TouchableOpacity>
       </ScrollView>
