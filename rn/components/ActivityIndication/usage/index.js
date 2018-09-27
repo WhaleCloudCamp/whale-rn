@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
-import ActivityIndication from '../index';
+import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import ActivityIndication from '..';
 import { ModalBasics } from '../../index';
 
 export default class ActiveDemo extends React.Component {
@@ -27,7 +27,7 @@ export default class ActiveDemo extends React.Component {
       default:
         break;
     }
-
+    // 持有modalKay变量可手动决定何时消失
     setTimeout(() => ModalBasics.remove(modalKey), 5000);
   }
 
@@ -36,35 +36,48 @@ export default class ActiveDemo extends React.Component {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <TouchableOpacity
           onPress={() => this.showModal(1)}
-          style={{ margin: 10 }}
+          style={styles.button}
         >
-          <Text>出现样式1</Text>
+          <Text>color white</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(2)}
-          style={{ margin: 10 }}
+          style={styles.button}
         >
-          <Text>出现样式2</Text>
+          <Text>size large</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(3)}
-          style={{ margin: 10 }}
+          style={styles.button}
         >
-          <Text>出现样式3</Text>
+          <Text>text 正在加载</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(4)}
-          style={{ margin: 10 }}
+          style={styles.button}
         >
-          <Text>出现样式4</Text>
+          <Text>toast true</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(5)}
-          style={{ margin: 10 }}
+          style={styles.button}
         >
-          <Text>出现样式5</Text>
+          <Text>toast true,text 正在加载</Text>
         </TouchableOpacity>
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  button: {
+    height: 42,
+    width: 260,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#333333',
+    borderRadius: 3,
+    margin: 5,
+  },
+});

@@ -3,9 +3,148 @@ import { View, Text, Image, StyleSheet, Alert } from 'react-native';
 import { ModalBasics, ModalView } from '../index';
 
 class Toast {
-  static makeToast(time, pictrue, text, side) {
-    // 参数错误或者不传参数时的默认状态
-    this.path = require('./style/toast_right.png');
+  static toastSucess(time, text, side) {
+    this.text = '成功';
+    this.time = 2000;
+    this.success = require('./style/toast_right.png');
+
+    if (typeof time === 'number') {
+      this.time = time;
+    } else if (time === 'long') {
+      this.time = 3500;
+    } else if (time === 'short') {
+      this.time = 2000;
+    } else if (time === 'none') {
+      this.time = 0;
+    } else {
+      this.time = 0;
+    }
+    if (typeof text === 'string' && text !== '') {
+      this.text = text;
+    }
+
+    let mStyle;
+    switch (side) {
+      case 'top':
+        mStyle = styles.modalviewTop;
+        break;
+      case 'bottom':
+        mStyle = styles.modalviewBottom;
+        break;
+      default:
+        mStyle = styles.modalview;
+        break;
+    }
+
+    const modalView = (
+      <ModalView style={mStyle} modal ref={v => (this.modalViewTag = v)}>
+        <View style={styles.viewAround}>
+          <Image source={this.success} />
+          <Text style={styles.textWithPic}>{this.text}</Text>
+        </View>
+      </ModalView>
+    );
+    if (this.time !== 0) {
+      setTimeout(() => this.modalViewTag.close(), this.time);
+    }
+    return ModalBasics.show(modalView);
+  }
+
+  static toastFail(time, text, side) {
+    this.text = '失败';
+    this.time = 2000;
+    this.fail = require('./style/toast_error.png');
+
+    if (typeof time === 'number') {
+      this.time = time;
+    } else if (time === 'long') {
+      this.time = 3500;
+    } else if (time === 'short') {
+      this.time = 2000;
+    } else if (time === 'none') {
+      this.time = 0;
+    } else {
+      this.time = 0;
+    }
+    if (typeof text === 'string' && text !== '') {
+      this.text = text;
+    }
+
+    let mStyle;
+    switch (side) {
+      case 'top':
+        mStyle = styles.modalviewTop;
+        break;
+      case 'bottom':
+        mStyle = styles.modalviewBottom;
+        break;
+      default:
+        mStyle = styles.modalview;
+        break;
+    }
+
+    const modalView = (
+      <ModalView style={mStyle} modal ref={v => (this.modalViewTag = v)}>
+        <View style={styles.viewAround}>
+          <Image source={this.fail} />
+          <Text style={styles.textWithPic}>{this.text}</Text>
+        </View>
+      </ModalView>
+    );
+    if (this.time !== 0) {
+      setTimeout(() => this.modalViewTag.close(), this.time);
+    }
+    return ModalBasics.show(modalView);
+  }
+
+  static toastWarn(time, text, side) {
+    this.text = '警告';
+    this.time = 2000;
+    this.warn = require('./style/toast_warning.png');
+
+    if (typeof time === 'number') {
+      this.time = time;
+    } else if (time === 'long') {
+      this.time = 3500;
+    } else if (time === 'short') {
+      this.time = 2000;
+    } else if (time === 'none') {
+      this.time = 0;
+    } else {
+      this.time = 0;
+    }
+    if (typeof text === 'string' && text !== '') {
+      this.text = text;
+    }
+
+    let mStyle;
+    switch (side) {
+      case 'top':
+        mStyle = styles.modalviewTop;
+        break;
+      case 'bottom':
+        mStyle = styles.modalviewBottom;
+        break;
+      default:
+        mStyle = styles.modalview;
+        break;
+    }
+
+    const modalView = (
+      <ModalView style={mStyle} modal ref={v => (this.modalViewTag = v)}>
+        <View style={styles.viewAround}>
+          <Image source={this.warn} />
+          <Text style={styles.textWithPic}>{this.text}</Text>
+        </View>
+      </ModalView>
+    );
+    if (this.time !== 0) {
+      setTimeout(() => this.modalViewTag.close(), this.time);
+    }
+    return ModalBasics.show(modalView);
+  }
+
+  static toastText(time, text, side) {
     this.text = '提示';
     this.time = 2000;
 
@@ -17,16 +156,8 @@ class Toast {
       this.time = 2000;
     } else if (time === 'none') {
       this.time = 0;
-    }
-
-    if (pictrue === 'success') {
-      this.path = require('./style/toast_right.png');
-    } else if (pictrue === 'failed') {
-      this.path = require('./style/toast_error.png');
-    } else if (pictrue === 'warn') {
-      this.path = require('./style/toast_warning.png');
-    } else if (pictrue === 'none') {
-      this.path = '';
+    } else {
+      this.time = 0;
     }
     if (typeof text === 'string' && text !== '') {
       this.text = text;
@@ -37,7 +168,7 @@ class Toast {
       case 'top':
         mStyle = styles.modalviewTop;
         break;
-      case 'botton':
+      case 'bottom':
         mStyle = styles.modalviewBottom;
         break;
       default:
@@ -45,23 +176,11 @@ class Toast {
         break;
     }
 
-    const modalView =
-      this.path !== '' ? (
-        <ModalView
-          style={styles.modalview}
-          modal
-          ref={v => (this.modalViewTag = v)}
-        >
-          <View style={styles.viewAround}>
-            <Image source={this.path} />
-            <Text style={styles.textWithPic}>{this.text}</Text>
-          </View>
-        </ModalView>
-      ) : (
-        <ModalView style={mStyle} modal ref={v => (this.modalViewTag = v)}>
-          <Text style={styles.textwithoutPic}>{this.text}</Text>
-        </ModalView>
-      );
+    const modalView = (
+      <ModalView style={mStyle} modal ref={v => (this.modalViewTag = v)}>
+        <Text style={styles.textwithoutPic}>{this.text}</Text>
+      </ModalView>
+    );
     if (this.time !== 0) {
       setTimeout(() => this.modalViewTag.close(), this.time);
     }
@@ -69,7 +188,9 @@ class Toast {
   }
 
   static close() {
-    this.modalViewTag.close();
+    if (this.time === 0) {
+      this.modalViewTag.close();
+    }
   }
 }
 

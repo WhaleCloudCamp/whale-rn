@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import Slider from '../index';
+import { Text, View, ScrollView } from 'react-native';
+import Slider from '..';
 
 export default class SliderDemo extends React.Component {
   constructor(props) {
@@ -32,8 +32,8 @@ export default class SliderDemo extends React.Component {
 
   render() {
     return (
-      <View>
-        <View>
+      <ScrollView style={{ marginStart: 5, marginEnd: 5 }}>
+        <View style={{ marginTop: 5 }}>
           <Text>Default settings</Text>
           <Slider />
         </View>
@@ -91,7 +91,7 @@ export default class SliderDemo extends React.Component {
             maximumTrackTintColor="blue"
           />
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
