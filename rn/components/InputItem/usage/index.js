@@ -27,7 +27,7 @@ export default class InputItemDemo extends Component {
 
   render() {
     const labelStyle = {
-      width: 4 * 14 * 1.05, // 4个字符，fontSize=14，
+      width: 7 * 14 * 1.05, // 7个字符，fontSize=14，
     };
     return (
       <View style={{ flex: 1, paddingTop: 20, backgroundColor: 'white' }}>

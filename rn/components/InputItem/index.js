@@ -29,7 +29,6 @@ export default class InputItem extends Component {
     keyboardType: PropTypes.string,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     labelStyle: Text.propTypes.style,
-    labelNumber: PropTypes.number,
     clear: PropTypes.bool, // 是否显示 clear 按钮
     ...TextInput.propTypes,
     /**
@@ -42,6 +41,11 @@ export default class InputItem extends Component {
     extraImage: Image.propTypes.source,
     extraImageStyle: Image.propTypes.style,
     onExtraClick: PropTypes.func,
+  };
+
+  static defaultProps = {
+    clear: true,
+    keyboardType: 'default'
   };
 
   constructor(props) {
@@ -69,7 +73,7 @@ export default class InputItem extends Component {
       keyboardType,
       label,
       labelStyle,
-      labelNumber,
+      clear,
       inputStyle,
       validate,
       extraText,
@@ -98,6 +102,7 @@ export default class InputItem extends Component {
         <Input
           style={[styles.input, inputStyle]}
           keyboardType={keyboardType}
+          clearButtonMode={clear ? 'while-editing' : 'never'}
           placeholderTextColor={theme.color_text_placeholder}
           validate={rules}
           validateCallBack={validateCallback}
