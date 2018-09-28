@@ -38,7 +38,7 @@ export default class Picker extends Component {
       >
         <Text
           style={{
-            fontSize: size === 'big' ? CSS.pixel(28) : CSS.pixel(22),
+            fontSize: size === 'big' ? CSS.pixel(26) : CSS.pixel(22),
             color: size === 'big' ? '#4a4a4a' : '#a0a0a0',
             backgroundColor: 'rgba(0,0,0,0)',
           }}
