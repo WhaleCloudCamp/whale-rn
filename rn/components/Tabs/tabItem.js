@@ -1,15 +1,3 @@
-// TabItem组件
-
-// ## API
-// 属性 | 说明 | 类型 | 默认值
-// ----|-----|------|------
-// | onPress | 点击item触发的事件 | (e: Object): void | - |
-// | selected | 是否选中 | boolean | false |
-// | tintColor    | 选中文字颜色 | string | - |
-// | unselectedTintColor | 未选中文字颜色 | string | - |
-// | title | 标题文字 | string | - |
-// | key | 唯一标识 | string | - | ？
-
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';

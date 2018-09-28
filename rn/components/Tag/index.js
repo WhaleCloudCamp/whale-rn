@@ -1,13 +1,3 @@
-// Tag组件
-
-// ## API
-// 属性 | 说明 | 类型 | 默认值
-// ----|-----|------|------
-// | title   | tag标题 | string | - |
-// | selected | tag是否选中 | boolean | false |
-// | disabled | tag是否禁用 | Object | false |
-// | onClick  | 点击tag的自定义事件 | (e: Object): void | - |
-
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
