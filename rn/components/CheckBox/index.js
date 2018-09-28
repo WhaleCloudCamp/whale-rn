@@ -8,7 +8,7 @@ import normalDisableImage from './img/checkbox_unselected_disabled.png';
 
 export default class CheckBox extends React.Component {
   static propTypes = {
-    onChange: PropTypes.number,
+    onChange: PropTypes.func,
     isChecked: PropTypes.bool,
     disable: PropTypes.bool,
   };

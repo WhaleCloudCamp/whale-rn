@@ -6,7 +6,7 @@ import normalImage from './img/disabled.png';
 
 export default class Radio extends React.Component {
   static propTypes = {
-    onChange: PropTypes.number,
+    onChange: PropTypes.func,
     isChecked: PropTypes.bool,
     disabled: PropTypes.bool,
   };

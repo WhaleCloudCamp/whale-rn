@@ -39,7 +39,7 @@ export default class RadioDemo extends React.Component {
         />
 
         <Radio
-          stytles={{ margin: 20, width: 40, hieght: 20 }}
+          stytles={{ margin: 20, width: 40, height: 30 }}
           isChecked
           disabled
           onChange={ischeck => {
