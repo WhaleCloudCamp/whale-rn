@@ -14,9 +14,9 @@ Toast.toastText(time, text, side);
 ## 关闭
 Toast.close();
 
-## 参数含义
-| Params | Value | Note |
-| - | :-: | :-: |
-| time | `long`/`short`/`none`或者具体时间（单位：ms） | long为`3500ms`，short为`2000ms`，none为手动关闭 |
-| text | 传入要显示的文字 | 不传时默认为`成功`、`失败`、`警告`或`消息` |
-| side | `top`/`bottom` | 不传或默认时，显示在中央 |
+## 属性
+| 属性 | 类型 | 默认值 | 说明 |
+| - | :-: | :-: | :-: |
+| time | String、Nunber | `short` | `long`/`short`/`none`<br>具体时间（单位：ms）<br>`long`为`3500ms`<br>`short`为`2000ms`<br>`none`为手动关闭 |
+| text | String | `成功`、`失败`、`警告`或`消息` | - |
+| side | String | `center` | `top`/`bottom`/`center` |
