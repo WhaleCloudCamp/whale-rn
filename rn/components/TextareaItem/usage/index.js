@@ -40,6 +40,38 @@ export default class TextAreaDemo extends React.Component {
             console.warn('当前区域：'.concat(area));
           }}
         />
+        <TextAreaItem
+          chooseType="accross" //accross ||vertical ||acrossvertical
+          styleAcrossMain={{ marginTop: 10 }}
+          styleAcrossTitle={{}}
+          styleAcrossInput={{}}
+          styleAcrossHint={{}}
+          acrossTitle="项目名称"
+          acrossMax={10}
+          acrossInputTint="请输入项目名称"
+          onChangeText={text => {
+            console.warn('当前文本：'.concat(text));
+          }}
+          onChangeArea={area => {
+            console.warn('当前区域：'.concat(area));
+          }}
+        />
+        <TextAreaItem
+          chooseType="vertical" //accross ||vertical ||acrossvertical
+          verticalTitle="项目名称2"
+          verticalMax={13}
+          verticalInputTint="请输入项目名称1"
+          styleVerticalMain={{}}
+          styleVerticalTitle={{}}
+          styleVerticalInput={{}}
+          styleVerticalHint={{}}
+          onChangeText={text => {
+            console.warn('当前文本：'.concat(text));
+          }}
+          onChangeArea={area => {
+            console.warn('当前区域：'.concat(area));
+          }}
+        />
       </View>
     );
   }
