@@ -9,6 +9,8 @@ import {
 import PropTypes from 'prop-types';
 import defaultAddPic from './img/add.png';
 import defaultRmPic from './img/rm.png';
+import defaultDisableRmPic from './img/rm_disable.png';
+import defaultDisableAddPic from './img/add_disable.png';
 
 export default class Stepper extends React.Component {
   static propTypes = {
@@ -42,10 +44,15 @@ export default class Stepper extends React.Component {
         <TouchableHighlight
           disabled={this.props.disable}
           activeOpacity={0.5}
+          underlayColor="white"
           onPress={this.sub}
         >
           <Image
-            source={this.props.rmImg || defaultRmPic}
+            source={
+              this.props.disable
+                ? this.props.rmDisableImg || defaultDisableRmPic
+                : this.props.rmImg || defaultRmPic
+            }
             style={[stytles.img, this.props.styleImg]}
           />
         </TouchableHighlight>
@@ -56,10 +63,15 @@ export default class Stepper extends React.Component {
         <TouchableHighlight
           disabled={this.props.disable}
           activeOpacity={0.5}
+          underlayColor="white"
           onPress={this.add}
         >
           <Image
-            source={this.props.addImg || defaultAddPic}
+            source={
+              this.props.disable
+                ? this.props.addDisablePic || defaultDisableAddPic
+                : this.props.addImg || defaultAddPic
+            }
             style={[stytles.img, this.props.styleImg]}
           />
         </TouchableHighlight>
