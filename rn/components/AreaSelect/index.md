@@ -1,5 +1,5 @@
-# Stepper
-Stepper组件
+# AreaSelect
+AreaSelect组件,用于省市区三级选择
 
 ## 属性
 | 属性 | 类型 | 默认值 | 说明 |

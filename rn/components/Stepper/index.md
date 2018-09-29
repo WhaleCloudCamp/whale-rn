@@ -1,5 +1,6 @@
 # Stepper
-Stepper组件
+Stepper组件,用作增加或者减少当前数值。
+当想要对数值进行小幅度调整时，可以使用 Stepper
 
 ## 属性
 | 属性 | 类型 | 默认值 | 说明 |
@@ -12,8 +13,10 @@ Stepper组件
 |step|number| 1|当前步数|
 | styleImg | 同View.style |  | 图标的样式
 | styleText | 同View.style |  | 文本的样式
-| normalImage | imgage  | 正常状态下的图片（不选则默认）
-| checkedImage | imgage | 选择状态的图片 （不选则默认）
+| rmDisableImg | imgage  | 减图片（可点击）
+| addImg | imgage |  加图片（可点击）
+| rmDisableImg | imgage  | 减图片（不可点击）
+| addDisablePic | imgage |  加图片（不可点击）
 
 ## 事件
 | 事件 | 返回值 | 说明 |

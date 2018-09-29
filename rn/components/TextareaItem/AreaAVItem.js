@@ -83,18 +83,25 @@ export default class AreaAVItem extends React.Component {
           <Text style={[styles.title, this.props.styleAVTitle]}>
             {this.props.avTitle}
           </Text>
-          <Text style={[styles.areaTitle, this.props.styleAVAreaTitle]}>
-            {this.state.areaTitle}
-          </Text>
+
           <TouchableHighlight
             activeOpacity={0.5}
+            style={{ flex: 1 }}
             underlayColor="white"
             onPress={() => this.getView('bottom', false)}
           >
-            <Image
-              style={[styles.imgBk, this.props.styleAVImg]}
-              source={iconRight}
-            />
+            <View
+              style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}
+            >
+              <Text style={[styles.areaTitle, this.props.styleAVAreaTitle]}>
+                {this.state.areaTitle}
+              </Text>
+
+              <Image
+                style={[styles.imgBk, this.props.styleAVImg]}
+                source={iconRight}
+              />
+            </View>
           </TouchableHighlight>
         </View>
         <View style={styles.line} />

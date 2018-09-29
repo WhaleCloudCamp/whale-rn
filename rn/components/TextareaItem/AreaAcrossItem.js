@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
   input: {
     width: '100%',
     height: '100%',
+    marginTop: 8,
   },
   textHint: {
     color: 'gray',

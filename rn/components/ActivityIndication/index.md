@@ -13,11 +13,11 @@ this.modalKey = ModalBasics.show(<ActivityIndication toast text="正在加载" /
 ## 关闭
 ModalBasics.remove(modalKey);
 
-## 参数含义
-| Params | Note | Type | Default |
+## 属性
+| 属性 | 类型 | 默认值 | 说明 |
 | :-: | :-: | :-: | :-: |
-|  animating  | 显隐状态 | boolean  | true  |
-|  size  | spinner大小，可选`small`/`large` | string  | small  |
-|  toast  | loading样式类型 | boolean  | false  |
-|  text  | loading文本 | string |  -   |
-|  color | spinner颜色 | string  | gray  |
+|  animating  | boolean  | true  | 显隐状态 |
+|  size  | string  | small  | spinner大小，可选`small`/`large` |
+|  toast  | boolean  | false  | loading样式类型 |
+|  text  | string |  -   | loading文本 |
+|  color | string  | gray  | spinner颜色 |

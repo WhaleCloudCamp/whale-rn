@@ -34,7 +34,7 @@ export default class Navbar extends React.Component {
     isShowLastRightIcon: false, // //右边第二个视图是否展示
     isShowRightText: false, // //右边文本是否展示
 
-    isUnderlayColor: '0C83FF',
+    isUnderlayColor: '#0C83FF',
   };
 
   onSelected() {
@@ -52,8 +52,9 @@ export default class Navbar extends React.Component {
 
         <View style={stytles.leftView}>
           <TouchableHighlight
-            underlayColor={this.props.isUnderlayColor}
-            activeOpacity={0.8}
+            // underlayColor={this.props.isUnderlayColor}
+            activeOpacity={0.5}
+            underlayColor="transparent"
             onPress={this.props.onLeftItemPress}
           >
             <Image
@@ -65,7 +66,7 @@ export default class Navbar extends React.Component {
           {this.props.isShowDel ? (
             <TouchableHighlight
               underlayColor={this.props.isUnderlayColor}
-              activeOpacity={0.8}
+              activeOpacity={0.5}
               onPress={this.props.onDelPress}
             >
               <Image
@@ -80,26 +81,20 @@ export default class Navbar extends React.Component {
           {this.props.isShowFirstRightIcon ? (
             <TouchableHighlight
               underlayColor={this.props.isUnderlayColor}
-              activeOpacity={0.8}
+              activeOpacity={0.5}
               onPress={this.props.onRightFirstItemPress}
             >
-              <Image
-                source={this.props.imgRightFirstIcon || imgDelIcon}
-                style={stytles.imgBack}
-              />
+              <Image source={this.props.imgRightFirstIcon || imgDelIcon} />
             </TouchableHighlight>
           ) : null}
 
           {this.props.isShowLastRightIcon ? (
             <TouchableHighlight
               underlayColor={this.props.isUnderlayColor}
-              activeOpacity={0.8}
+              activeOpacity={0.5}
               onPress={this.props.onRightLastItemPress}
             >
-              <Image
-                source={this.props.imgRightLasttIcon || imgDelIcon}
-                style={stytles.imgBack}
-              />
+              <Image source={this.props.imgRightLasttIcon || imgDelIcon} />
             </TouchableHighlight>
           ) : null}
           {this.props.isShowRightText ? (

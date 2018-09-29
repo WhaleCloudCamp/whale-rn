@@ -1,23 +1,9 @@
-// Button组件
-
-// ## API
-// 属性 | 说明 | 类型 | 默认值
-// ----|-----|------|------
-// | type    | 按钮类型，可选值为`normal`、`loading`、`disabled` |   string   |   -  |
-// | size    | 按钮大小，可选值为`big`、`small` | string | `big`|
-// | title   | 按钮标题 | string | - |
-// | disabled| 设置禁用 | boolean | false |
-// | onClick | 点击反馈的自定义类名 | (e: Object): void | - |
-// | style   | 按钮自定义样式 | Object | - |
-// | textStyle | 按钮文字自定义样式 | Object | - |
-
 import React from 'react';
 import {
   View,
   StyleSheet,
   ViewPropTypes,
   TouchableOpacity,
-  TouchableWithoutFeedback,
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -71,7 +57,7 @@ export default class Button extends React.Component {
     } else if (type === 'loading') {
       if (size === 'big') {
         return (
-          <TouchableWithoutFeedback
+          <TouchableOpacity
             style={[styles.loadingBig, style]}
             disabled={disabled}
           >
@@ -79,11 +65,11 @@ export default class Button extends React.Component {
               image={require('./Activityindicator/assets/style2.png')}
             />
             <Text style={[styles.titleBig, textStyle]}>{title}</Text>
-          </TouchableWithoutFeedback>
+          </TouchableOpacity>
         );
       } else if (size === 'small') {
         return (
-          <TouchableWithoutFeedback
+          <TouchableOpacity
             style={[styles.loadingSmall, style]}
             disabled={disabled}
           >
@@ -91,7 +77,7 @@ export default class Button extends React.Component {
               image={require('./Activityindicator/assets/style2.png')}
             />
             <Text style={[styles.titleSmall, textStyle]} />
-          </TouchableWithoutFeedback>
+          </TouchableOpacity>
         );
       }
     } else if (type === 'disabled') {

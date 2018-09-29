@@ -5,7 +5,6 @@ import {
   Animated,
   TouchableWithoutFeedback,
 } from 'react-native';
-import PropTypes from 'prop-types';
 import SwitchItem from './SwitchItem';
 
 const SwithThumb = Animated.createAnimatedComponent(SwitchItem);

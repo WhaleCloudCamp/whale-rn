@@ -1,13 +1,3 @@
-// Tag组件
-
-// ## API
-// 属性 | 说明 | 类型 | 默认值
-// ----|-----|------|------
-// | title   | tag标题 | string | - |
-// | selected | tag是否选中 | boolean | false |
-// | disabled | tag是否禁用 | Object | false |
-// | onClick  | 点击tag的自定义事件 | (e: Object): void | - |
-
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
@@ -18,7 +8,7 @@ export default class Tag extends React.Component {
     title: PropTypes.string.isRequired,
     selected: PropTypes.bool,
     disabled: PropTypes.bool,
-    onClick: PropTypes.func,
+    // onClick: PropTypes.func,
   };
 
   constructor(props) {
@@ -39,12 +29,12 @@ export default class Tag extends React.Component {
 
   tagClick = () => {
     const { selected } = this.state;
-    const { onClick } = this.props;
+    // const { onClick } = this.props;
     this.setState({
       selected: !selected,
     });
     let curSelect = this.state.selected;
-    onClick(curSelect);
+    // onClick(curSelect);
   };
 
   render() {

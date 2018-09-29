@@ -14,10 +14,10 @@ import Badge from './Badge';
 <Badge text={42} overflowCount={99}/>
 ```
 
-## 参数含义
-Params | Note | Type | Default
+## 属性
+属性 | 类型 | 默认值 | 说明
 ----|-----|------|------
-text | 展示的数字或文案，当为数字时候，大于 overflowCount <br/> 时显示为...，为 0 时隐藏 | string\|number | `new`
-corner | 置于角落（此版本未实现） | boolean | `false`
-dot | 不展示数字，只有一个小红点 | boolean | `false`
-overflowCount | 展示封顶的数字值 | number | `99`
+text | string\|number | `new` | 展示的数字或文案，当为数字时候，大于 overflowCount <br/> 时显示为...，为 0 时隐藏
+corner | boolean | `false` | 置于角落（此版本未实现）
+dot | boolean | `false` | 不展示数字，只有一个小红点
+overflowCount | number | `99` | 展示封顶的数字值

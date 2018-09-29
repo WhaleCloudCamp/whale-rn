@@ -1,5 +1,5 @@
-# Stepper
-Stepper组件
+# TextAreal
+TextAreal组件,文本输入区域，分为三种类型｛accross ||vertical ||acrossvertical｝
 
 ## 属性
 | 属性 | 类型 | 默认值 | 说明 |
