@@ -1,5 +1,5 @@
-# ModalView
-checkbox组件
+# checkbox  
+checkbox组件,在两个互斥对象进行选择。
 
 ## 属性
 | 属性 | 类型 | 默认值 | 说明 |
