@@ -22,7 +22,11 @@ export default class ToastExample extends Component {
     } else if (check === 8) {
       Toast.toastWarn('short', '一个警告');
     } else if (check === 9) {
-      Toast.toastText('short', '太长怎么办太长怎么办太长怎么办太长怎么办', side);
+      Toast.toastText(
+        'short',
+        '太长怎么办太长怎么办太长怎么办太长怎么办',
+        side
+      );
     }
   }
 
@@ -88,7 +92,7 @@ export default class ToastExample extends Component {
         >
           <Text style={{ fontSize: 19 }}>失败提示</Text>
         </TouchableOpacity>
-        
+
         <Text style={{ margin: 10, fontSize: 19 }}>警告提示</Text>
         <TouchableOpacity
           style={styles.button}

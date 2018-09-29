@@ -13,7 +13,7 @@ export default class BadgeExample extends React.Component {
         <View style={styles.lineView} />
         <View style={styles.containView}>
           <Text style={{ fontSize: 21 }}>Dot badge</Text>
-          <Badge dot/>
+          <Badge dot />
         </View>
         <View style={styles.lineView} />
         <View style={styles.containView}>

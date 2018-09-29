@@ -44,9 +44,17 @@ export default class Badge extends React.Component {
       </View>
     ) : (
       <View style={[styles.wrap, this.props.style]}>
-        <View >
+        <View>
           {children}
-          <Text style={[styles.text, styles.textDom, children ? styles.textAbsolute : null]}>{text}</Text>
+          <Text
+            style={[
+              styles.text,
+              styles.textDom,
+              children ? styles.textAbsolute : null,
+            ]}
+          >
+            {text}
+          </Text>
         </View>
       </View>
     );

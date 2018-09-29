@@ -25,7 +25,9 @@ export default class ActiveDemo extends React.Component {
         );
         break;
       case 6:
-        modalKey = ModalBasics.show(<ActivityIndication text="正在加载" size="large" side="column" />);
+        modalKey = ModalBasics.show(
+          <ActivityIndication text="正在加载" size="large" side="column" />
+        );
         break;
       default:
         break;
