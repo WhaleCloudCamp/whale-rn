@@ -1,18 +1,22 @@
-# 使用说明
+# Toast使用说明
+一种轻量级反馈/提示，可以用来显示一些提示内容。
 
-## 引用
+## 代码演示
+
+```js
 import { Toast } from './Toast';
 
-## 显示
-```
+······
+
 Toast.toastSuccess(time, text, side);
 Toast.toastFail(time, text, side);
 Toast.toastWarn(time, text, side);
 Toast.toastText(time, text, side);
-```
 
-## 关闭
+······
+
 Toast.close();
+```
 
 ## 属性
 | 属性 | 类型 | 默认值 | 说明 |

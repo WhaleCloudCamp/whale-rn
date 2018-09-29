@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, StyleSheet } from 'react-native';
 import Slider from '..';
 
 export default class SliderDemo extends React.Component {
@@ -91,7 +91,27 @@ export default class SliderDemo extends React.Component {
             maximumTrackTintColor="blue"
           />
         </View>
+
+        <View style={{ marginTop: 10 }}>
+          <Text>custom thumb: </Text>
+          <Slider
+            defaultValue={0.15}
+            minimumTrackTintColor="red"
+            maximumTrackTintColor="blue"
+            thumbStyle={styles.thumb}
+          />
+        </View>
       </ScrollView>
     );
   }
 }
+const styles = StyleSheet.create({
+  thumb: {
+    width: 18,
+    height: 18,
+    backgroundColor: 'rgb(255, 255, 255)',
+    borderColor: '#33FF00',
+    borderWidth: 2,
+    borderRadius: 30,
+  },
+});

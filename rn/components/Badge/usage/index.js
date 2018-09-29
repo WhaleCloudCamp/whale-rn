@@ -13,7 +13,19 @@ export default class BadgeExample extends React.Component {
         <View style={styles.lineView} />
         <View style={styles.containView}>
           <Text style={{ fontSize: 21 }}>Dot badge</Text>
+          <Badge dot/>
+        </View>
+        <View style={styles.lineView} />
+        <View style={styles.containView}>
+          <Text style={{ fontSize: 21 }}>Dot badge corner</Text>
           <Badge dot>
+            <View style={{ height: 35, width: 35, backgroundColor: '#ddd' }} />
+          </Badge>
+        </View>
+        <View style={styles.lineView} />
+        <View style={styles.containView}>
+          <Text style={{ fontSize: 21 }}>Number badge corner</Text>
+          <Badge text={42} overflowCount={99}>
             <View style={{ height: 35, width: 35, backgroundColor: '#ddd' }} />
           </Badge>
         </View>

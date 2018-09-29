@@ -19,6 +19,10 @@ export default class ToastExample extends Component {
       Toast.toastFail('short');
     } else if (check === 7) {
       Toast.toastWarn('short');
+    } else if (check === 8) {
+      Toast.toastWarn('short', '一个警告');
+    } else if (check === 9) {
+      Toast.toastText('short', '太长怎么办太长怎么办太长怎么办太长怎么办', side);
     }
   }
 
@@ -44,6 +48,13 @@ export default class ToastExample extends Component {
         >
           <Text style={{ fontSize: 19 }}>底部Toast</Text>
         </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(9, 'center')}
+        >
+          <Text style={{ fontSize: 19 }}>长文本</Text>
+        </TouchableOpacity>
+
         <Text style={{ margin: 10, fontSize: 19 }}>成功提示</Text>
         <TouchableOpacity
           style={styles.button}
@@ -69,6 +80,7 @@ export default class ToastExample extends Component {
         >
           <Text style={{ fontSize: 19 }}>不定义时间</Text>
         </TouchableOpacity>
+
         <Text style={{ margin: 10, fontSize: 19 }}>失败提示</Text>
         <TouchableOpacity
           style={styles.button}
@@ -76,12 +88,19 @@ export default class ToastExample extends Component {
         >
           <Text style={{ fontSize: 19 }}>失败提示</Text>
         </TouchableOpacity>
+        
         <Text style={{ margin: 10, fontSize: 19 }}>警告提示</Text>
         <TouchableOpacity
           style={styles.button}
           onPress={() => this.showModal(7)}
         >
           <Text style={{ fontSize: 19 }}>警告提示</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.showModal(8)}
+        >
+          <Text style={{ fontSize: 19 }}>警告自定义文字提示</Text>
         </TouchableOpacity>
       </ScrollView>
     );
