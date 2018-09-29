@@ -4,7 +4,6 @@ import {
   StyleSheet,
   ViewPropTypes,
   TouchableOpacity,
-  TouchableWithoutFeedback,
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -58,7 +57,7 @@ export default class Button extends React.Component {
     } else if (type === 'loading') {
       if (size === 'big') {
         return (
-          <TouchableWithoutFeedback
+          <TouchableOpacity
             style={[styles.loadingBig, style]}
             disabled={disabled}
           >
@@ -66,11 +65,11 @@ export default class Button extends React.Component {
               image={require('./Activityindicator/assets/style2.png')}
             />
             <Text style={[styles.titleBig, textStyle]}>{title}</Text>
-          </TouchableWithoutFeedback>
+          </TouchableOpacity>
         );
       } else if (size === 'small') {
         return (
-          <TouchableWithoutFeedback
+          <TouchableOpacity
             style={[styles.loadingSmall, style]}
             disabled={disabled}
           >
@@ -78,7 +77,7 @@ export default class Button extends React.Component {
               image={require('./Activityindicator/assets/style2.png')}
             />
             <Text style={[styles.titleSmall, textStyle]} />
-          </TouchableWithoutFeedback>
+          </TouchableOpacity>
         );
       }
     } else if (type === 'disabled') {
