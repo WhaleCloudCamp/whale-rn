@@ -1,5 +1,5 @@
 # Progress
-Progress组件
+Progress组件,可用于展示当前进度百分比
 
 ## 属性
 | 属性 | 类型 | 默认值 | 说明 |
