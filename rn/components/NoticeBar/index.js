@@ -27,9 +27,11 @@ export default class NoticeBar extends React.Component {
     };
   }
 
-  closeClick() {
-    this.setState({ close: true });
-  }
+  closeClick = () => {
+    this.setState({
+      close: true,
+    });
+  };
 
   render() {
     const { close } = this.state;
@@ -64,7 +66,7 @@ export default class NoticeBar extends React.Component {
       </View>
     );
 
-    return !close ? <View>{main}</View> : null;
+    return !close ? <View>{main()}</View> : <View />;
   }
 }
 
@@ -89,8 +91,8 @@ const styles = StyleSheet.create({
   },
   close: {
     tintColor: '#F86E21',
-    width: 16,
-    height: 16,
+    width: 12,
+    height: 12,
     marginRight: 12,
   },
 });

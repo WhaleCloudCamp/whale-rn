@@ -8,7 +8,7 @@ export default class Tag extends React.Component {
     title: PropTypes.string.isRequired,
     selected: PropTypes.bool,
     disabled: PropTypes.bool,
-    onClick: PropTypes.func,
+    // onClick: PropTypes.func,
   };
 
   constructor(props) {
@@ -29,12 +29,12 @@ export default class Tag extends React.Component {
 
   tagClick = () => {
     const { selected } = this.state;
-    const { onClick } = this.props;
+    // const { onClick } = this.props;
     this.setState({
       selected: !selected,
     });
     let curSelect = this.state.selected;
-    onClick(curSelect);
+    // onClick(curSelect);
   };
 
   render() {
