@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { Styles } from '../InputItem/style';
 
 export default class SearchBar extends React.Component {
   static propTypes = {
@@ -20,12 +19,11 @@ export default class SearchBar extends React.Component {
     onChange: PropTypes.func,
     onFoucs: PropTypes.func,
     onCancel: PropTypes.func,
-    disabled: PropTypes.bool,
   };
 
   render() {
     const {
-      showChoose = true,
+      showChoose = false,
       showCancel = true,
       value = '',
       placeholder = '搜索',
@@ -33,7 +31,6 @@ export default class SearchBar extends React.Component {
       onChange,
       onFoucs,
       onCancel,
-      disabled,
     } = this.props;
 
     const chooseArea = () =>
@@ -59,6 +56,9 @@ export default class SearchBar extends React.Component {
           placeholder={placeholder}
           placeholderTextColor="#888888"
           clearButtonMode="while-editing"
+          onChange={onChange}
+          onSubmitEditing={onSubmit}
+          onFoucs={onFoucs}
         >
           {value}
         </TextInput>
@@ -67,7 +67,7 @@ export default class SearchBar extends React.Component {
 
     const cancelArea = () =>
       showCancel ? (
-        <TouchableOpacity style={styles.cancelArea}>
+        <TouchableOpacity style={styles.cancelArea} onPress={onCancel}>
           <Text style={styles.cancelText}>取消</Text>
         </TouchableOpacity>
       ) : null;
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
     marginLeft: 10,
     marginRight: 10,
-    backgroundColor: '#F1F1F1',
+    backgroundColor: '#f1f1f1',
     borderRadius: 14,
   },
   searchIcon: {
