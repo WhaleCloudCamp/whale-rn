@@ -18,8 +18,7 @@ export default class AlertContent extends Component {
             borderRadius: 7,
             alignItems: 'center',
             paddingTop: 15,
-            border: 0,
-            textAlign: 'center',
+            borderWidth: 0,
             overflow: 'hidden',
           }}
         >
@@ -48,8 +47,6 @@ export default class AlertContent extends Component {
               paddingBottom: 13,
               paddingLeft: 15,
               paddingRight: 15,
-              fontSize: 15,
-              lineHeight: 1.5,
               overflow: 'scroll',
             }}
           >
