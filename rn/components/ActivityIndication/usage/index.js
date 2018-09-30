@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import ActivityIndication from '..';
+import Button from '../../Button';
+import Label from '../../Label';
+import Page from '../../Page';
 import { ModalBasics } from '../../index';
 
 export default class ActiveDemo extends React.Component {
@@ -38,57 +40,50 @@ export default class ActiveDemo extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <TouchableOpacity
-          onPress={() => this.showModal(1)}
-          style={styles.button}
-        >
-          <Text>白色加载条</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.showModal(2)}
-          style={styles.button}
-        >
-          <Text>大加载条</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.showModal(3)}
-          style={styles.button}
-        >
-          <Text>显示正在加载1</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.showModal(6)}
-          style={styles.button}
-        >
-          <Text>显示正在加载2</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.showModal(4)}
-          style={styles.button}
-        >
-          <Text>有边框</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => this.showModal(5)}
-          style={styles.button}
-        >
-          <Text>有边框显示正在加载</Text>
-        </TouchableOpacity>
-      </View>
+      <Page>
+        <Label type="default" size="xl" text="基本" style={{ margin: 20 }} />
+        <Button
+          type="normal"
+          size="big"
+          title="Small Loading（White）"
+          onClick={() => this.showModal(1)}
+        />
+        <Button
+          style={{ marginTop: 10 }}
+          type="normal"
+          size="big"
+          title="Large Loading"
+          onClick={() => this.showModal(2)}
+        />
+        <Button
+          style={{ marginTop: 10 }}
+          type="normal"
+          size="big"
+          title="Loading Text"
+          onClick={() => this.showModal(3)}
+        />
+        <Button
+          style={{ marginTop: 10 }}
+          type="normal"
+          size="big"
+          title="Loading Text2"
+          onClick={() => this.showModal(6)}
+        />
+        <Button
+          style={{ marginTop: 10 }}
+          type="normal"
+          size="big"
+          title="Loading Toast"
+          onClick={() => this.showModal(4)}
+        />
+        <Button
+          style={{ marginTop: 10 }}
+          type="normal"
+          size="big"
+          title="Loading Toast Text"
+          onClick={() => this.showModal(5)}
+        />
+      </Page>
     );
   }
 }
-const styles = StyleSheet.create({
-  button: {
-    height: 42,
-    width: 260,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    borderWidth: 1,
-    borderColor: '#333333',
-    borderRadius: 3,
-    margin: 5,
-  },
-});
