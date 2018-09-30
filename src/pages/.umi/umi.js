@@ -28,7 +28,7 @@ Promise.all(moduleBeforeRendererPromises).then(() => {
   }
 });
 
-require('../../global.less');
+
 
 // hot module replacement
 if (module.hot) {

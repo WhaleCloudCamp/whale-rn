@@ -1,17 +1,17 @@
 import React from 'react';
 import { TouchableHighlight, Image } from 'react-native';
 import PropTypes from 'prop-types';
-import checkedImage from './img/checkbox_selected_normal.png';
-import normalImage from './img/checkbox_unselected_normal.png';
-import checkedDisableImage from './img/checkbox_selected_disabled.png';
-import normalDisableImage from './img/checkbox_unselected_disabled.png';
+import checkedImage from '../../icons/checkbox_selected_normal.png';
+import normalImage from '../../icons/checkbox_unselected_normal.png';
+import checkedDisableImage from '../../icons/checkbox_selected_disabled.png';
+import normalDisableImage from '../../icons/checkbox_unselected_disabled.png';
 
 export default class CheckBox extends React.Component {
   static propTypes = {
     onChange: PropTypes.func,
     isChecked: PropTypes.bool,
     disable: PropTypes.bool,
-  };
+  }; 
 
   static defaultProps = {
     disable: false,

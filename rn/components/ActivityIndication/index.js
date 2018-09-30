@@ -10,7 +10,6 @@ export default class ActivityIndication extends React.Component {
     size: PropTypes.oneOf(['large', 'small']),
     text: PropTypes.string,
     color: PropTypes.string,
-    side: PropTypes.oneOf(['row', 'column']),
   };
 
   static defaultProps = {
@@ -18,7 +17,6 @@ export default class ActivityIndication extends React.Component {
     color: 'gray',
     size: 'small',
     toast: false,
-    side: 'row',
   };
 
   renderToast() {
@@ -43,15 +41,15 @@ export default class ActivityIndication extends React.Component {
   }
 
   renderSpinner() {
-    const { color, size, text, side } = this.props;
-    const { spinner, spinnerRow, tip } = styles;
+    const { color, size, text } = this.props;
+    const { spinner, tip } = styles;
     return (
       <ModalView
         style={styles.centerView}
         modal
         ref={v => (this.modalViewTag = v)}
       >
-        <View style={side === 'row' ? spinnerRow : spinner}>
+        <View style={spinner}>
           <ActivityIndicator color={color} size={size} />
           {text && <Text style={[tip]}>{text}</Text>}
         </View>
@@ -105,12 +103,8 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: 6,
   },
-  spinnerRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   spinner: {
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },

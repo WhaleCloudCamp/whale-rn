@@ -11,7 +11,7 @@ export default class AreaAcrossItem extends React.Component {
 
   static defaultProps = {
     verticalTitle: '标题',
-    verticalMax: 10,
+    verticalMax: 500,
     verticalInputTint: '请输入',
   };
 
@@ -48,6 +48,7 @@ export default class AreaAcrossItem extends React.Component {
               this.setText(text);
             }}
             textAlignVertical="top"
+            multiline
           />
 
           <View style={styles.rightView}>

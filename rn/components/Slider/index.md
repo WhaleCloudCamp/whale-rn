@@ -1,17 +1,14 @@
-# Slider使用方法
-允许用户在一个区间中选择特定值，eg：控制屏幕的显示亮度、控制音量大小。
+# 使用方法
 
-
-## 代码演示
-```jsx
+## 引用
 import Slider from './Slider';
 
-······
-
-<View>
-  <Text>Default settings</Text>
-  <Slider />
-</View>
+## 使用
+```jsx
+    <View>
+        <Text>Default settings</Text>
+        <Slider />
+    </View>
 ```
 
 ## 属性
@@ -25,8 +22,6 @@ import Slider from './Slider';
 | disabled    |  Boolean     | false    | 值为 `true` 时，滑块为禁用状态 |
 | maximumTrackTintColor  |  String     | `#108ee9`（RN)    | 底部背景色 |
 | minimumTrackTintColor  |  String     | `#ddd` (RN)   | 当前选中部分的颜色 |
-| showValue | Bool | false | 是否在滑竿两边显示`最大值`和`最小值` |
-| thumbStyle | Style | - | 滑块样式 |
 
 ## 事件
 事件 | 返回值 | 说明

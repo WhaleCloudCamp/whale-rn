@@ -11,7 +11,7 @@ export default class AreaAcrrossItem extends React.Component {
 
   static defaultProps = {
     acrossTitle: '标题',
-    acrossMax: 100,
+    acrossMax: 500,
     acrossInputTint: '请输入',
   };
 
@@ -48,6 +48,7 @@ export default class AreaAcrrossItem extends React.Component {
               this.setText(text);
             }}
             textAlignVertical="top"
+            multiline
           />
 
           <View style={styles.rightView}>

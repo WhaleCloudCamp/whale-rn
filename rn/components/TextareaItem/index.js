@@ -18,12 +18,12 @@ export default class TextAreaItem extends React.Component {
   };
 
   static defaultProps = {
-    acrossMax: 100,
-    verticalMax: 100,
+    acrossMax: 500,
+    verticalMax: 500,
     acrossTitle: '标题',
     verticalTitle: '标题',
     avTitle: '标题',
-    avMax: 100,
+    avMax: 500,
     chooseType: 'accross',
   };
 

@@ -8,24 +8,8 @@ export default class TextAreaDemo extends React.Component {
       <View>
         <TextAreaItem
           chooseType="acrossvertical" //accross ||vertical ||acrossvertical
-          //  styleAcrossMain={{}}
-          //  styleAcrossTitle={{}}
-          //  styleAcrossInput={{}}
-          //  styleAcrossHint={{}}
-          //  acrossTitle ='项目名称'
-          //  acrossMax ={10}
-          //  acrossInputTint ='请输入项目名称'
-
-          //  verticalTitle ='项目名称1'
-          //  verticalMax ={13}
-          //  verticalInputTint ='请输入项目名称1'
-          //  styleVerticalMain={{}}
-          //  styleVerticalTitle={{}}
-          //  styleVerticalInput={{}}
-          //  styleVerticalHint={{}}
-
           avTitle="项目名称2"
-          avMax={19}
+          avMax={100}
           avInputTint="请输入项目2"
           styleAVMain={{}}
           styleAVTitleView={{}}
@@ -33,12 +17,8 @@ export default class TextAreaDemo extends React.Component {
           styleAVAreaTitle={{}}
           styleAVImg={{}}
           styleAVInput={{}}
-          onChangeText={text => {
-            console.warn('当前文本：'.concat(text));
-          }}
-          onChangeArea={area => {
-            console.warn('当前区域：'.concat(area));
-          }}
+          onChangeText={text => {}}
+          onChangeArea={area => {}}
         />
         <TextAreaItem
           chooseType="accross" //accross ||vertical ||acrossvertical
@@ -47,30 +27,22 @@ export default class TextAreaDemo extends React.Component {
           styleAcrossInput={{}}
           styleAcrossHint={{}}
           acrossTitle="项目名称"
-          acrossMax={10}
+          acrossMax={100}
           acrossInputTint="请输入项目名称"
-          onChangeText={text => {
-            console.warn('当前文本：'.concat(text));
-          }}
-          onChangeArea={area => {
-            console.warn('当前区域：'.concat(area));
-          }}
+          onChangeText={text => {}}
+          onChangeArea={area => {}}
         />
         <TextAreaItem
           chooseType="vertical" //accross ||vertical ||acrossvertical
           verticalTitle="项目名称2"
-          verticalMax={13}
+          verticalMax={100}
           verticalInputTint="请输入项目名称1"
           styleVerticalMain={{}}
           styleVerticalTitle={{}}
           styleVerticalInput={{}}
           styleVerticalHint={{}}
-          onChangeText={text => {
-            console.warn('当前文本：'.concat(text));
-          }}
-          onChangeArea={area => {
-            console.warn('当前区域：'.concat(area));
-          }}
+          onChangeText={text => {}}
+          onChangeArea={area => {}}
         />
       </View>
     );

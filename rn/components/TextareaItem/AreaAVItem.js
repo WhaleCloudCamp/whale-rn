@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import iconRight from './img/icon_right.png';
+import iconRight from '../../icons/icon_right.png';
 import areaDataSouce from '../AreaSelect/CityCode';
 import AreaSelect from '../AreaSelect/index';
 import ModalBasics from '../ModalBasics/index';
@@ -22,7 +22,7 @@ export default class AreaAVItem extends React.Component {
 
   static defaultProps = {
     avTitle: '标题',
-    avMax: 100,
+    avMax: 500,
     avInputTint: '请输入',
   };
 
@@ -116,6 +116,7 @@ export default class AreaAVItem extends React.Component {
               this.setText(text);
             }}
             textAlignVertical="top"
+            multiline
           />
         </View>
       </View>
