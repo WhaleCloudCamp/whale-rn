@@ -81,7 +81,7 @@ export default class ModalTarget extends Component {
 //测试先放了一个设置 真实情况应该是rgba0000
 let styles = StyleSheet.create({
   globalmodal: {
-    backgroundColor: '#rgba(255,0,0,0.7)',
+    backgroundColor: '#rgba(0,0,0,0)',
     position: 'absolute',
     top: 0,
     left: 0,

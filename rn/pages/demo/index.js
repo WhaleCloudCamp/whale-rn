@@ -36,7 +36,6 @@ export default class Demo extends Component {
             { title: 'NavBar', routeName: 'NavBar' },
             { title: 'NoticeBar', routeName: 'NoticeBar' },
             { title: 'Pagination', routeName: 'Pagination' },
-            { title: 'Popover', routeName: 'Popover' },
             { title: 'Progress', routeName:'Progress'},
             { title: 'Prompt', routeName:'Prompt'},
             { title: 'Radio', routeName:'Radio'},
