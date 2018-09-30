@@ -20,7 +20,7 @@ const phoneValidateCallback = (error, message) => {
 <Input
   style={{ flex: 1 }}
   placeholder="请输入手机号"
-  validate={[{ pattern: , message: '手机号错误' }]}
+  validate={[{ pattern: phonePatter, message: '手机号错误' }]}
   validateCallBack={this.phoneValidateCallback}
 />
 ```
