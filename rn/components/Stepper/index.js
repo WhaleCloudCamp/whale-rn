@@ -7,10 +7,10 @@ import {
   Text,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import defaultAddPic from './img/add.png';
-import defaultRmPic from './img/rm.png';
-import defaultDisableRmPic from './img/rm_disable.png';
-import defaultDisableAddPic from './img/add_disable.png';
+import defaultAddPic from '../../icons/create.png';
+import defaultRmPic from '../../icons/rm.png';
+import defaultDisableRmPic from '../../icons/rm_disable.png';
+import defaultDisableAddPic from '../../icons/create_disable.png';
 
 export default class Stepper extends React.Component {
   static propTypes = {

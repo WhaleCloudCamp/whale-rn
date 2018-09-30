@@ -11,7 +11,7 @@ TextAreal组件,文本输入区域，分为三种类型｛accross ||vertical ||a
 | styleAcrossInput | 同View.style |  | 横向textArea 输入框样式
 | styleAcrossHint | 同View.style |  | 横向textArea 限制字段样式
 | acrossTitle | string | 默认标题  | 横向textArea 左侧标题
-| acrossMax | number | 默认值100  | 横向textArea 输入框输入最大长度
+| acrossMax | number | 默认值500  | 横向textArea 输入框输入最大长度
 | acrossInputTint | string | 默认值为请输入  | 横向textArea 输入框提示语
 
 | styleVerticalMain | 同View.style |  | 竖向textArea主样式
@@ -19,7 +19,7 @@ TextAreal组件,文本输入区域，分为三种类型｛accross ||vertical ||a
 | styleVerticalInput | 同View.style |  |  竖向textArea 输入框样式
 | styleVerticalHint | 同View.style |  |  竖向textArea 限制字段样式
 | verticalTitle | string | 默认标题  |  竖向textArea 左侧标题
-| verticalMax | number | 默认值100  |  竖向textArea 输入框输入最大长度
+| verticalMax | number | 默认值500  |  竖向textArea 输入框输入最大长度
 | verticalInputTint | string | 默认值为请输入  |  竖向textArea 输入框提示语
 
 
@@ -31,7 +31,7 @@ TextAreal组件,文本输入区域，分为三种类型｛accross ||vertical ||a
 | styleAVInput | 同View.style |  |  竖向样式2textArea 输入框样式
 
 | avTitle | string | 默认标题  |  竖向textArea 左侧标题
-| avMax | number | 默认值100  |  竖向textArea 输入框输入最大长度
+| avMax | number | 默认值500  |  竖向textArea 输入框输入最大长度
 | avInputTint | string | 默认值为请输入  |  竖向textArea 输入框提示语
 
 

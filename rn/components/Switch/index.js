@@ -14,7 +14,7 @@ export default class Switch extends React.Component {
     checkedColor: '#4CD964',
     unCheckColor: 'transparent',
     disCheckColor: '#B3E9C1',
-    disUnCheckColor: '#ECEBE9',
+    disUnCheckColor: '#EFEEEC',
     circleColor: '#FFFFFF',
     disCircleColor: '#F4F3F2',
     check: false,
@@ -63,6 +63,8 @@ export default class Switch extends React.Component {
                   top: 0,
                   alignItems: 'center',
                   borderRadius: 14,
+                  borderColor: '#F5F5F5',
+                  borderWidth: 1,
                   backgroundColor: this.disable
                     ? Switch.defaultProps.disCircleColor
                     : Switch.defaultProps.circleColor,
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
     width: 45,
     height: 28,
     borderRadius: 14,
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderColor: '#cccccc',
     justifyContent: 'center',
   },

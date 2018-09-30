@@ -1,8 +1,8 @@
 import React from 'react';
 import { TouchableHighlight, Image } from 'react-native';
 import PropTypes from 'prop-types';
-import checkedImage from './img/normal.png';
-import normalImage from './img/disabled.png';
+import checkedImage from '../../icons/normal.png';
+import normalImage from '../../icons/disabled.png';
 
 export default class Radio extends React.Component {
   static propTypes = {

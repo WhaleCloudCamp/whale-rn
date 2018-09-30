@@ -7,8 +7,8 @@ import {
   StyleSheet,
 } from 'react-native';
 import PropTypes from 'prop-types';
-import imgBackIcon from './img/icon_fh.png';
-import imgDelIcon from './img/icon_del.png';
+import imgBackIcon from '../../icons/dark_back.png';
+import imgDelIcon from '../../icons/dark_close.png';
 
 export default class Navbar extends React.Component {
   static propTypes = {
@@ -33,8 +33,7 @@ export default class Navbar extends React.Component {
     isShowFirstRightIcon: false, // //右边第一个视图是否展示
     isShowLastRightIcon: false, // //右边第二个视图是否展示
     isShowRightText: false, // //右边文本是否展示
-
-    isUnderlayColor: '#0C83FF',
+    isUnderlayColor: 'transparent',
   };
 
   onSelected() {
@@ -52,14 +51,14 @@ export default class Navbar extends React.Component {
 
         <View style={stytles.leftView}>
           <TouchableHighlight
-            // underlayColor={this.props.isUnderlayColor}
+            style={stytles.touch}
             activeOpacity={0.5}
             underlayColor="transparent"
             onPress={this.props.onLeftItemPress}
           >
             <Image
               source={this.props.imgBackIcon || imgBackIcon}
-              style={stytles.imgBack}
+              style={[this.stytlesImgBack]}
             />
           </TouchableHighlight>
 
@@ -67,12 +66,10 @@ export default class Navbar extends React.Component {
             <TouchableHighlight
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
+              style={stytles.touch}
               onPress={this.props.onDelPress}
             >
-              <Image
-                source={this.props.imgDelIcon || imgDelIcon}
-                style={stytles.imgBack}
-              />
+              <Image source={this.props.imgDelIcon || imgDelIcon} />
             </TouchableHighlight>
           ) : null}
         </View>
@@ -80,6 +77,7 @@ export default class Navbar extends React.Component {
         <View style={stytles.rightView}>
           {this.props.isShowFirstRightIcon ? (
             <TouchableHighlight
+              style={stytles.touch}
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
               onPress={this.props.onRightFirstItemPress}
@@ -90,6 +88,7 @@ export default class Navbar extends React.Component {
 
           {this.props.isShowLastRightIcon ? (
             <TouchableHighlight
+              style={stytles.touch}
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
               onPress={this.props.onRightLastItemPress}
@@ -98,12 +97,15 @@ export default class Navbar extends React.Component {
             </TouchableHighlight>
           ) : null}
           {this.props.isShowRightText ? (
-            <Text
-              style={[stytles.rightText, this.props.styleRightText]}
+            <TouchableHighlight
+              underlayColor={this.props.isUnderlayColor}
+              activeOpacity={0.5}
               onPress={this.props.onRightTextPress}
             >
-              {this.props.rightText}
-            </Text>
+              <Text style={[stytles.rightText, this.props.styleRightText]}>
+                {this.props.rightText}
+              </Text>
+            </TouchableHighlight>
           ) : null}
         </View>
       </View>
@@ -118,11 +120,13 @@ const stytles = StyleSheet.create({
     height: 44,
     backgroundColor: '#0C83FF',
   },
-  imgBack: {
-    width: 15,
-    height: 20,
-    margin: 5,
+  touch: {
+    height: '100%',
+    width: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
+
   title: {
     color: '#FFFFFF',
 
@@ -134,13 +138,14 @@ const stytles = StyleSheet.create({
   leftView: {
     flexDirection: 'row',
     position: 'absolute',
-    left: 10,
+    height: '100%',
     alignItems: 'center',
   },
   rightView: {
     flexDirection: 'row',
     position: 'absolute',
     right: 10,
+    height: '100%',
     alignItems: 'center',
   },
   rightText: {

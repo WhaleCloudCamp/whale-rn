@@ -8,7 +8,7 @@ export default class ItemExample extends Component {
   render() {
     const data = {
       onPress: e => console.warn(e),
-      leftIcon: require('../../../icons/add.png'),
+      leftIcon: require('../../../icons/create.png'),
       title: '标题标题标题标题标题标题标题标题标题标题',
       note: '说明说明说明说明说明说明说明说明说明',
       details:
@@ -16,7 +16,7 @@ export default class ItemExample extends Component {
     };
     const checkData = {
       onPress: e => console.warn(e),
-      leftIcon: require('../../../icons/add.png'),
+      leftIcon: require('../../../icons/create.png'),
       rightIcon: 'check',
       title: '标题标题标题标题标题标题标题标题标题标题',
       note: '说明说明说明说明说明说明说明说明说明',
