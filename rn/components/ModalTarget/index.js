@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, AppRegistry } from 'react-native';
 import Theme from '../../themes';
 import DeviceEventEmitter from './EventEmitter';
+import Page from '../Page';
 
 let keyValue = 0;
 
@@ -67,21 +68,21 @@ export default class ModalTarget extends Component {
   render() {
     const { modals } = this.state;
     return (
-      <View style={{ backgroundColor: Theme.fill_grey, flex: 1 }}>
+      <Page style={{ backgroundColor: Theme.fill_base, flex: 1 }}>
         {this.props.children}
         {modals.map(item => (
           <View key={`modals${item.key}`} style={styles.globalmodal}>
             {item.modal}
           </View>
         ))}
-      </View>
+      </Page>
     );
   }
 }
 //测试先放了一个设置 真实情况应该是rgba0000
 let styles = StyleSheet.create({
   globalmodal: {
-    backgroundColor: '#rgba(255,0,0,0.7)',
+    backgroundColor: '#rgba(0,0,0,0)',
     position: 'absolute',
     top: 0,
     left: 0,

@@ -16,6 +16,7 @@ export default class WhaleSlider extends React.Component {
     maximumTrackTintColor: PropTypes.string,
     minimumTrackTintColor: PropTypes.string,
     showValue: PropTypes.bool,
+    thumbStyle: PropTypes.object,
   };
 
   static defaultProps = {
@@ -43,6 +44,7 @@ export default class WhaleSlider extends React.Component {
       maximumTrackTintColor,
       minimumTrackTintColor,
       showValue,
+      thumbStyle,
     } = this.props;
     let start;
     let end;
@@ -63,7 +65,7 @@ export default class WhaleSlider extends React.Component {
           disabled={disabled}
           onValueChange={onChange}
           onSlidingComplete={onAfterChange}
-          thumbStyle={styles.thumb}
+          thumbStyle={thumbStyle || styles.thumb}
           style={showValue ? styles.showValueSlider : styles.normalSlider}
         />
         {end}

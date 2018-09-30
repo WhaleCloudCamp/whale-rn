@@ -1,10 +1,12 @@
-# 使用说明
+# Badge使用说明
+图标右上角的红点、数字或者文字。用于告知用户，该区域的状态变化或者待处理任务的数量。
 
-## 引用
+## 代码演示
+```jsx
 import Badge from './Badge';
 
-## 使用
-```jsx
+······
+
 <Badge />
 <Badge dot>
     <View style={{ height: 35, width: 35, backgroundColor: '#ddd' }} />

@@ -44,9 +44,17 @@ export default class Badge extends React.Component {
       </View>
     ) : (
       <View style={[styles.wrap, this.props.style]}>
-        <View style={styles.textDom}>
+        <View>
           {children}
-          <Text style={styles.text}>{text}</Text>
+          <Text
+            style={[
+              styles.text,
+              styles.textDom,
+              children ? styles.textAbsolute : null,
+            ]}
+          >
+            {text}
+          </Text>
         </View>
       </View>
     );
@@ -82,9 +90,11 @@ const styles = StyleSheet.create({
     backgroundColor: Theme.brand_important,
     borderRadius: 4 * Theme.radius_sm,
     borderStyle: 'solid',
-    // position: 'absolute',
-    // top: -10,
-    // right: -15
+  },
+  textAbsolute: {
+    position: 'absolute',
+    top: -10,
+    right: -15,
   },
   textCorner: {
     width: 18 * grid,

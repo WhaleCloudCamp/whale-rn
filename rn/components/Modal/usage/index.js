@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { ModalBasics, ModalView } from '../../index';
 import Modal from '../index';
+import Page from '../../Page';
 
 export default class ModalExample extends Component {
   showAlert(title, content, actions) {
@@ -118,7 +118,7 @@ export default class ModalExample extends Component {
 
   render() {
     return (
-      <View>
+      <Page>
         <TouchableOpacity
           onPress={() =>
             this.showAlert('警告弹窗', '一个按钮', [
@@ -224,7 +224,7 @@ export default class ModalExample extends Component {
         >
           <Text>定点提示</Text>
         </TouchableOpacity>
-      </View>
+      </Page>
     );
   }
 }

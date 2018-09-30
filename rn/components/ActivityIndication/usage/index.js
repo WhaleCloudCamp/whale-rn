@@ -24,6 +24,11 @@ export default class ActiveDemo extends React.Component {
           <ActivityIndication toast text="正在加载" />
         );
         break;
+      case 6:
+        modalKey = ModalBasics.show(
+          <ActivityIndication text="正在加载" size="large" side="column" />
+        );
+        break;
       default:
         break;
     }
@@ -38,31 +43,37 @@ export default class ActiveDemo extends React.Component {
           onPress={() => this.showModal(1)}
           style={styles.button}
         >
-          <Text>color white</Text>
+          <Text>白色加载条</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(2)}
           style={styles.button}
         >
-          <Text>size large</Text>
+          <Text>大加载条</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(3)}
           style={styles.button}
         >
-          <Text>text 正在加载</Text>
+          <Text>显示正在加载1</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => this.showModal(6)}
+          style={styles.button}
+        >
+          <Text>显示正在加载2</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(4)}
           style={styles.button}
         >
-          <Text>toast true</Text>
+          <Text>有边框</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => this.showModal(5)}
           style={styles.button}
         >
-          <Text>toast true,text 正在加载</Text>
+          <Text>有边框显示正在加载</Text>
         </TouchableOpacity>
       </View>
     );
