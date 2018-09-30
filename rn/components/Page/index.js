@@ -17,7 +17,7 @@ export default class Page extends Component {
       {
         flex: 1,
         height: '100%',
-        backgroundColor: Theme.fill_base
+        backgroundColor: Theme.fill_base,
       },
     ].concat(style);
     return { style, ...others };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
 import Slider from '..';
+import Page from '../../Page';
 
 export default class SliderDemo extends React.Component {
   constructor(props) {
@@ -8,7 +9,6 @@ export default class SliderDemo extends React.Component {
     this.state = {
       changingValue: 0.25,
       changedValue: 0.15,
-      minMaxValue: 0,
     };
   }
 
@@ -24,15 +24,9 @@ export default class SliderDemo extends React.Component {
     });
   };
 
-  minMaxChange = value => {
-    this.setState({
-      minMaxValue: value,
-    });
-  };
-
   render() {
     return (
-      <ScrollView style={{ marginStart: 5, marginEnd: 5 }}>
+      <Page style={{ marginStart: 5, marginEnd: 5 }}>
         <View style={{ marginTop: 5 }}>
           <Text>Default settings</Text>
           <Slider />
@@ -41,20 +35,6 @@ export default class SliderDemo extends React.Component {
         <View style={{ marginTop: 10 }}>
           <Text>Default value settings</Text>
           <Slider showValue max={100} step={1} />
-        </View>
-
-        <View style={{ marginTop: 10 }}>
-          <Text>Initial value: 0.5</Text>
-          <Slider defaultValue={0.5} />
-        </View>
-
-        <View style={{ marginTop: 10 }}>
-          <Text>min: 0, max: 1, current Value: {this.state.minMaxValue}</Text>
-          <Slider
-            min={0}
-            max={1}
-            onAfterChange={value => this.minMaxChange(value)}
-          />
         </View>
 
         <View style={{ marginTop: 10 }}>
@@ -101,7 +81,7 @@ export default class SliderDemo extends React.Component {
             thumbStyle={styles.thumb}
           />
         </View>
-      </ScrollView>
+      </Page>
     );
   }
 }

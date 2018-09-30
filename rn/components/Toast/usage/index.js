@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { Toast } from '..';
+import Button from '../../Button';
+import Label from '../../Label';
+import Page from '../../Page';
 
 export default class ToastExample extends Component {
   showModal(check, side) {
@@ -32,94 +34,45 @@ export default class ToastExample extends Component {
 
   render() {
     return (
-      <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
-        <Text style={{ margin: 10, fontSize: 19 }}>纯文本</Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(1, 'top')}
-        >
-          <Text style={{ fontSize: 19 }}>顶部Toast</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(1)}
-        >
-          <Text style={{ fontSize: 19 }}>中间Toast</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(1, 'bottom')}
-        >
-          <Text style={{ fontSize: 19 }}>底部Toast</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(9, 'center')}
-        >
-          <Text style={{ fontSize: 19 }}>长文本</Text>
-        </TouchableOpacity>
-
-        <Text style={{ margin: 10, fontSize: 19 }}>成功提示</Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(2)}
-        >
-          <Text style={{ fontSize: 19 }}>默认时间long</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(3)}
-        >
-          <Text style={{ fontSize: 19 }}>默认时间short</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(4)}
-        >
-          <Text style={{ fontSize: 19 }}>自定义时间5秒</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(5)}
-        >
-          <Text style={{ fontSize: 19 }}>不定义时间</Text>
-        </TouchableOpacity>
-
-        <Text style={{ margin: 10, fontSize: 19 }}>失败提示</Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(6)}
-        >
-          <Text style={{ fontSize: 19 }}>失败提示</Text>
-        </TouchableOpacity>
-
-        <Text style={{ margin: 10, fontSize: 19 }}>警告提示</Text>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(7)}
-        >
-          <Text style={{ fontSize: 19 }}>警告提示</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.showModal(8)}
-        >
-          <Text style={{ fontSize: 19 }}>警告自定义文字提示</Text>
-        </TouchableOpacity>
-      </ScrollView>
+      <Page>
+        <Label type="default" size="xl" text="基本" />
+        <Button
+          type="normal"
+          size="big"
+          title="Text Only"
+          onClick={() => this.showModal(1)}
+        />
+        <Button
+          type="normal"
+          size="big"
+          title="Long Text"
+          onClick={() => this.showModal(9)}
+        />
+        <Button
+          type="normal"
+          size="big"
+          title="Success"
+          onClick={() => this.showModal(3)}
+        />
+        <Button
+          type="normal"
+          size="big"
+          title="Fail"
+          onClick={() => this.showModal(6)}
+        />
+        <Button
+          type="normal"
+          size="big"
+          title="Warn"
+          onClick={() => this.showModal(7)}
+        />
+        <Button
+          type="normal"
+          size="big"
+          title="Warn Custom Text"
+          onClick={() => this.showModal(8)}
+        />
+      </Page>
     );
   }
 }
-const styles = StyleSheet.create({
-  button: {
-    height: 42,
-    width: 260,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    borderWidth: 1,
-    borderColor: '#333333',
-    borderRadius: 3,
-    margin: 5,
-  },
-});
