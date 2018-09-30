@@ -18,7 +18,7 @@ let routes = [
     "routes": [
       {
         "path": "/modal",
-        "component": require('../../../rn/components/Modal/usage').default,
+        "component": require('../../../rn/components/Alert/usage').default,
         "exact": true
       },
       {

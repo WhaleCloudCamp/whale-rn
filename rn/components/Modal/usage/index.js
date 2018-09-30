@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { ModalBasics, ModalView } from '../../index';
 import Modal from '../index';
+import Page from '../../Page';
 
 export default class ModalExample extends Component {
   showAlert(title, content, actions) {
