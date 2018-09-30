@@ -1,17 +1,17 @@
-import React from "react";
-import { ModalBasics, ModalView } from "../index";
-import AlertContent from "./AlertContent";
+import React from 'react';
+import { ModalBasics, ModalView } from '../index';
+import AlertContent from './AlertContent';
 
 export default function whaleAlert(title, content, actions) {
   if (!actions) {
-    actions = [{ text: "确定", onPress: () => {} }];
+    actions = [{ text: '确定', onPress: () => {} }];
   }
   const alertCon = { title, content, actions };
   //兼容web，从函数中打开this指向为无定义
   const thissupport = this || {};
   let modalViewTag = (
     <ModalView
-      style={{ alignItems: "center", justifyContent: "center" }}
+      style={{ alignItems: 'center', justifyContent: 'center' }}
       ref={v => (thissupport.modalViewTag = v)}
     >
       <AlertContent

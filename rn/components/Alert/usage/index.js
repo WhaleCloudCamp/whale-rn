@@ -14,8 +14,12 @@ export default class AlertExample extends Component {
 
   render() {
     return (
-      <View style={{flex: 1,
-        backgroundColor: '#FFF',}}>
+      <View
+        style={{
+          flex: 1,
+          backgroundColor: '#FFF',
+        }}
+      >
         <Button
           type="normal"
           size="big"
