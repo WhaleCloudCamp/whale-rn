@@ -10,7 +10,7 @@
 > `Input` 支持 `TextInput` 所有属性
 
 ## Usage
-使用 `Input` 替代 `TextInput` 就好  
-[样例1](./usage/index.js)  
+使用 `Input` 替代 `TextInput` 就好  
+[样例1](./usage/index.js)  
 [样例2](../InputItem/index.js)  
 [样例3](../InputItem/usage/index.js)
