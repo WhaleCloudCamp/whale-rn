@@ -33,7 +33,7 @@ export default class Demo extends Component {
             { title: 'ModalDrawerView', routeName: 'ModalDrawerView' },
             { title: 'ModalPopoverView', routeName:'ModalPopoverView'},
             { title: 'ModalView', routeName: 'ModalView' },
-            { title: 'NavBar', routeName: 'Navbar' },
+            { title: 'NavBar', routeName: 'NavBar' },
             { title: 'NoticeBar', routeName: 'NoticeBar' },
             { title: 'Pagination', routeName: 'Pagination' },
             { title: 'Popover', routeName: 'Popover' },

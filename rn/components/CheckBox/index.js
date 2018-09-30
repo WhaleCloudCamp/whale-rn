@@ -11,7 +11,7 @@ export default class CheckBox extends React.Component {
     onChange: PropTypes.func,
     isChecked: PropTypes.bool,
     disable: PropTypes.bool,
-  }; 
+  };
 
   static defaultProps = {
     disable: false,
