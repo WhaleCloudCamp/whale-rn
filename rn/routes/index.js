@@ -15,7 +15,7 @@ import MenuPicker from '../components/MenuPicker/usage';
 import Modal from '../components/Modal/usage';
 import ModalDrawerView from '../components/ModalDrawerView/usage'
 import ModalView from '../components/ModalView/usage';
-import NavBar from '../components/Navbar/usage';
+import NavBar from '../components/NavBar/usage';
 import NoticeBar from '../components/NoticeBar/usage';
 import Pagination from '../components/Pagination/usage'
 import Progress from '../components/Progress/usage'
