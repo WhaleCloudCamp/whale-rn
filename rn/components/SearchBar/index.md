@@ -6,16 +6,6 @@
 - 应该在 placeholder 里提供提示文字，提醒用户输入相关内容，比如：双11特卖。
 - 在搜索栏下方，可提供有用的标签文案，帮助用户通过点击直接完成输入，比如：列出一些最近搜索的关键词。
 
-
-showChoose: PropTypes.bool,
-    showCancel: PropTypes.bool,
-    value: PropTypes.string,
-    placeholder: PropTypes.string,
-    onSubmit: PropTypes.func,
-    onChange: PropTypes.func,
-    onFoucs: PropTypes.func,
-    onCancel: PropTypes.func,
-
 ## API
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
@@ -32,6 +22,19 @@ showChoose: PropTypes.bool,
 ```js
 import SearchBar from "whale-rn";
 
-<SearchBar></SearchBar>
+<View>
+    <View style={{marginTop:20}}>
+      <SearchBar showChoose showCancel />
+    </View>
+    <View style={{marginTop:20}}>
+      <SearchBar showChoose={false} showCancel value='我是输入内容'/>
+    </View>
+    <View style={{marginTop:20}}>
+      <SearchBar showChoose showCancel={false} />
+    </View>
+    <View style={{marginTop:20}}>
+      <SearchBar showChoose={false} showCancel={false} />
+    </View>
+  </View>
 
 ```

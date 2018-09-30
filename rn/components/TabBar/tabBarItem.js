@@ -5,7 +5,7 @@ import Themes from '../../themes';
 
 export default class TabBarItem extends React.Component {
   static propTypes = {
-    badge: PropTypes.string,
+    badge: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onPress: PropTypes.func,
     selected: PropTypes.bool,
     icon: Image.propTypes.source.isRequired,
@@ -16,32 +16,46 @@ export default class TabBarItem extends React.Component {
   };
 
   static defaultProps = {
-    onPress() {},
+    // onPress() {},
+  };
+
+  constructor(props) {
+    super(props);
+    const { badge } = props;
+    this.state = {
+      badgeNum: badge,
+    };
+  }
+
+  itemClick = () => {
+    this.setState({
+      badgeNum: 0,
+    });
+    this.props.onPress && this.props.onPress();
   };
 
   render() {
     const {
-      badge,
-      onPress,
       selected,
       icon,
       selectedIcon,
       tintColor = '#108ee9',
       unselectedTintColor = '#888888',
       title,
-      key,
     } = this.props;
 
-    const badgeDom = badge ? (
+    const { badgeNum } = this.state;
+
+    const badgeDom = badgeNum ? (
       <View style={styles.badge}>
-        <Text style={styles.badgeText}>{badge}</Text>
+        <Text style={styles.badgeText}>{badgeNum > 99 ? 99 : badgeNum}</Text>
       </View>
     ) : null;
 
     const source = selected ? selectedIcon : icon;
 
     return (
-      <TouchableOpacity style={[styles.itemBox]} onPress={onPress}>
+      <TouchableOpacity style={[styles.itemBox]} onPress={this.itemClick}>
         <View>
           {source == null ? null : (
             <Image source={source} style={styles.barIcon} />
@@ -88,7 +102,7 @@ const styles = StyleSheet.create({
   badgeText: {
     textAlign: 'center',
     color: Themes.color_text_base_inverse,
-    fontSize: Themes.font_size_icontext,
+    fontSize: 10,
   },
   title: {
     marginTop: 5,

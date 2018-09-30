@@ -4,6 +4,7 @@
 ## API
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
+| tabsArray | TabBarItem数组 | array | - |
 | barTintColor | 标签栏背景颜色 | string | - |
 | tintColor    | 选中文字颜色 | string | - |
 | unselectedTintColor | 未选中文字颜色 | string | - |
@@ -11,9 +12,13 @@
 ```js
 import TabBar from "whale-rn";
 
-<View>
-    <TabBar />
-</View>
+<TabBar tabsArray={[
+    { title: '首页', badge: 0, icon: images.icon, selectedIcon: images.selectedIcon },
+    { title: '视频', badge: 1, icon: images.icon, selectedIcon: images.selectedIcon },
+    { title: '新闻', badge: 0, icon: images.icon, selectedIcon: images.selectedIcon },
+    { title: '发现', badge: 0, icon: images.icon, selectedIcon: images.selectedIcon },
+    { title: '我的', badge: 0, icon: images.icon, selectedIcon: images.selectedIcon }]}
+/>
 ```
 
 ## TabBarItem组件
@@ -35,15 +40,21 @@ import TabBar from "whale-rn";
 ```js
 import TabBarItem from "./tabBarItem";
 
-<TabBarItem
-    title="首页"
-    badge={0}
-    icon={require('./usage/assets/friend.png')}
-    selectedIcon={require('./usage/assets/friend_sel.png')}
-    selected={this.state.selectedTab === 1}
-    onPress={() => this.onChangeTab(1)}
-    tintColor={tintColor}
-    unselectedTintColor={unselectedTintColor}
-/>
+tabsArray.map((item, index) => {
+    const { title, badge, icon, selectedIcon } = item;
+    return (
+        <TabBarItem
+        key={'r-' + index}
+        title={title}
+        badge={badge}
+        icon={icon}
+        selectedIcon={selectedIcon}
+        selected={this.state.selectedTab === index}
+        onPress={() => this.onChangeTab(index)}
+        tintColor={tintColor}
+        unselectedTintColor={unselectedTintColor}
+        />
+    )
+})
 ```
 

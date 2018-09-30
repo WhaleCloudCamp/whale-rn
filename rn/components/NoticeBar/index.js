@@ -37,7 +37,7 @@ export default class NoticeBar extends React.Component {
     const { close } = this.state;
 
     const {
-      icon = require('./assets/horn.png'),
+      icon = require('../../icons/NoticeBar_Horn.png'),
       title,
       showClose = false,
       onClick,
@@ -59,7 +59,7 @@ export default class NoticeBar extends React.Component {
           <TouchableWithoutFeedback onPress={this.closeClick}>
             <Image
               style={styles.close}
-              source={require('./assets/dark_close.png')}
+              source={require('../../icons/NoticeBar_Dark_close.png')}
             />
           </TouchableWithoutFeedback>
         )}
