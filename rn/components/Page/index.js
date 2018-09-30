@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, ViewPropTypes } from 'react-native';
+import Theme from '../../themes';
 
 export default class Page extends Component {
   static propTypes = {
@@ -16,6 +17,7 @@ export default class Page extends Component {
       {
         flex: 1,
         height: '100%',
+        backgroundColor: Theme.fill_base
       },
     ].concat(style);
     return { style, ...others };
