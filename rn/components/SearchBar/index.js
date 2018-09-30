@@ -24,7 +24,7 @@ export default class SearchBar extends React.Component {
   render() {
     const {
       showChoose = false,
-      showCancel = true,
+      showCancel = false,
       value = '',
       placeholder = '搜索',
       onSubmit,
@@ -39,7 +39,7 @@ export default class SearchBar extends React.Component {
           <Text style={styles.chooseText}>选择项</Text>
           <Image
             style={styles.chooseIcon}
-            source={require('./assets/Rectangle.png')}
+            source={require('../../icons/SearchBar_Down.png')}
           />
         </TouchableOpacity>
       ) : null;
@@ -48,7 +48,7 @@ export default class SearchBar extends React.Component {
       <View style={styles.searchArea}>
         <Image
           style={styles.searchIcon}
-          source={require('./assets/searchbar_search.png')}
+          source={require('../../icons/SearchBar_Search.png')}
         />
         <TextInput
           style={styles.input}
@@ -73,7 +73,7 @@ export default class SearchBar extends React.Component {
       ) : null;
 
     return (
-      <View style={styles.searchBar}>
+      <View style={[styles.searchBar]}>
         {chooseArea()}
         {searchArea()}
         {cancelArea()}

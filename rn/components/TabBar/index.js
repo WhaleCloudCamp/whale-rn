@@ -6,6 +6,7 @@ import Themes from '../../themes';
 
 export default class TabBar extends React.Component {
   static propTypes = {
+    tabsArray: PropTypes.array.isRequired,
     barTintColor: PropTypes.string,
     tintColor: PropTypes.string,
     unselectedTintColor: PropTypes.string,
@@ -15,7 +16,7 @@ export default class TabBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 1,
+      selectedTab: 0,
     };
   }
 
@@ -31,42 +32,38 @@ export default class TabBar extends React.Component {
       barTintColor = Themes.fill_base,
       tintColor = '#108ee9',
       unselectedTintColor = '#888888',
+      tabsArray,
     } = this.props;
 
     const style = { backgroundColor: barTintColor };
 
+    const renderTabItems = () =>
+      tabsArray.map((item, index) => {
+        const { title, badge, icon, selectedIcon } = item;
+        return (
+          <TabBarItem
+            key={`r-${index}`}
+            title={title}
+            badge={badge}
+            icon={icon}
+            selectedIcon={selectedIcon}
+            selected={this.state.selectedTab === index}
+            onPress={() => this.onChangeTab(index)}
+            tintColor={tintColor}
+            unselectedTintColor={unselectedTintColor}
+          />
+        );
+      });
+
     return (
-      <View style={[styles.tabBar, style]}>
-        <TabBarItem
-          title="首页"
-          badge={0}
-          icon={require('./usage/assets/friend.png')}
-          selectedIcon={require('./usage/assets/friend_sel.png')}
-          selected={this.state.selectedTab === 1}
-          onPress={() => this.onChangeTab(1)}
-          tintColor={tintColor}
-          unselectedTintColor={unselectedTintColor}
-        />
-        <TabBarItem
-          title="首页"
-          badge={0}
-          icon={require('./usage/assets/friend.png')}
-          selectedIcon={require('./usage/assets/friend_sel.png')}
-          selected={this.state.selectedTab === 2}
-          onPress={() => this.onChangeTab(2)}
-          tintColor={tintColor}
-          unselectedTintColor={unselectedTintColor}
-        />
-        <TabBarItem
-          title="首页"
-          badge={0}
-          icon={require('./usage/assets/friend.png')}
-          selectedIcon={require('./usage/assets/friend_sel.png')}
-          selected={this.state.selectedTab === 3}
-          onPress={() => this.onChangeTab(3)}
-          tintColor={tintColor}
-          unselectedTintColor={unselectedTintColor}
-        />
+      <View
+        style={[
+          styles.tabBar,
+          { position: 'absolute', left: 0, right: 0, bottom: 0 },
+          style,
+        ]}
+      >
+        {renderTabItems()}
       </View>
     );
   }

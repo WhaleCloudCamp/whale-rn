@@ -4,6 +4,17 @@ import SearchBar from '../index';
 
 export default () => (
   <View>
-    <SearchBar />;
+    <View style={{ marginTop: 20 }}>
+      <SearchBar showChoose showCancel />
+    </View>
+    <View style={{ marginTop: 20 }}>
+      <SearchBar showChoose={false} showCancel value="我是输入内容" />
+    </View>
+    <View style={{ marginTop: 20 }}>
+      <SearchBar showChoose showCancel={false} />
+    </View>
+    <View style={{ marginTop: 20 }}>
+      <SearchBar showChoose={false} showCancel={false} />
+    </View>
   </View>
 );
