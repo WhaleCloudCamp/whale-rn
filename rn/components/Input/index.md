@@ -11,6 +11,19 @@
 
 ## Usage
 使用 `Input` 替代 `TextInput` 就好  
+
+```js
+const phonePatter = '^1\\d{10}$';
+const phoneValidateCallback = (error, message) => {
+  console.log(error, message);
+}
+<Input
+  style={{ flex: 1 }}
+  placeholder="请输入手机号"
+  validate={[{ pattern: , message: '手机号错误' }]}
+  validateCallBack={this.phoneValidateCallback}
+/>
+```
 [样例1](./usage/index.js)  
 [样例2](../InputItem/index.js)  
 [样例3](../InputItem/usage/index.js)
