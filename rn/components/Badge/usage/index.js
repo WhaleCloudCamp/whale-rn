@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import Badge from '..';
+import Page from '../../Page';
 
 export default class BadgeExample extends React.Component {
   render() {
     return (
-      <ScrollView>
+      <Page>
         <View style={styles.containView}>
           <Text style={{ fontSize: 21 }}>Default badge</Text>
           <Badge />
@@ -44,14 +45,14 @@ export default class BadgeExample extends React.Component {
           </View>
         </View>
         <View style={styles.lineView} />
-      </ScrollView>
+      </Page>
     );
   }
 }
-
+const screenWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   containView: {
-    flex: 1,
+    width: screenWidth,
     flexDirection: 'row',
     height: 70,
     justifyContent: 'space-between',
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     paddingEnd: 20,
   },
   lineView: {
-    flex: 1,
+    width: screenWidth,
     height: 1,
     backgroundColor: '#333333',
   },

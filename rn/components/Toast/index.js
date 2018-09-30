@@ -6,7 +6,7 @@ class Toast {
   static toastSucess(time, text, side) {
     this.text = '成功';
     this.time = 2000;
-    this.success = require('./style/toast_right.png');
+    this.success = require('../../icons/toast_right.png');
 
     if (typeof time === 'number') {
       this.time = time;
@@ -37,7 +37,12 @@ class Toast {
     }
 
     const modalView = (
-      <ModalView style={mStyle} modal ref={v => (this.modalViewTag = v)}>
+      <ModalView
+        style={mStyle}
+        modalOpacity={0}
+        modal
+        ref={v => (this.modalViewTag = v)}
+      >
         <View style={styles.viewAround}>
           <Image source={this.success} />
           <Text style={styles.textWithPic}>{this.text}</Text>
@@ -53,7 +58,7 @@ class Toast {
   static toastFail(time, text, side) {
     this.text = '失败';
     this.time = 2000;
-    this.fail = require('./style/toast_error.png');
+    this.fail = require('../../icons/toast_error.png');
 
     if (typeof time === 'number') {
       this.time = time;
@@ -84,7 +89,12 @@ class Toast {
     }
 
     const modalView = (
-      <ModalView style={mStyle} modal ref={v => (this.modalViewTag = v)}>
+      <ModalView
+        style={mStyle}
+        modalOpacity={0}
+        modal
+        ref={v => (this.modalViewTag = v)}
+      >
         <View style={styles.viewAround}>
           <Image source={this.fail} />
           <Text style={styles.textWithPic}>{this.text}</Text>
@@ -100,7 +110,7 @@ class Toast {
   static toastWarn(time, text, side) {
     this.text = '警告';
     this.time = 2000;
-    this.warn = require('./style/toast_warning.png');
+    this.warn = require('../../icons/toast_warning.png');
 
     if (typeof time === 'number') {
       this.time = time;
@@ -131,7 +141,12 @@ class Toast {
     }
 
     const modalView = (
-      <ModalView style={mStyle} modal ref={v => (this.modalViewTag = v)}>
+      <ModalView
+        style={mStyle}
+        modalOpacity={0}
+        modal
+        ref={v => (this.modalViewTag = v)}
+      >
         <View style={styles.viewAround}>
           <Image source={this.warn} />
           <Text style={styles.textWithPic}>{this.text}</Text>
@@ -177,7 +192,12 @@ class Toast {
     }
 
     const modalView = (
-      <ModalView style={mStyle} modal ref={v => (this.modalViewTag = v)}>
+      <ModalView
+        style={mStyle}
+        modalOpacity={0}
+        modal
+        ref={v => (this.modalViewTag = v)}
+      >
         <Text style={styles.textwithoutPic}>{this.text}</Text>
       </ModalView>
     );
