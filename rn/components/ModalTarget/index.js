@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, AppRegistry } from 'react-native';
 import Theme from '../../themes';
 import DeviceEventEmitter from './EventEmitter';
+import Page from '../Page';
 
 let keyValue = 0;
 
@@ -67,14 +68,14 @@ export default class ModalTarget extends Component {
   render() {
     const { modals } = this.state;
     return (
-      <View style={{ backgroundColor: Theme.fill_grey, flex: 1 }}>
+      <Page style={{ backgroundColor: Theme.fill_base, flex: 1 }}>
         {this.props.children}
         {modals.map(item => (
           <View key={`modals${item.key}`} style={styles.globalmodal}>
             {item.modal}
           </View>
         ))}
-      </View>
+      </Page>
     );
   }
 }
