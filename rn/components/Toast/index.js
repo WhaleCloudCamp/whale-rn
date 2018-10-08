@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, Alert } from 'react-native';
-import { ModalBasics, ModalView } from '../index';
+import { ModalBasics, ModalView } from '..';
 
 class Toast {
   static toastSucess(time, text, side) {
@@ -231,8 +231,13 @@ const styles = StyleSheet.create({
   viewAround: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 90,
-    width: 90,
+    minHeight: 90,
+    minWidth: 90,
+    maxWidth: 243,
+    paddingEnd: 12,
+    paddingStart: 12,
+    paddingTop: 8,
+    paddingBottom: 8,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     borderRadius: 5,
     elevation: 4,

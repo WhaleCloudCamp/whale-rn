@@ -8,9 +8,9 @@ import ActivityIndication from './ActivityIndication';
 
 ······
 
-this.modalKey = ModalBasics.show(<ActivityIndication color="white" />);
-this.modalKey = ModalBasics.show(<ActivityIndication size="large" />);
-this.modalKey = ModalBasics.show(<ActivityIndication text="正在加载" />);
+<ActivityIndication color="white" />
+<ActivityIndication size="large" />
+<ActivityIndication text="正在加载" />
 this.modalKey = ModalBasics.show(<ActivityIndication toast />);
 this.modalKey = ModalBasics.show(<ActivityIndication toast text="正在加载" />);
 
