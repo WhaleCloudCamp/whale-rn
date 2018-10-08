@@ -16,7 +16,7 @@ windows:安装小乌龟
 mac:安装sourcetree
 安装 ios 依赖
 ```sh
-cd rn/ios
+cd ios
 pod install
 ```
 
