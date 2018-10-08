@@ -6,6 +6,7 @@ import ReactNative, {
   PanResponder,
   Platform,
   ViewPropTypes,
+  Animated,
 } from 'react-native';
 import Theme from '../../themes';
 
@@ -96,7 +97,7 @@ export default class ModalView extends Component {
 
     return (
       <View style={styles.globalmodal}>
-        <View
+        <Animated.View
           style={[
             styles.globalmodal,
             {

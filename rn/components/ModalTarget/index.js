@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, AppRegistry } from 'react-native';
+import { StyleSheet, View, AppRegistry, Animated } from 'react-native';
 import Theme from '../../themes';
 import DeviceEventEmitter from './EventEmitter';
 import Page from '../Page';
@@ -69,9 +69,13 @@ export default class ModalTarget extends Component {
     const { modals } = this.state;
     return (
       <Page style={{ backgroundColor: Theme.fill_base, flex: 1 }}>
-        {this.props.children}
+        <Animated.View style={{ flex: 1 }}>{this.props.children}</Animated.View>
         {modals.map(item => (
-          <View key={`modals${item.key}`} style={styles.globalmodal}>
+          <View
+            key={`modals${item.key}`}
+            style={styles.globalmodal}
+            pointerEvents="box-none"
+          >
             {item.modal}
           </View>
         ))}
