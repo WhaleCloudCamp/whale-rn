@@ -22,7 +22,7 @@ export default class ToastExample extends Component {
     } else if (check === 7) {
       Toast.toastWarn('short');
     } else if (check === 8) {
-      Toast.toastWarn('short', '一个警告');
+      Toast.toastWarn('short', '一个长长长长长长长长长长长长长长长警告');
     } else if (check === 9) {
       Toast.toastText(
         'short',

@@ -3,32 +3,18 @@ import ActivityIndication from '..';
 import Button from '../../Button';
 import Label from '../../Label';
 import Page from '../../Page';
-import { ModalBasics } from '../../index';
+import { ModalBasics } from '../..';
 
 export default class ActiveDemo extends React.Component {
   showModal(check) {
     let modalKey;
     switch (check) {
       case 1:
-        modalKey = ModalBasics.show(<ActivityIndication color="white" />);
-        break;
-      case 2:
-        modalKey = ModalBasics.show(<ActivityIndication size="large" />);
-        break;
-      case 3:
-        modalKey = ModalBasics.show(<ActivityIndication text="正在加载" />);
-        break;
-      case 4:
         modalKey = ModalBasics.show(<ActivityIndication toast />);
         break;
-      case 5:
+      case 2:
         modalKey = ModalBasics.show(
           <ActivityIndication toast text="正在加载" />
-        );
-        break;
-      case 6:
-        modalKey = ModalBasics.show(
-          <ActivityIndication text="正在加载" size="large" side="column" />
         );
         break;
       default:
@@ -42,46 +28,27 @@ export default class ActiveDemo extends React.Component {
     return (
       <Page>
         <Label type="default" size="xl" text="基本" style={{ margin: 20 }} />
+        <Label type="default" size="md" text="Without text" style={{ marginStart: 20, marginBottom: 10 }} />
+        <ActivityIndication />
+        <Label type="default" size="md" text="With text" style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }} />
+        <ActivityIndication text="正在加载" />
+        <Label type="default" size="md" text="With large size" style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }} />
+        <ActivityIndication size="large" />
+        <Label type="default" size="md" text="With large size and custom side and text" style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }} />
+        <ActivityIndication text="正在加载" size="large" side="column" />
+        <Label type="default" size="md" text="With toast" style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }} />
         <Button
           type="normal"
           size="big"
-          title="Small Loading（White）"
+          title="Loading Toast"
           onClick={() => this.showModal(1)}
         />
         <Button
           style={{ marginTop: 10 }}
           type="normal"
           size="big"
-          title="Large Loading"
-          onClick={() => this.showModal(2)}
-        />
-        <Button
-          style={{ marginTop: 10 }}
-          type="normal"
-          size="big"
-          title="Loading Text"
-          onClick={() => this.showModal(3)}
-        />
-        <Button
-          style={{ marginTop: 10 }}
-          type="normal"
-          size="big"
-          title="Loading Text2"
-          onClick={() => this.showModal(6)}
-        />
-        <Button
-          style={{ marginTop: 10 }}
-          type="normal"
-          size="big"
-          title="Loading Toast"
-          onClick={() => this.showModal(4)}
-        />
-        <Button
-          style={{ marginTop: 10 }}
-          type="normal"
-          size="big"
           title="Loading Toast Text"
-          onClick={() => this.showModal(5)}
+          onClick={() => this.showModal(2)}
         />
       </Page>
     );

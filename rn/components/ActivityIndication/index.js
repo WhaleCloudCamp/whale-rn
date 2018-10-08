@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { ModalView } from '../index';
+import { ModalView } from '..';
 
 export default class ActivityIndication extends React.Component {
   static propTypes = {
@@ -46,16 +46,10 @@ export default class ActivityIndication extends React.Component {
     const { color, size, text, side } = this.props;
     const { spinner, spinnerRow, tip } = styles;
     return (
-      <ModalView
-        style={styles.centerView}
-        modal
-        ref={v => (this.modalViewTag = v)}
-      >
-        <View style={side === 'row' ? spinnerRow : spinner}>
-          <ActivityIndicator color={color} size={size} />
-          {text && <Text style={[tip]}>{text}</Text>}
-        </View>
-      </ModalView>
+      <View style={side === 'row' ? spinnerRow : spinner}>
+        <ActivityIndicator color={color} size={size} />
+        {text && <Text style={[tip]}>{text}</Text>}
+      </View>
     );
   }
 
