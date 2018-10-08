@@ -9,6 +9,7 @@
 | title   | 按钮标题 | string | - |
 | disabled| 设置禁用 | boolean | false |
 | onClick | 点击反馈的自定义类名 | (e: Object): void | - |
+| color   | 设置按钮统一背景色和边框色 | string | - |
 | style   | 按钮自定义样式 | Object | - |
 | textStyle | 按钮文字自定义样式 | Object | - |
 
