@@ -38,7 +38,11 @@ export default class Button extends React.Component {
       if (size === 'big') {
         return (
           <TouchableOpacity
-            style={[{ backgroundColor: color, borderColor: color }, styles.normalBig, style]}
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.normalBig,
+              style,
+            ]}
             disabled={disabled}
             onPress={onClick}
           >
@@ -48,7 +52,11 @@ export default class Button extends React.Component {
       } else if (size === 'small') {
         return (
           <TouchableOpacity
-            style={[{ backgroundColor: color, borderColor: color }, styles.normalSmall, style]}
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.normalSmall,
+              style,
+            ]}
             disabled={disabled}
             onPress={onClick}
           >
@@ -60,7 +68,11 @@ export default class Button extends React.Component {
       if (size === 'big') {
         return (
           <TouchableOpacity
-            style={[{ backgroundColor: color, borderColor: color }, styles.normal2Big, style]}
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.normal2Big,
+              style,
+            ]}
             disabled={disabled}
             onPress={onClick}
           >
@@ -70,7 +82,11 @@ export default class Button extends React.Component {
       } else if (size === 'small') {
         return (
           <TouchableOpacity
-            style={[{ backgroundColor: color, borderColor: color }, styles.normal2Small, style]}
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.normal2Small,
+              style,
+            ]}
             disabled={disabled}
             onPress={onClick}
           >
@@ -81,7 +97,14 @@ export default class Button extends React.Component {
     } else if (type === 'loading') {
       if (size === 'big') {
         return (
-          <TouchableOpacity style={[{ backgroundColor: color, borderColor: color }, styles.loadingBig, style]} disabled>
+          <TouchableOpacity
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.loadingBig,
+              style,
+            ]}
+            disabled
+          >
             <Activityindicator
               image={require('../../icons/Button_Loading.png')}
             />
@@ -90,7 +113,14 @@ export default class Button extends React.Component {
         );
       } else if (size === 'small') {
         return (
-          <TouchableOpacity style={[{ backgroundColor: color, borderColor: color }, styles.loadingSmall, style]} disabled>
+          <TouchableOpacity
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.loadingSmall,
+              style,
+            ]}
+            disabled
+          >
             <Activityindicator
               image={require('../../icons/Button_Loading.png')}
             />
@@ -101,13 +131,27 @@ export default class Button extends React.Component {
     } else if (type === 'disabled') {
       if (size === 'big') {
         return (
-          <View style={[{ backgroundColor: color, borderColor: color }, styles.disabledBig, style]} disabled={disabled}>
+          <View
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.disabledBig,
+              style,
+            ]}
+            disabled={disabled}
+          >
             <Text style={[styles.titleBig, textStyle]}>{title}</Text>
           </View>
         );
       } else if (size === 'small') {
         return (
-          <View style={[{ backgroundColor: color, borderColor: color }, styles.disabledSmall, style]} disabled={disabled}>
+          <View
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.disabledSmall,
+              style,
+            ]}
+            disabled={disabled}
+          >
             <Text style={[styles.titleSmall, textStyle]}>{title}</Text>
           </View>
         );
@@ -115,13 +159,27 @@ export default class Button extends React.Component {
     } else if (type === 'disabled2') {
       if (size === 'big') {
         return (
-          <View style={[{ backgroundColor: color, borderColor: color }, styles.disabled2Big, style]} disabled={disabled}>
+          <View
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.disabled2Big,
+              style,
+            ]}
+            disabled={disabled}
+          >
             <Text style={[styles.title3Big, textStyle]}>{title}</Text>
           </View>
         );
       } else if (size === 'small') {
         return (
-          <View style={[{ backgroundColor: color, borderColor: color }, styles.disabled2Small, style]} disabled={disabled}>
+          <View
+            style={[
+              { backgroundColor: color, borderColor: color },
+              styles.disabled2Small,
+              style,
+            ]}
+            disabled={disabled}
+          >
             <Text style={[styles.title3Small, textStyle]}>{title}</Text>
           </View>
         );
