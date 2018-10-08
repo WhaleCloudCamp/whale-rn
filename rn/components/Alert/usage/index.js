@@ -15,7 +15,7 @@ export default class AlertExample extends Component {
 
   render() {
     return (
-      <Page> 
+      <Page>
         <Button
           type="normal"
           size="big"
