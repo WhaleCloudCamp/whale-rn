@@ -81,7 +81,7 @@ export default class ImageRoll extends Component {
             <TouchableOpacity onPress={onCancel}>
               <Text style={styles.leftButton}>取消</Text>
             </TouchableOpacity>
-            <Text style={[styles.barTitle]}>Photos</Text>
+            <Text style={[styles.barTitle]}>相册</Text>
             <TouchableOpacity onPress={this.onDonePress}>
               <Text style={styles.rightBtn}>完成</Text>
             </TouchableOpacity>
