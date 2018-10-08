@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import NavBar from '../../NavBar';
+import Button from '../../Button';
 import Modal from '../index';
+
 import Page from '../../Page';
 
 export default class ModalExample extends Component {
@@ -13,16 +16,8 @@ export default class ModalExample extends Component {
   }
 
   showPopover(view, direction, align, showArrow) {
-    const content = (
-      <View
-        style={{ width: 230, height: 300, backgroundColor: 'rgba(0,255,0,1)' }}
-      >
-        <Text>12312</Text>
-      </View>
-    );
-    Modal.popover(content, view, direction, align, showArrow, {
-      backgroundColor: 'rgba(0,0,255,1)',
-    });
+    const content = <Text>泡泡</Text>;
+    Modal.popover(content, view, direction, align, showArrow, {});
   }
 
   showPrompt(
@@ -119,111 +114,152 @@ export default class ModalExample extends Component {
   render() {
     return (
       <Page>
-        <TouchableOpacity
-          onPress={() =>
-            this.showAlert('警告弹窗', '一个按钮', [
-              {
-                text: '确定',
-                onPress: e => {
-                  alert('确定');
-                },
-              },
-            ])
+        <NavBar
+          title="标题" //标题
+          style={{ backgroundColor: '#0C83FF' }} //主样式
+          styleTitle={{ color: 'white' }} //标题样式
+          isShowFirstRightIcon //是否显示右边第一个图标
+          imgRightFirstIcon={require('../../../icons/NoticeBar_Horn.png')} //右边第一个图标
+          onRightFirstItemPress={
+            //右边第一个图标事件
+            target => {
+              this.showPopover(target.refs.firstRightIcon, 'down', 'end', true);
+            }
           }
-        >
-          <Text>警告弹窗(1)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() =>
-            this.showAlert('警告弹窗', '两个按钮', [
-              {
-                text: '取消',
-                onPress: e => {
-                  alert('取消');
+        />
+        <ScrollView>
+          <Button
+            style={{ marginTop: 10, backgroundColor: '#FFF' }}
+            type="normal"
+            size="big"
+            title="警告弹窗(1)"
+            onClick={() =>
+              this.showAlert('警告弹窗', '一个按钮', [
+                {
+                  text: '确定',
+                  onPress: e => {
+                    alert('确定');
+                  },
                 },
-              },
-              {
-                text: '确定',
-                onPress: e => {
-                  alert('确定');
+              ])
+            }
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="警告弹窗(2)"
+            onClick={() =>
+              this.showAlert('警告弹窗', '两个按钮', [
+                {
+                  text: '取消',
+                  onPress: e => {
+                    alert('取消');
+                  },
                 },
-              },
-            ])
-          }
-        >
-          <Text>警告弹窗(2)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() =>
-            this.showAlert('警告弹窗', '三个按钮', [
-              {
-                text: '上',
-                onPress: e => {
-                  alert('上');
+                {
+                  text: '确定',
+                  onPress: e => {
+                    alert('确定');
+                  },
                 },
-              },
-              {
-                text: '中',
-                onPress: e => {
-                  alert('中');
+              ])
+            }
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="警告弹窗(3)"
+            onClick={() =>
+              this.showAlert('警告弹窗', '三个按钮', [
+                {
+                  text: '上',
+                  onPress: e => {
+                    alert('上');
+                  },
                 },
-              },
-              {
-                text: '下',
-                onPress: e => {
-                  alert('下');
+                {
+                  text: '中',
+                  onPress: e => {
+                    alert('中');
+                  },
                 },
-              },
-            ])
-          }
-        >
-          <Text>警告弹窗(3)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() =>
-            this.showPrompt('输入弹窗', '没有默认值', [{ text: '确定' }])
-          }
-        >
-          <Text>输入弹窗(1)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() =>
-            this.showPrompt(
-              '输入弹窗',
-              '默认值:1234',
-              [{ text: '确定' }],
-              '1234'
-            )
-          }
-        >
-          <Text>输入弹窗(2)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showView(true)}>
-          <Text>打开模态弹窗</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showView(false)}>
-          <Text>打开非模态弹窗</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showDrawerView('bottom', false)}>
-          <Text>抽屉底部出现</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showDrawerView('top', true)}>
-          <Text>抽屉顶部出现</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showDrawerView('right', true)}>
-          <Text>抽屉右边出现</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.showDrawerView('left', false)}>
-          <Text>抽屉左边出现</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          ref="downstart"
-          onPress={() =>
-            this.showPopover(this.refs.downstart, 'down', 'start', true)
-          }
-        >
-          <Text>定点提示</Text>
-        </TouchableOpacity>
+                {
+                  text: '下',
+                  onPress: e => {
+                    alert('下');
+                  },
+                },
+              ])
+            }
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="输入弹窗(1)"
+            onClick={() =>
+              this.showPrompt('输入弹窗', '没有默认值', [{ text: '确定' }])
+            }
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="输入弹窗(2)"
+            onClick={() =>
+              this.showPrompt(
+                '输入弹窗',
+                '默认值:1234',
+                [{ text: '确定' }],
+                '1234'
+              )
+            }
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="打开模态弹窗"
+            onClick={() => this.showView(true)}
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="打开非模态弹窗"
+            onClick={() => this.showView(false)}
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="抽屉底部出现"
+            onClick={() => this.showDrawerView('bottom', false)}
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="抽屉顶部出现"
+            onClick={() => this.showDrawerView('top', true)}
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="抽屉右边出现"
+            onClick={() => this.showDrawerView('right', true)}
+          />
+          <Button
+            style={{ marginTop: 10 }}
+            type="normal"
+            size="big"
+            title="抽屉左边出现"
+            onClick={() => this.showDrawerView('left', false)}
+          />
+        </ScrollView>
       </Page>
     );
   }

@@ -54,7 +54,7 @@ export default class NavBar extends React.Component {
             style={stytles.touch}
             activeOpacity={0.5}
             underlayColor="transparent"
-            onPress={this.props.onLeftItemPress}
+            onPress={() => this.props.onLeftItemPress(this)}
           >
             <Image
               source={this.props.imgBackIcon || imgBackIcon}
@@ -67,7 +67,7 @@ export default class NavBar extends React.Component {
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
               style={stytles.touch}
-              onPress={this.props.onDelPress}
+              onPress={() => this.props.onDelPress(this)}
             >
               <Image source={this.props.imgDelIcon || imgDelIcon} />
             </TouchableHighlight>
@@ -80,7 +80,8 @@ export default class NavBar extends React.Component {
               style={stytles.touch}
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
-              onPress={this.props.onRightFirstItemPress}
+              onPress={() => this.props.onRightFirstItemPress(this)}
+              ref="firstRightIcon"
             >
               <Image source={this.props.imgRightFirstIcon || imgDelIcon} />
             </TouchableHighlight>
@@ -91,7 +92,8 @@ export default class NavBar extends React.Component {
               style={stytles.touch}
               underlayColor={this.props.isUnderlayColor}
               activeOpacity={0.5}
-              onPress={this.props.onRightLastItemPress}
+              onPress={() => this.props.onRightLastItemPress(this)}
+              ref="lastRightIcon"
             >
               <Image source={this.props.imgRightLasttIcon || imgDelIcon} />
             </TouchableHighlight>
