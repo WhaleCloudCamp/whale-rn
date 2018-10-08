@@ -11,8 +11,6 @@ import List from '../components/List/usage';
 import Label from '../components/Label/usage'
 import MenuPicker from '../components/MenuPicker/usage';
 import Modal from '../components/Modal/usage';
-import ModalDrawerView from '../components/ModalDrawerView/usage'
-import ModalView from '../components/ModalView/usage';
 import NavBar from '../components/NavBar/usage';
 import NoticeBar from '../components/NoticeBar/usage';
 import Pagination from '../components/Pagination/usage'
@@ -45,9 +43,6 @@ export default routes = {
     Label: {screen:Label},
     MenuPicker: {screen:MenuPicker},
     Modal: { screen: Modal },
-    ModalDrawerView: { screen: ModalDrawerView },
-    ModalPopoverView: { screen: Modal },
-    ModalView: { screen: ModalView },
     NavBar: { screen:NavBar },
     NoticeBar: {screen:NoticeBar},
     Pagination: { screen: Pagination },

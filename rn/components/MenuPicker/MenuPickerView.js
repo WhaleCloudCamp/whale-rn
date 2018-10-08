@@ -35,9 +35,18 @@ export default class PopoverPickerView extends Modal.PopoverView {
 
   constructor(props) {
     super(props);
+    const { value = [], data } = props;
+    const labels = [];
+    Object.values(data).map(item => {
+      if (item.value === value[0]) {
+        labels[0] = item.label;
+      }
+      return item;
+    });
     this.state = {
-      value: props.value || [],
-      data: props.data,
+      value,
+      labels,
+      data,
     };
   }
 
@@ -51,19 +60,29 @@ export default class PopoverPickerView extends Modal.PopoverView {
     return firstValue;
   }
 
-  onItemPress(item) {
-    const { value } = this.state;
+  onItemPress(item, level) {
+    const { value, labels } = this.state;
     const { onChange } = this.props;
-    value[1] = item.value;
+    if (level === 1) {
+      value.length = 1;
+      value[0] = item.value;
+      labels[0] = item.label;
+    } else {
+      value[1] = item.value;
+      labels[1] = item.label;
+    }
     this.close(false);
-    onChange && onChange(value);
+    onChange && onChange({ value, labels });
   }
 
   onMenuPress(item) {
-    const { value } = this.state;
+    const { value, labels } = this.state;
     value[0] = item.value;
+    value[1] = '-111asd';
+    labels[0] = item.label;
     this.setState({
       value,
+      labels,
     });
   }
 
@@ -80,6 +99,7 @@ export default class PopoverPickerView extends Modal.PopoverView {
     const { data, value } = this.state;
     const firstSelectValue = this.getFirstValue(data, value);
     let subData = data;
+    let thisSubValue = '';
     let subSelectValue = firstSelectValue;
     let pickerStyle = {
       backgroundColor: Theme.poppItemColor,
@@ -100,6 +120,7 @@ export default class PopoverPickerView extends Modal.PopoverView {
       } else {
         subData = [];
       }
+      thisSubValue = parent[0].value;
       if (value && value.length > 1) {
         subSelectValue = value[1];
       }
@@ -133,8 +154,11 @@ export default class PopoverPickerView extends Modal.PopoverView {
                 title={item.label}
                 isSub
                 textAlign={textAlign}
-                selected={item.value === subSelectValue}
-                onPress={() => this.onItemPress(item)}
+                selected={
+                  item.value === subSelectValue &&
+                  (!thisSubValue || thisSubValue === firstSelectValue)
+                }
+                onPress={() => this.onItemPress(item, level)}
               />
             ))}
         </ScrollView>
