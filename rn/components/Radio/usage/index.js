@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableHighlight } from 'react-native';
 import Radio from '../index';
+import Page from '../../Page';
 
 export default class RadioDemo extends React.Component {
   setCheck(type) {
@@ -21,7 +22,7 @@ export default class RadioDemo extends React.Component {
 
   render() {
     return (
-      <View style={{ backgroundColor: 'white' }}>
+      <Page>
         <TouchableHighlight
           onPress={() => this.setCheck(1)}
           underlayColor="white"
@@ -118,7 +119,7 @@ export default class RadioDemo extends React.Component {
             }}
           />
         </View>
-      </View>
+      </Page>
     );
   }
 }

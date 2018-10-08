@@ -1,11 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
 import TextAreaItem from '../index';
+import Page from '../../Page';
 
 export default class TextAreaDemo extends React.Component {
   render() {
     return (
-      <View>
+      <Page style={{ backgroundColor: '#EFEEEC' }}>
         <TextAreaItem
           chooseType="acrossvertical" //accross ||vertical ||acrossvertical
           avTitle="项目名称2"
@@ -44,7 +45,7 @@ export default class TextAreaDemo extends React.Component {
           onChangeText={text => {}}
           onChangeArea={area => {}}
         />
-      </View>
+      </Page>
     );
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Button } from 'react-native';
 import Progress from '../index';
+import Page from '../../Page';
 
 export default class ProgressTest extends React.Component {
   constructor(props) {
@@ -10,27 +11,29 @@ export default class ProgressTest extends React.Component {
 
   render() {
     return (
-      <View style={styles.main}>
-        <Progress
-          ref={c => {
-            this.progressBar = c;
-          }}
-          style={{
-            marginTop: 10,
-          }}
-        />
+      <Page>
+        <View style={styles.main}>
+          <Progress
+            ref={c => {
+              this.progressBar = c;
+            }}
+            style={{
+              marginTop: 10,
+            }}
+          />
 
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Button title="减掉" onPress={this.remove} />
-          <Button title="增加" onPress={this.add} />
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Button title="减掉" onPress={this.remove} />
+            <Button title="增加" onPress={this.add} />
+          </View>
         </View>
-      </View>
+      </Page>
     );
   }
 
@@ -50,5 +53,6 @@ export default class ProgressTest extends React.Component {
 const styles = StyleSheet.create({
   main: {
     flex: 1,
+    backgroundColor: '#f5f5f5',
   },
 });
