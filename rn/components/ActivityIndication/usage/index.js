@@ -28,15 +28,40 @@ export default class ActiveDemo extends React.Component {
     return (
       <Page>
         <Label type="default" size="xl" text="基本" style={{ margin: 20 }} />
-        <Label type="default" size="md" text="Without text" style={{ marginStart: 20, marginBottom: 10 }} />
+        <Label
+          type="default"
+          size="md"
+          text="Without text"
+          style={{ marginStart: 20, marginBottom: 10 }}
+        />
         <ActivityIndication />
-        <Label type="default" size="md" text="With text" style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }} />
+        <Label
+          type="default"
+          size="md"
+          text="With text"
+          style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }}
+        />
         <ActivityIndication text="正在加载" />
-        <Label type="default" size="md" text="With large size" style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }} />
+        <Label
+          type="default"
+          size="md"
+          text="With large size"
+          style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }}
+        />
         <ActivityIndication size="large" />
-        <Label type="default" size="md" text="With large size and custom side and text" style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }} />
+        <Label
+          type="default"
+          size="md"
+          text="With large size and custom side and text"
+          style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }}
+        />
         <ActivityIndication text="正在加载" size="large" side="column" />
-        <Label type="default" size="md" text="With toast" style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }} />
+        <Label
+          type="default"
+          size="md"
+          text="With toast"
+          style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }}
+        />
         <Button
           type="normal"
           size="big"
