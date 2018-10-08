@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View, ScrollView, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Slider from '..';
 import Page from '../../Page';
+import Label from '../../Label';
 
 export default class SliderDemo extends React.Component {
   constructor(props) {
@@ -26,59 +27,48 @@ export default class SliderDemo extends React.Component {
 
   render() {
     return (
-      <Page style={{ marginStart: 5, marginEnd: 5 }}>
-        <View style={{ marginTop: 5 }}>
-          <Text>Default settings</Text>
+      <Page style={{ paddingStart: 5, paddingEnd: 5 }}>
+        <Label type="default" size="xl" text="基本" style={{ margin: 20 }} />
+
+        <View style={{ marginTop: 5, marginStart: 20, marginEnd: 20 }}>
+          <Label type="default" text="Default settings" />
           <Slider />
         </View>
 
-        <View style={{ marginTop: 10 }}>
-          <Text>Default value settings</Text>
+        <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
+          <Label type="default" text="Default value settings" />
           <Slider showValue max={100} step={1} />
         </View>
 
-        <View style={{ marginTop: 10 }}>
-          <Text>step: 0.25</Text>
+        <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
+          <Label type="default" text="step: 0.25" />
           <Slider step={0.25} value={0.25} />
         </View>
 
-        <View style={{ marginTop: 10 }}>
-          <Text>disabled</Text>
+        <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
+          <Label type="default" text="disabled" />
           <Slider disabled defaultValue={0.25} />
         </View>
 
-        <View style={{ marginTop: 10 }}>
-          <Text>onChange value: {this.state.changingValue}</Text>
+        <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
+          <Label
+            type="default"
+            text={`onChange value: ${this.state.changingValue}`}
+          />
           <Slider
             defaultValue={0.25}
             onChange={value => this.handleChange(value)}
           />
         </View>
 
-        <View style={{ marginTop: 10 }}>
-          <Text>onAfterChange value: {this.state.changedValue}</Text>
+        <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
+          <Label
+            type="default"
+            text={`onAfterChange value: ${this.state.changedValue}`}
+          />
           <Slider
             defaultValue={0.15}
             onAfterChange={value => this.onAfterChange(value)}
-          />
-        </View>
-
-        <View style={{ marginTop: 10 }}>
-          <Text>custom color: </Text>
-          <Slider
-            defaultValue={0.15}
-            minimumTrackTintColor="red"
-            maximumTrackTintColor="blue"
-          />
-        </View>
-
-        <View style={{ marginTop: 10 }}>
-          <Text>custom thumb: </Text>
-          <Slider
-            defaultValue={0.15}
-            minimumTrackTintColor="red"
-            maximumTrackTintColor="blue"
-            thumbStyle={styles.thumb}
           />
         </View>
       </Page>
