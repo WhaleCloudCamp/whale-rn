@@ -13,6 +13,7 @@ export default class NavBarTest extends React.Component {
             style={{ backgroundColor: '#0C83FF' }} //主样式
             styleRightText={{ color: 'white' }} //右文本样式
             styleTitle={{ color: 'white' }} //标题样式
+            isShowBk //是否显示返回键
             isShowDel //是否显示左边第二个图标
             isShowFirstRightIcon //是否显示右边第一个图标
             isShowLastRightIcon //是否显示右边第二个图标
@@ -52,6 +53,7 @@ export default class NavBarTest extends React.Component {
             style={{ backgroundColor: '#1E90FF', marginTop: 10 }} //主样式
             styleTitle={{ color: 'white' }} //标题样式
             isShowFirstRightIcon //是否显示右边第一个图标
+            isShowBk //是否显示返回键
             onLeftItemPress={
               //返回点击事件
               () => {
@@ -104,6 +106,7 @@ export default class NavBarTest extends React.Component {
             styleRightText={{ color: 'black' }} //右文本样式
             styleTitle={{ color: 'black' }} //标题样式
             rightText="文本" //右文本
+            isShowBk //是否显示返回键
             isShowRightText //是否显示右边文本
             imgBackIcon={require('../../../icons/arrow-back.png')}
             onLeftItemPress={
