@@ -19,6 +19,7 @@ export default class NavBar extends React.Component {
     onRightFirstItemPress: PropTypes.func,
     onRightLastItemPress: PropTypes.func,
     onRightTextPress: PropTypes.func,
+    isShowBk: PropTypes.bool,
     isShowDel: PropTypes.bool,
     isShowFirstRightIcon: PropTypes.bool,
     isShowLastRightIcon: PropTypes.bool,
@@ -29,6 +30,7 @@ export default class NavBar extends React.Component {
   static defaultProps = {
     title: '标题', //当前标题
     rightText: '提交', //右边文本
+    isShowBk: false, // //左边删除按钮是否展示
     isShowDel: false, // //左边删除按钮是否展示
     isShowFirstRightIcon: false, // //右边第一个视图是否展示
     isShowLastRightIcon: false, // //右边第二个视图是否展示
@@ -50,17 +52,19 @@ export default class NavBar extends React.Component {
         </Text>
 
         <View style={stytles.leftView}>
-          <TouchableHighlight
-            style={stytles.touch}
-            activeOpacity={0.5}
-            underlayColor="transparent"
-            onPress={this.props.onLeftItemPress}
-          >
-            <Image
-              source={this.props.imgBackIcon || imgBackIcon}
-              style={[this.stytlesImgBack]}
-            />
-          </TouchableHighlight>
+          {this.props.isShowBk ? (
+            <TouchableHighlight
+              style={stytles.touch}
+              activeOpacity={0.5}
+              underlayColor="transparent"
+              onPress={this.props.onLeftItemPress}
+            >
+              <Image
+                source={this.props.imgBackIcon || imgBackIcon}
+                style={[this.stytlesImgBack]}
+              />
+            </TouchableHighlight>
+          ) : null}
 
           {this.props.isShowDel ? (
             <TouchableHighlight
