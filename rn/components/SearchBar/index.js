@@ -118,7 +118,6 @@ export default class SearchBar extends React.Component {
         height: 200,
         textAlign: 'center',
       });
-
     });
   }
 
