@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import CheckBox from '../index';
+import Page from '../../Page';
 
 export default class CheckBoxDemo extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <Page>
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <CheckBox
             stytles={{ margin: 10 }}
@@ -58,7 +59,7 @@ export default class CheckBoxDemo extends React.Component {
           />
           <Text> （disable）下的选中状态</Text>
         </View>
-      </View>
+      </Page>
     );
   }
 }

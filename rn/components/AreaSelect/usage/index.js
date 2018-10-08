@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import AreaSelect from '../index';
 import ModalBasics from '../../ModalBasics';
 import areaDataSouce from '../CityCode';
+import Page from '../../Page';
 
 export default class AreaSelectDemo extends React.Component {
   constructor(props) {
@@ -12,9 +13,9 @@ export default class AreaSelectDemo extends React.Component {
 
   render() {
     return (
-      <View>
+      <Page>
         <Text onPress={() => this.getView('bottom', false)}> 33333333</Text>
-      </View>
+      </Page>
     );
   }
 
