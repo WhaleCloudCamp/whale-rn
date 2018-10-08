@@ -10,6 +10,7 @@ NavBar组件,用于展示头部标题栏，支持自定义图标及样式
 |---|---|---|---|
 |title|String|标题|标题|
 |rightText|String|右文本|右文本|
+|isShowBk|bool|false|是否显示返回键|
 |isShowDel|bool|false|是否显示左边第二个图标|
 |isShowRightText|bool|false|是否显示右文本|
 |isShowFirstRightIcon|bool|false|是否显示右边第一个图标
