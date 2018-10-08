@@ -10,6 +10,7 @@ import {
 import PropTypes from 'prop-types';
 import ImagePickerStyles from './styles';
 import ImageRoll from './ImageRoll';
+import { Toast } from '../Toast';
 
 const Styles = StyleSheet.create(ImagePickerStyles);
 
@@ -22,12 +23,14 @@ export default class ImagePicker extends Component {
     onChange: PropTypes.func,
     onAddImagePress: PropTypes.func,
     onFail: PropTypes.func,
+    maximum: PropTypes.number,
   };
 
   static defaultProps = {
     styles: {},
     files: [],
     selectable: true,
+    maximum: 9,
   };
 
   constructor(props) {
@@ -112,29 +115,39 @@ export default class ImagePicker extends Component {
     }
   };
 
-  addImage(imageObj) {
-    if (!imageObj.url) {
-      imageObj.url = imageObj.uri;
-      delete imageObj.uri;
-    }
+  onFinished = selectedImages => {
+    selectedImages.forEach((item, index) => {
+      if (!item.url) {
+        item.url = item.uri;
+        delete item.uri;
+      }
+    });
     const { files = [] } = this.props;
-    const newImages = files.concat(imageObj);
+    const newImages = files.concat(selectedImages);
     if (this.props.onChange) {
       this.props.onChange(newImages, 'add');
     }
-  }
+  };
 
-  renderImagePicker = () => (
-    <ImageRoll onCancel={this.hideImageRoll} onSelected={this.addImage} />
-  );
+  renderImagePicker = () => {
+    const { maximum, files = [] } = this.props;
+    return (
+      <ImageRoll
+        maximum={maximum - files.length}
+        onCancel={this.hideImageRoll}
+        onFinished={this.onFinished}
+      />
+    );
+  };
 
   render() {
-    const { selectable, styles } = this.props;
+    const { selectable, styles, maximum, files = [] } = this.props;
     const { visible } = this.state;
+    const left = maximum - files.length;
     return (
       <View style={[Styles.container, styles.container]}>
         {this.renderFilesView()}
-        {selectable && this.renderAddButton()}
+        {selectable && left > 0 && this.renderAddButton()}
         {visible && this.renderImagePicker()}
       </View>
     );

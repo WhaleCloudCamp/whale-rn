@@ -27,11 +27,21 @@ export default class ImagePickerDemo extends Component {
     },
   };
 
+  handleFileChange = files => {
+    this.setState({
+      files,
+    });
+  };
+
   render() {
     const { files } = this.state;
     return (
       <Page>
-        <ImagePicker styles={this.imagePickerStyles} files={files} />
+        <ImagePicker
+          styles={this.imagePickerStyles}
+          files={files}
+          onChange={this.handleFileChange}
+        />
       </Page>
     );
   }
