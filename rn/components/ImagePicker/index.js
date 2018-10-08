@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import ImagePickerStyles from './styles';
+import ImageRoll from './ImageRoll';
 
 const Styles = StyleSheet.create(ImagePickerStyles);
 
@@ -19,6 +20,8 @@ export default class ImagePicker extends Component {
     selectable: PropTypes.bool,
     onImagePress: PropTypes.func,
     onChange: PropTypes.func,
+    onAddImagePress: PropTypes.func,
+    onFail: PropTypes.func,
   };
 
   static defaultProps = {
@@ -60,7 +63,7 @@ export default class ImagePicker extends Component {
           activeOpacity={0.6}
         >
           <Image
-            source={item.url}
+            source={{ uri: item.url }}
             style={[Styles.image, Styles.size, styles.size, styles.image]}
           />
         </TouchableOpacity>
@@ -76,26 +79,60 @@ export default class ImagePicker extends Component {
     return filesView;
   };
 
+  showPicker = () => {
+    const { onAddImagePress } = this.props;
+    if (onAddImagePress) {
+      onAddImagePress();
+      return;
+    }
+    this.setState({
+      visible: true,
+    });
+  };
+
   renderAddButton = () => {
     const { styles } = this.props;
     return (
-      <TouchableOpacity style={[Styles.size, styles.size]} activeOpacity={0.6}>
-        <Text>+</Text>
+      <TouchableOpacity
+        style={[Styles.size, Styles.plusWrap, styles.size, styles.plusWrap]}
+        activeOpacity={0.6}
+        onPress={this.showPicker}
+      >
+        <Text style={[Styles.plusText, styles.plusText]}>+</Text>
       </TouchableOpacity>
     );
   };
 
+  hideImageRoll = () => {
+    this.setState({
+      visible: false,
+    });
+    if (this.props.onFail) {
+      this.props.onFail('cancel image selection');
+    }
+  };
+
+  addImage(imageObj) {
+    if (!imageObj.url) {
+      imageObj.url = imageObj.uri;
+      delete imageObj.uri;
+    }
+    const { files = [] } = this.props;
+    const newImages = files.concat(imageObj);
+    if (this.props.onChange) {
+      this.props.onChange(newImages, 'add');
+    }
+  }
+
   renderImagePicker = () => (
-    <Modal visible>
-      <View />
-    </Modal>
+    <ImageRoll onCancel={this.hideImageRoll} onSelected={this.addImage} />
   );
 
   render() {
-    const { selectable } = this.props;
+    const { selectable, styles } = this.props;
     const { visible } = this.state;
     return (
-      <View style={Styles.container}>
+      <View style={[Styles.container, styles.container]}>
         {this.renderFilesView()}
         {selectable && this.renderAddButton()}
         {visible && this.renderImagePicker()}

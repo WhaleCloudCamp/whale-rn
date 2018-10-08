@@ -38,4 +38,17 @@ export default {
     marginTop: -8,
     fontWeight: '300',
   },
+  plusWrap: {
+    borderRadius: themes.radius_sm,
+    borderWidth: 1,
+    borderColor: themes.border_color_base,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  plusText: {
+    fontSize: 64,
+    backgroundColor: 'transparent',
+    fontWeight: '100',
+    color: themes.color_text_caption,
+  },
 };
