@@ -1,6 +1,5 @@
 import ActionSheet from '../components/ActionSheet/usage'
 import ActivityIndication from '../components/ActivityIndication/usage'
-import Alert from '../components/Alert/usage'
 import AreaSelect from '../components/AreaSelect/usage';
 import Badge from '../components/Badge/usage';
 import Button from '../components/Button/usage';
@@ -15,7 +14,6 @@ import NavBar from '../components/NavBar/usage';
 import NoticeBar from '../components/NoticeBar/usage';
 import Pagination from '../components/Pagination/usage'
 import Progress from '../components/Progress/usage'
-import Prompt from '../components/Prompt/usage';
 import Radio from '../components/Radio/usage';
 import SearchBar from '../components/SearchBar/usage';
 import Slider from '../components/Slider/usage'
@@ -32,7 +30,6 @@ export default routes = {
     Demo: { screen: Demo },
     ActionSheet: { screen: ActionSheet },
     ActivityIndication: { screen: ActivityIndication },
-    Alert: { screen: Alert },
     AreaSelect: { screen: AreaSelect },
     Badge: { screen: Badge },
     Button: { screen: Button },
@@ -47,7 +44,6 @@ export default routes = {
     NoticeBar: {screen:NoticeBar},
     Pagination: { screen: Pagination },
     Progress: { screen: Progress },
-    Prompt: { screen: Prompt },
     Radio: { screen: Radio },
     SearchBar: { screen: SearchBar },
     Slider: {screen:Slider},

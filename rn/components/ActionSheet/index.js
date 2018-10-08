@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import ActionSheetView from './ActionSheetView';
-import { ModalBasics } from '..';
+import ModalBasics from '../ModalBasics';
 import Themes from '../../themes';
 import PopupView from './PopupView';
 import ShareActionSheetView from './ShareActionSheetView';

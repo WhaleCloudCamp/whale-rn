@@ -1,8 +1,8 @@
 {
   "name": "whale-rn",
-  "version": "0.0.1",
+  "version": "0.0.1-beta02",
   "description": "yes! this is a react-native components",
-  "main": "index.js",
+  "main": "rn/components/index.js",
   "directories": {
     "components": "components"
   },
@@ -32,7 +32,9 @@
     "react-native-component"
   ],
   "files": [
-    "components"
+    "rn/components",
+    "rn/icons",
+    "rn/themes"
   ],
   "authors": [
     "xiaohuoni <448627663@qq.com> (https://github.com/xiaohuoni)"
@@ -64,6 +66,8 @@
     "metro-react-native-babel-preset": "^0.45.0",
     "path": "^0.12.7",
     "prettier": "^1.14.2",
+    "react": "16.5.0",
+    "react-native": "0.57.0",
     "react-test-renderer": "16.5.0",
     "schedule": "0.4.0",
     "through2": "^2.0.3",
@@ -72,11 +76,10 @@
     "vinyl-fs": "^3.0.3"
   },
   "dependencies": {
+    "events": "^3.0.0",
     "prop-types": "^15.6.2",
-    "react": "16.5.0",
     "react-art": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-native": "0.57.0",
     "react-native-web": "^0.9.0",
     "react-navigation": "^2.14.0"
   },

@@ -3,7 +3,7 @@ import ActivityIndication from '..';
 import Button from '../../Button';
 import Label from '../../Label';
 import Page from '../../Page';
-import { ModalBasics } from '../..';
+import ModalBasics from '../../ModalBasics';
 
 export default class ActiveDemo extends React.Component {
   showModal(check) {

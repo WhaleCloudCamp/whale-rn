@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, Alert } from 'react-native';
-import { ModalBasics, ModalView } from '..';
+import ModalBasics from '../ModalBasics';
+import ModalView from '../ModalView';
 
 class Toast {
   static toastSucess(time, text, side) {

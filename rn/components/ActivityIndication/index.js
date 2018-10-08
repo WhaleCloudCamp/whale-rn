@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
-import { ModalView } from '..';
+import ModalView from '../ModalView';
 
 export default class ActivityIndication extends React.Component {
   static propTypes = {

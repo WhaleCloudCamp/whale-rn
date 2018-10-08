@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Dimensions, View } from 'react-native';
-import { ModalBasics, ModalView } from '../index';
+import ModalBasics from '../ModalBasics';
+import ModalView from '../ModalView';
 import PromptContent from './PromptContent';
 
 export default function whalePrompt(

@@ -16,7 +16,6 @@ export default class Demo extends Component {
         dataSource: [
             { title: 'ActionSheet', routeName: 'ActionSheet'},
             { title: 'ActivityIndication', routeName: 'ActivityIndication' },
-            { title: 'Alert', routeName: 'Alert' },
             { title: 'AreaSelect', routeName: 'AreaSelect' },
             { title: 'Badge', routeName: 'Badge' },
             { title: 'Button', routeName:'Button'},
@@ -32,7 +31,6 @@ export default class Demo extends Component {
             { title: 'Pagination', routeName: 'Pagination' },
             { title: 'Popover', routeName: 'Popover' },
             { title: 'Progress', routeName:'Progress'},
-            { title: 'Prompt', routeName:'Prompt'},
             { title: 'Radio', routeName:'Radio'},
             { title: 'SearchBar', routeName:'SearchBar'},
             { title: 'Slider', routeName: 'Slider' },

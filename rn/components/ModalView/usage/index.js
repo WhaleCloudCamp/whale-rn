@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { ModalBasics, ModalView } from '../../index';
+import ModalBasics from '../../ModalBasics';
+import ModalView from '../index';
 
 export default class ModalViewExample extends Component {
   showModal(modal, text, modalOpacity = 0.7) {

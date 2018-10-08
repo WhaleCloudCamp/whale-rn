@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { ModalBasics, ModalView } from '../../index';
 import Prompt from '../index';
-import FooterButtons from '../../FooterButtons';
 
 export default class PromptExample extends Component {
   showModal(text, content) {

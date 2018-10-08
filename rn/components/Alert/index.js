@@ -1,5 +1,6 @@
 import React from 'react';
-import { ModalBasics, ModalView } from '../index';
+import ModalBasics from '../ModalBasics';
+import ModalView from '../ModalView';
 import AlertContent from './AlertContent';
 
 export default function whaleAlert(title, content, actions) {
