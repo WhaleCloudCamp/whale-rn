@@ -41,6 +41,7 @@ export default class ImagePickerDemo extends Component {
           styles={this.imagePickerStyles}
           files={files}
           onChange={this.handleFileChange}
+          maximum={6}
         />
       </Page>
     );
