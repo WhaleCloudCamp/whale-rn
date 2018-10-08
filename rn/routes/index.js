@@ -7,9 +7,7 @@ import Button from '../components/Button/usage';
 import CheckBox from '../components/CheckBox/usage'
 import Input from '../components/Input/usage'
 import InputItem from '../components/InputItem/usage';
-import Item from '../components/Item/usage';
-import ItemAvatar from '../components/ItemAvatar/usage';
-import ItemDivider from '../components/ItemDivider/usage'
+import List from '../components/List/usage';
 import Label from '../components/Label/usage'
 import MenuPicker from '../components/MenuPicker/usage';
 import Modal from '../components/Modal/usage';
@@ -43,9 +41,7 @@ export default routes = {
     CheckBox: {screen:CheckBox},
     Input: { screen: Input },
     InputItem: { screen: InputItem },
-    Item: { screen: Item },
-    ItemAvatar: { screen: ItemAvatar },
-    ItemDivider: { screen: ItemDivider },
+    List: { screen: List },
     Label: {screen:Label},
     MenuPicker: {screen:MenuPicker},
     Modal: { screen: Modal },

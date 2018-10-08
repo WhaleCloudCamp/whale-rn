@@ -33,10 +33,12 @@ export default class ItemBasics extends Component {
       PropTypes.number,
     ]),
     itemStyle: ViewPropTypes.style,
+    onClick: PropTypes.func,
   };
 
   static defaultProps = {
     note: '',
+    onClick: () => {},
   };
 
   renderLeftIcon(leftIcon) {
@@ -63,6 +65,7 @@ export default class ItemBasics extends Component {
       note,
       details,
       children,
+      onClick,
       ...other
     } = this.props;
     const leftIconCont = this.renderLeftIcon(leftIcon);
@@ -78,7 +81,12 @@ export default class ItemBasics extends Component {
       justifyContent: 'space-between',
     };
     return (
-      <TouchableOpacity {...other}>
+      <TouchableOpacity
+        {...other}
+        onPress={e => {
+          onClick && onClick(e);
+        }}
+      >
         <View style={contentStyle}>
           {leftIconCont}
           {titleCont}
