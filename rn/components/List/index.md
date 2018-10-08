@@ -16,3 +16,6 @@ import List from "whale-rn";
 <Text>2</Text>
 </List>
 ```
+
+
+inset时 ItemDivider失效

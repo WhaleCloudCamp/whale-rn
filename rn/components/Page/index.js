@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ViewPropTypes } from 'react-native';
+import { View, ViewPropTypes ,ScrollView} from 'react-native';
 import Theme from '../../themes';
 
 export default class Page extends Component {
@@ -18,6 +18,7 @@ export default class Page extends Component {
         flex: 1,
         height: '100%',
         backgroundColor: Theme.fill_base,
+        overflow: 'scroll'
       },
     ].concat(style);
     return { style, ...others };
