@@ -48,7 +48,7 @@ export default class ModalExample extends Component {
       >
         <View
           style={{
-            backgroundColor: '#00FF00',
+            backgroundColor: '#FFF',
             padding: 40,
             borderRadius: 15,
             alignItems: 'center',
@@ -79,7 +79,6 @@ export default class ModalExample extends Component {
       >
         <View
           style={{
-            backgroundColor: 'rgba(0,0,255,0.7)',
             minWidth: 300,
             minHeight: 260,
             justifyContent: 'center',
@@ -129,7 +128,7 @@ export default class ModalExample extends Component {
         />
         <ScrollView>
           <Button
-            style={{ marginTop: 10, backgroundColor: '#FFF' }}
+            style={{ marginTop: 10 }}
             type="normal"
             size="big"
             title="警告弹窗(1)"

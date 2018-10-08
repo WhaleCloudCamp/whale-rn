@@ -72,7 +72,7 @@ export default class ModalDrawerView extends ModalView {
     style = [].concat(style).concat(sideStyle);
     containerStyle = [
       {
-        backgroundColor: 'rgba(0, 0, 255, 1)',
+        backgroundColor: 'rgba(255, 255, 255, 1)',
       },
     ]
       .concat(containerStyle)
