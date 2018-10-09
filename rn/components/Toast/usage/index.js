@@ -22,11 +22,11 @@ export default class ToastExample extends Component {
     } else if (check === 7) {
       Toast.toastWarn('short');
     } else if (check === 8) {
-      Toast.toastWarn('short', '一个长长长长长长长长长长长长长长长警告');
+      Toast.toastWarn('short', '这是一个超过一行最大长度字符数量的警告');
     } else if (check === 9) {
       Toast.toastText(
         'short',
-        '太长怎么办太长怎么办太长怎么办太长怎么办',
+        '这是一个超过一行最大长度字符数量的文本',
         side
       );
     }
@@ -40,7 +40,7 @@ export default class ToastExample extends Component {
           type="normal"
           size="big"
           title="Text Only"
-          onClick={() => this.showModal(5)}
+          onClick={() => this.showModal(1)}
         />
         <Button
           style={{ marginTop: 10 }}
