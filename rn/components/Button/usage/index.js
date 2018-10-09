@@ -9,6 +9,9 @@ export default () => (
       type="normal"
       size="big"
       title="主按钮 Normal"
+      onClick={() => {
+        console.log(123);
+      }}
     />
     <Button
       style={{ marginTop: 10 }}
