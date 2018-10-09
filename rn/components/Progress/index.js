@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   },
   precent: {
     color: '#0C83FF',
-    width: 25,
+    width: 30,
     fontSize: 10,
     marginRight: 10,
   },

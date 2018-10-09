@@ -29,6 +29,7 @@ export default class AreaAVItem extends React.Component {
   constructor(props) {
     super(props);
     this.dataSouce = areaDataSouce.CityZoneCode.China;
+    this.isCalled = false;
     this.state = {
       inputText: '',
       areaTitle: '',
@@ -76,6 +77,18 @@ export default class AreaAVItem extends React.Component {
     return ModalBasics.show(modalVIew);
   }
 
+  HandlerOnceTap = (functionTobeCalled, interval = 3000) => {
+    if (!this.isCalled) {
+      this.isCalled = true;
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        this.isCalled = false;
+      }, interval);
+      return functionTobeCalled();
+    }
+    return null;
+  };
+
   render() {
     return (
       <View style={[styles.main, this.props.styleAVMain]}>
@@ -88,7 +101,10 @@ export default class AreaAVItem extends React.Component {
             activeOpacity={0.5}
             style={{ flex: 1 }}
             underlayColor="white"
-            onPress={() => this.getView('bottom', false)}
+            onPress={
+              // () => this.getView('bottom', false)
+              () => this.HandlerOnceTap(() => this.getView('bottom', false))
+            }
           >
             <View
               style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}
