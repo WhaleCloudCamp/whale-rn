@@ -7,24 +7,17 @@ import Page from '../../Page';
 export default class ToastExample extends Component {
   showModal(check, side) {
     if (check === 1) {
-      Toast.toastText('short', '这是一个纯文本Toast', side);
-    } else if (check === 2) {
-      Toast.toastSucess('long');
+      Toast.toastText('这是一个纯文本Toast', 'short', side);
     } else if (check === 3) {
-      Toast.toastSucess('short');
-    } else if (check === 4) {
-      Toast.toastSucess(5000);
-    } else if (check === 5) {
-      Toast.toastSucess('none');
-      setTimeout(() => Toast.close(), 5000);
+      Toast.toastSucess('成功', 'short');
     } else if (check === 6) {
-      Toast.toastFail('short');
+      Toast.toastFail('失败', 'short');
     } else if (check === 7) {
-      Toast.toastWarn('short');
+      Toast.toastWarn('警告', 'short');
     } else if (check === 8) {
-      Toast.toastWarn('short', '这是一个超过一行最大长度字符数量的警告');
+      Toast.toastWarn('这是一个超过一行最大长度字符数量的警告', 'short');
     } else if (check === 9) {
-      Toast.toastText('short', '这是一个超过一行最大长度字符数量的文本', side);
+      Toast.toastText('这是一个超过一行最大长度字符数量的文本', 'short', side);
     }
   }
 

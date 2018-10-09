@@ -8,13 +8,13 @@ import { Toast } from './Toast';
 
 ······
 
-Toast.toastSuccess(time, text, side);
-Toast.toastFail(time, text, side);
-Toast.toastWarn(time, text, side);
-Toast.toastText(time, text, side);
+Toast.toastSuccess(text, time, side);
+Toast.toastFail(text, time, side);
+Toast.toastWarn(text, time, side);
+Toast.toastText(text, time, side);
 
 ······
-
+// 仅当time参数为none或0时，close函数有效
 Toast.close();
 ```
 

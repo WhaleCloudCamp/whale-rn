@@ -4,7 +4,7 @@ import ModalBasics from '../ModalBasics';
 import ModalView from '../ModalView';
 
 export default class Toast {
-  static toastSucess(time, text, side) {
+  static toastSucess(text, time, side) {
     this.text = '成功';
     this.time = 2000;
     this.success = require('../../icons/toast_right.png');
@@ -16,8 +16,6 @@ export default class Toast {
     } else if (time === 'short') {
       this.time = 2000;
     } else if (time === 'none') {
-      this.time = 0;
-    } else {
       this.time = 0;
     }
     if (typeof text === 'string' && text !== '') {
@@ -56,7 +54,7 @@ export default class Toast {
     return ModalBasics.show(modalView);
   }
 
-  static toastFail(time, text, side) {
+  static toastFail(text, time, side) {
     this.text = '失败';
     this.time = 2000;
     this.fail = require('../../icons/toast_error.png');
@@ -68,8 +66,6 @@ export default class Toast {
     } else if (time === 'short') {
       this.time = 2000;
     } else if (time === 'none') {
-      this.time = 0;
-    } else {
       this.time = 0;
     }
     if (typeof text === 'string' && text !== '') {
@@ -108,7 +104,7 @@ export default class Toast {
     return ModalBasics.show(modalView);
   }
 
-  static toastWarn(time, text, side) {
+  static toastWarn(text, time, side) {
     this.text = '警告';
     this.time = 2000;
     this.warn = require('../../icons/toast_warning.png');
@@ -120,8 +116,6 @@ export default class Toast {
     } else if (time === 'short') {
       this.time = 2000;
     } else if (time === 'none') {
-      this.time = 0;
-    } else {
       this.time = 0;
     }
     if (typeof text === 'string' && text !== '') {
@@ -160,7 +154,7 @@ export default class Toast {
     return ModalBasics.show(modalView);
   }
 
-  static toastText(time, text, side) {
+  static toastText(text, time, side) {
     this.text = '提示';
     this.time = 2000;
 
@@ -171,8 +165,6 @@ export default class Toast {
     } else if (time === 'short') {
       this.time = 2000;
     } else if (time === 'none') {
-      this.time = 0;
-    } else {
       this.time = 0;
     }
     if (typeof text === 'string' && text !== '') {
