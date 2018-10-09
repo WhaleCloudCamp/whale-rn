@@ -54,3 +54,8 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+
+
+# umi
+.umi
+.umi-production

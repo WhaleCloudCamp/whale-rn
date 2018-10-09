@@ -7,6 +7,6 @@
         "libraryName": "whale-rn",
         "libraryDirectory": "./rn/index.js"
       }
-    ]
+    ],"react-native-web"
   ]
 }

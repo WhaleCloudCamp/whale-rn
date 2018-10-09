@@ -25,4 +25,4 @@ ModalBasics.remove(modalKey);
 在按钮被触发时，会调用``onPress``事件，若无定义该事件，则默认调用关闭弹出窗。
 
 
-![12](../../sketch/alert.png)
+<!-- ![12](../../sketch/alert.png) -->
