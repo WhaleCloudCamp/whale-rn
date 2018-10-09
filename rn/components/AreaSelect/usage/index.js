@@ -8,16 +8,36 @@ import Page from '../../Page';
 export default class AreaSelectDemo extends React.Component {
   constructor(props) {
     super(props);
+    this.isCalled = false;
     this.dataSouce = areaDataSouce.CityZoneCode.China;
   }
 
   render() {
     return (
       <Page>
-        <Text onPress={() => this.getView('bottom', false)}> 33333333</Text>
+        <Text
+          onPress={() =>
+            this.HandlerOnceTap(() => this.getView('bottom', false))
+          }
+        >
+          {' '}
+          33333333
+        </Text>
       </Page>
     );
   }
+
+  HandlerOnceTap = (functionTobeCalled, interval = 3000) => {
+    if (!this.isCalled) {
+      this.isCalled = true;
+      clearTimeout(this.timer);
+      this.timer = setTimeout(() => {
+        this.isCalled = false;
+      }, interval);
+      return functionTobeCalled();
+    }
+    return null;
+  };
 
   getView(side, modal, modalOpacity = 0.7) {
     const modalVIew = (
