@@ -7,6 +7,7 @@ Progress组件,可用于展示当前进度百分比
 |progressColor|String|#0084FF|进度条颜色|
 |progressAniDuration|number|300|进度条动画时长|
 |progress|number|300|当前进度|
+|isShowPercent|bool|false|是否显示百分比|
 | style | 同View.style |  | 主样式
 
 

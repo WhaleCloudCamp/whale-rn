@@ -21,6 +21,15 @@ export default class ProgressTest extends React.Component {
               marginTop: 10,
             }}
           />
+          <Progress
+            ref={c => {
+              this.progressBar1 = c;
+            }}
+            isShowPercent
+            style={{
+              marginTop: 10,
+            }}
+          />
 
           <View
             style={{
@@ -41,12 +50,16 @@ export default class ProgressTest extends React.Component {
     const self = this;
     self.currProgress += 1;
     self.progressBar.progress = self.currProgress / 10;
+
+    self.progressBar1.progress = self.currProgress / 10;
   };
 
   remove = () => {
     const self = this;
     self.currProgress -= 1;
     self.progressBar.progress = self.currProgress / 10;
+
+    self.progressBar1.progress = self.currProgress / 10;
   };
 }
 
