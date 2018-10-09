@@ -24,11 +24,7 @@ export default class ToastExample extends Component {
     } else if (check === 8) {
       Toast.toastWarn('short', '这是一个超过一行最大长度字符数量的警告');
     } else if (check === 9) {
-      Toast.toastText(
-        'short',
-        '这是一个超过一行最大长度字符数量的文本',
-        side
-      );
+      Toast.toastText('short', '这是一个超过一行最大长度字符数量的文本', side);
     }
   }
 
