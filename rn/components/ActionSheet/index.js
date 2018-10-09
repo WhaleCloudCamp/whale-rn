@@ -42,11 +42,15 @@ function showActionSheet(params) {
 }
 
 function showShareActionSheet(params) {
-  const { shareItems, toolItems, onCancelPress } = params;
+  const { shareItems = [], toolItems = [], onCancelPress, callback } = params;
   let modalView = null;
   const cancel = () => {
     dismissModal(modalView);
     onCancelPress && onCancelPress();
+  };
+  const callbackWrap = (item, index, items) => {
+    dismissModal(modalView);
+    callback && callback(item, index, items);
   };
   let element = (
     <View style={{ flex: 1 }}>
@@ -56,6 +60,7 @@ function showShareActionSheet(params) {
           shareItems={shareItems}
           toolItems={toolItems}
           onCancelPress={cancel}
+          callback={callbackWrap}
         />
       </PopupView>
     </View>

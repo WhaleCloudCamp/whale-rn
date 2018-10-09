@@ -15,6 +15,7 @@ export default class ShareActionSheetView extends Component {
     shareItems: PropTypes.arrayOf(PropTypes.object),
     toolItems: PropTypes.arrayOf(PropTypes.object),
     onCancelPress: PropTypes.func,
+    callback: PropTypes.func,
   };
 
   onCancelPress = () => {
@@ -22,12 +23,18 @@ export default class ShareActionSheetView extends Component {
     onCancelPress && onCancelPress();
   };
 
+  onItemPress = (item, index, items) => {
+    const { callback } = this.props;
+    callback && callback(item, index, items);
+  };
+
   renderItem = (title, image, onPress) => (
     <ListItem title={title} image={image} onPress={onPress} />
   );
 
   renderShareItem = ({ item, index }) => {
-    const { title, image, onPress } = item;
+    const { title, image } = item;
+    const onPress = () => this.onItemPress(item, index, this.props.shareItems);
     return this.renderItem(title, image, onPress);
   };
 
@@ -48,7 +55,8 @@ export default class ShareActionSheetView extends Component {
   };
 
   renderToolItem = ({ item, index }) => {
-    const { title, image, onPress } = item;
+    const { title, image } = item;
+    const onPress = () => this.onItemPress(item, index, this.props.toolItems);
     return this.renderItem(title, image, onPress);
   };
 
