@@ -12,8 +12,8 @@ import Themes from '../../themes';
 
 export default class Button extends React.Component {
   static propTypes = {
-    type: PropTypes.string.isRequired,
-    size: PropTypes.string.isRequired,
+    type: PropTypes.string,
+    size: PropTypes.string,
     title: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,

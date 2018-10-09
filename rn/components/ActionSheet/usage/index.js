@@ -7,6 +7,8 @@ import {
   StyleSheet,
 } from 'react-native';
 import ActionSheet from '..';
+import Button from '../../Button';
+import Page from '../../Page';
 
 const ShareItems = [
   { title: '钉钉好友', image: require('../assets/icon-ding-ding.png') },
@@ -27,26 +29,17 @@ export default class ActionSheetDemo extends Component {
     super(props);
     this.state = {
       selectedItem: null,
+      selectedShareItem: null,
     };
   }
 
   button = (text, onPress) => (
-    <TouchableOpacity
-      style={{
-        borderColor: 'blue',
-        borderWidth: 1,
-        padding: 8,
-        borderRadius: 8,
-      }}
-      onPress={onPress}
-    >
-      <Text>{text}</Text>
-    </TouchableOpacity>
+    <Button style={{ width: '80%' }} title={text} onClick={onPress} />
   );
 
   showActionSheet = () => {
     const options = [];
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 6; i++) {
       options.push(`选项${i + 1}`);
     }
     ActionSheet.showActionSheet({
@@ -64,17 +57,23 @@ export default class ActionSheetDemo extends Component {
     ActionSheet.showShareActionSheet({
       shareItems: ShareItems,
       toolItems: ToolItems,
+      callback: item => this.setState({ selectedShareItem: item }),
     });
   };
 
   render() {
-    const { selectedItem } = this.state;
+    const { selectedItem, selectedShareItem } = this.state;
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        {this.button('action sheet', this.showActionSheet)}
+      <Page style={{ alignItems: 'center', justifyContent: 'center' }}>
+        {this.button('Action Sheet', this.showActionSheet)}
         <Text style={{ marginTop: 6 }}>{selectedItem}</Text>
-        {this.button('share action sheet', this.showShareActionSheet)}
-      </View>
+        <View style={{ height: 10 }} />
+        {this.button('Share', this.showShareActionSheet)}
+        <View style={{ height: 10 }} />
+        {selectedShareItem && (
+          <Text style={{ marginTop: 6 }}>{selectedShareItem.title}</Text>
+        )}
+      </Page>
     );
   }
 }
