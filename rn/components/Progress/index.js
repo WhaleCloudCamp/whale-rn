@@ -12,6 +12,7 @@ export default class Progress extends React.Component {
 
     //进度动画时长
     progressAniDuration: PropTypes.number,
+    isShowPercent: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -20,6 +21,7 @@ export default class Progress extends React.Component {
 
     //进度条动画时长
     progressAniDuration: 300,
+    isShowPercent: false,
   };
 
   // 构造
@@ -55,8 +57,9 @@ export default class Progress extends React.Component {
             }}
           />
         </View>
-
-        <Text style={styles.precent}>{this.state.progressNum}%</Text>
+        {this.props.isShowPercent ? (
+          <Text style={styles.precent}>{this.state.progressNum}%</Text>
+        ) : null}
       </View>
     );
   }
