@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, Alert } from 'react-native';
 import ModalBasics from '../ModalBasics';
 import ModalView from '../ModalView';
 
-class Toast {
+export default class Toast {
   static toastSucess(time, text, side) {
     this.text = '成功';
     this.time = 2000;
@@ -262,4 +262,4 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
 });
-export { Toast };
+// export { Toast };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Toast } from '..';
+import Toast from '..';
 import Button from '../../Button';
 import Label from '../../Label';
 import Page from '../../Page';
@@ -40,7 +40,7 @@ export default class ToastExample extends Component {
           type="normal"
           size="big"
           title="Text Only"
-          onClick={() => this.showModal(1)}
+          onClick={() => this.showModal(5)}
         />
         <Button
           style={{ marginTop: 10 }}

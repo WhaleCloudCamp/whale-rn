@@ -10,7 +10,6 @@ import {
 import PropTypes from 'prop-types';
 import ImagePickerStyles from './styles';
 import ImageRoll from './ImageRoll';
-import { Toast } from '../Toast';
 
 const Styles = StyleSheet.create(ImagePickerStyles);
 
