@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 
-import Theme from '../../themes';
+import Theme from "../../themes";
 
 export default class MenuPickerItem extends Component {
   static propTypes = {
@@ -10,16 +10,16 @@ export default class MenuPickerItem extends Component {
     title: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
-      PropTypes.number,
+      PropTypes.number
     ]),
-    selected: PropTypes.bool,
+    selected: PropTypes.bool
   };
 
   buildProps() {
     let {
       style,
       title,
-      textAlign = 'left',
+      textAlign = "left",
       accessory,
       isSub,
       selected,
@@ -36,31 +36,31 @@ export default class MenuPickerItem extends Component {
         paddingBottom: Theme.poppItemPaddingBottom,
         borderColor: Theme.poppItemSeparatorColor,
         borderBottomWidth: !isSub ? null : Theme.poppItemSeparatorWidth,
-        flexDirection: 'row',
-        alignItems: 'center',
-      },
+        flexDirection: "row",
+        alignItems: "center"
+      }
     ].concat(style);
     let imageStyle = {
       width: Theme.poppAccessoryWidth,
       height: Theme.poppAccessoryHeight,
-      tintColor: Theme.poppAccessoryCheckColor,
+      tintColor: Theme.poppAccessoryCheckColor
     };
     accessory = (
       <View style={{ paddingLeft: Theme.poppAccessoryPaddingLeft }}>
         <Image
           style={imageStyle}
-          source={selected && isSub ? require('../../icons/check.png') : null}
+          source={selected && isSub ? require("../../icons/check.png") : null}
         />
       </View>
     );
-    if (typeof title === 'string' || typeof title === 'number') {
+    if (typeof title === "string" || typeof title === "number") {
       let titleStyle = {
         textAlign,
         color: Theme.poppItemTitleColor,
         fontSize: Theme.poppItemFontSize,
-        overflow: 'hidden',
+        overflow: "hidden",
         flexGrow: 1,
-        flexShrink: 1,
+        flexShrink: 1
       };
       title = (
         <Text style={titleStyle} numberOfLines={1}>

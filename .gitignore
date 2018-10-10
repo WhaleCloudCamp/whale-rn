@@ -35,7 +35,7 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
-yarn.lock
+*.lock
 
 # BUCK
 buck-out/
@@ -58,8 +58,8 @@ buck-out/
 
 
 # umi
-*/.umi/
-*/.umi-production/
+**/.umi
+**/.umi-production/
 
 #website
 website/

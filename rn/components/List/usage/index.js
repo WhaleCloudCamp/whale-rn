@@ -11,7 +11,7 @@ export default class ListExample extends Component {
     const data = {
       disabled: true,
       leftIcon: require('../../../icons/TabBar_Friend_sel.png'),
-      title: '标题',
+      title: '标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题',
       note: '点我无效',
       details: '详情详情',
     };

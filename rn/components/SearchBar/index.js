@@ -18,7 +18,6 @@ export default class SearchBar extends React.Component {
     placeholder: PropTypes.string,
     onSubmit: PropTypes.func,
     onChange: PropTypes.func,
-    onFoucs: PropTypes.func,
     onCancel: PropTypes.func,
   };
 
@@ -129,7 +128,6 @@ export default class SearchBar extends React.Component {
       placeholder = '搜索',
       onSubmit,
       onChange,
-      onFoucs,
       onCancel,
     } = this.props;
 
@@ -166,10 +164,8 @@ export default class SearchBar extends React.Component {
           clearButtonMode="while-editing"
           onChange={onChange}
           onSubmitEditing={onSubmit}
-          onFoucs={onFoucs}
-        >
-          {value}
-        </TextInput>
+          value={value}
+        />
       </View>
     );
 
