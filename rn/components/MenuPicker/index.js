@@ -21,7 +21,7 @@ export default class MenuPicker extends ModalBasics {
     height,
     width,
     style,
-    textAlign
+    textAlign,
   }) {
     return super.show(
       <this.MenuPickerView
