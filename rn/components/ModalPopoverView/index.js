@@ -81,14 +81,12 @@ export default class ModalPopoverView extends ModalView {
             break;
         }
       }
-      popoverStyle = []
-        .concat(popoverStyle)
-        .concat({
-          position: 'absolute',
-          left: 0,
-          top: 0,
-          backgroundColor: 'rgba(0,0,0,0)',
-        });
+      popoverStyle = [].concat(popoverStyle).concat({
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        backgroundColor: 'rgba(0,0,0,0)',
+      });
       this.props = { popoverStyle, direction, showArrow, arrow, ...others };
       return;
     }

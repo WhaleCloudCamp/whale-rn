@@ -19,6 +19,7 @@
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-w": "umi build",
     "build-s": "build-storybook -o ./website -c ./.storybook"
   },
   "repository": {
