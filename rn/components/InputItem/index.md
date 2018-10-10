@@ -27,6 +27,9 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import InputItem from '..';
 import ActionSheet from '../../ActionSheet';
 
+const phonePattern = '^1\\d{10}$';
+const moneyPattern = '^\\d+(.\\d{1,2})?$';
+
 export default class InputItemDemo extends Component {
   constructor(props) {
     super(props);
@@ -63,7 +66,7 @@ export default class InputItemDemo extends Component {
             keyboardType="phone-pad"
             placeholder="请输入手机号"
             validate={{
-              rules: [{ pattern: '^1\\d{10}$', message: '手机号错误' }],
+              rules: [{ pattern: phonePattern, message: '手机号错误' }],
             }}
           />
           <InputItem
@@ -79,7 +82,7 @@ export default class InputItemDemo extends Component {
             keyboardType="numeric"
             placeholder="输入金额"
             validate={{
-              rules: [{ pattern: '^\\d+(.\\d{1,2})?$', message: '金额错误' }],
+              rules: [{ pattern: moneyPattern, message: '金额错误' }],
             }}
             extraText="元"
           />
@@ -122,4 +125,5 @@ export default class InputItemDemo extends Component {
     );
   }
 }
+
 ```
