@@ -5,6 +5,7 @@ import Button from '../../Button';
 import Modal from '../index';
 
 import Page from '../../Page';
+import Imgsrc from '../../../icons/NoticeBar_Horn.png';
 
 export default class ModalExample extends Component {
   showAlert(title, content, actions) {
@@ -118,7 +119,7 @@ export default class ModalExample extends Component {
           style={{ backgroundColor: '#0C83FF' }} //主样式
           styleTitle={{ color: 'white' }} //标题样式
           isShowFirstRightIcon //是否显示右边第一个图标
-          imgRightFirstIcon={require('../../../icons/NoticeBar_Horn.png')} //右边第一个图标
+          imgRightFirstIcon={Imgsrc} //右边第一个图标
           onRightFirstItemPress={
             //右边第一个图标事件
             target => {

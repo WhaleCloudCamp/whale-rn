@@ -90,7 +90,7 @@ export default class PopoverPickerView extends Modal.PopoverView {
     let {
       popoverStyle,
       level,
-      height,
+      height = 500,
       width,
       children,
       textAlign,
@@ -108,7 +108,9 @@ export default class PopoverPickerView extends Modal.PopoverView {
       flex: 1,
       flexDirection: 'row',
     };
-    popoverStyle = [pickerStyle].concat(popoverStyle);
+    popoverStyle = [pickerStyle].concat(popoverStyle).concat({ left: 0 });
+    console.log(popoverStyle);
+
     if (level === 2) {
       let parent = data;
       if (firstSelectValue && firstSelectValue !== '') {

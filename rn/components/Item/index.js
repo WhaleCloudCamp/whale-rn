@@ -77,10 +77,10 @@ export default class Item extends ItemBasics {
     if (typeof title === 'string' || typeof title === 'number') {
       title = (
         <Text
+          numberOfLines={1}
           style={{
             color: '#333',
             fontSize: 14,
-            maxHeight: 14,
             marginBottom: details ? 7 : 0,
           }}
         >
@@ -93,10 +93,10 @@ export default class Item extends ItemBasics {
     if (typeof details === 'string' || typeof details === 'number') {
       details = (
         <Text
+          numberOfLines={1}
           style={{
             color: '#888',
             fontSize: 12,
-            maxHeight: 12,
           }}
         >
           {details}
@@ -117,15 +117,16 @@ export default class Item extends ItemBasics {
         <View
           style={{
             maxWidth: 78,
-            maxHeight: 13,
             overflow: 'hidden',
             paddingLeft: 15,
           }}
         >
           <Text
+            numberOfLines={1}
             style={{
               color: '#888',
               fontSize: 13,
+              // whiteSpace: 'nowrap',
             }}
           >
             {note}

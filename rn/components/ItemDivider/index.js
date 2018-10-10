@@ -10,10 +10,6 @@ export default class Item extends ItemBasics {
 
   static defaultProps = {
     disabled: true,
-    style: {
-      color: '#222',
-      fontWeight: 'bold',
-    },
     itemStyle: {
       backgroundColor: '#F5F5F5',
     },
@@ -24,10 +20,11 @@ export default class Item extends ItemBasics {
     if (typeof title === 'string' || typeof title === 'number') {
       title = (
         <Text
+          numberOfLines={1}
           style={{
             color: '#333',
             fontSize: 14,
-            maxHeight: 14,
+            // whiteSpace: 'nowrap',
             marginBottom: details ? 7 : 0,
           }}
         >
@@ -44,15 +41,16 @@ export default class Item extends ItemBasics {
         <View
           style={{
             maxWidth: 78,
-            maxHeight: 13,
             overflow: 'hidden',
             paddingLeft: 15,
           }}
         >
           <Text
+            numberOfLines={1}
             style={{
               color: '#888',
               fontSize: 13,
+              // whiteSpace: 'nowrap',
             }}
           >
             {note}

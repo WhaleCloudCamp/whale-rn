@@ -131,7 +131,7 @@ export default class AreaAVItem extends React.Component {
               this.props.onAVChange(text);
               this.setText(text);
             }}
-            textAlignVertical="top"
+            // textAlignVertical="top"
             multiline
           />
         </View>

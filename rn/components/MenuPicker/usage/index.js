@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import MenuPicker from '../index';
+import Page from '../../Page';
+import Button from '../../Button';
 
 export default class MenuPickerExample extends Component {
   constructor(props) {
@@ -11,7 +13,7 @@ export default class MenuPickerExample extends Component {
     };
   }
 
-  showPopover(view, direction, align, showArrow) {
+  showPopover(view) {
     view.measure((x, y, width, height, pageX, pageY) => {
       let fromBounds = { x: pageX, y: pageY, width, height };
       // Array<{label: ReactNode, value, disabled?, children<data>?}>
@@ -125,49 +127,15 @@ export default class MenuPickerExample extends Component {
 
   render() {
     return (
-      <View>
-        <View style={[styles.searchBar]}>
-          <TouchableOpacity
-            style={styles.chooseArea}
-            ref="downstart"
-            onPress={() =>
-              this.showPopover(this.refs.downstart, 'down', 'start', true)
-            }
-          >
-            <Text style={styles.chooseText}>
-              {this.state.showValue || '选择项'}
-            </Text>
-            <Image
-              style={styles.chooseIcon}
-              source={require('../../../icons/SearchBar_Down.png')}
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <Page>
+        <TouchableOpacity
+          style={[{ backgroundColor: '#0084FF', borderColor: '#0084FF' }]}
+          onPress={() => this.showPopover(this.refs.downstart)}
+          ref="downstart"
+        >
+          <Text>{this.state.showValue || '选择项'}</Text>
+        </TouchableOpacity>
+      </Page>
     );
   }
 }
-const styles = StyleSheet.create({
-  searchBar: {
-    flexDirection: 'row',
-    backgroundColor: '#ffffff',
-    height: 44,
-  },
-  chooseArea: {
-    flex: 2,
-    flexDirection: 'row',
-    height: 44,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  chooseText: {
-    marginLeft: 5,
-    marginRight: 5,
-    fontSize: 14,
-    color: '#0084FF',
-  },
-  chooseIcon: {
-    width: 10,
-    height: 6,
-  },
-});
