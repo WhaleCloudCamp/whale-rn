@@ -47,7 +47,7 @@ export default class AreaAcrossItem extends React.Component {
               this.props.onVerticalChange(text);
               this.setText(text);
             }}
-            textAlignVertical="top"
+            // textAlignVertical="top"
             multiline
           />
 
@@ -88,11 +88,11 @@ const styles = StyleSheet.create({
   textHint: {
     color: 'gray',
     fontSize: 8,
+    textAlign: 'center'
   },
   rightView: {
     position: 'absolute',
     right: 5,
     bottom: 5,
-    textAlign: 'center',
   },
 });

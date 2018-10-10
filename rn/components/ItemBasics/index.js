@@ -9,6 +9,7 @@ export default class ItemBasics extends Component {
       PropTypes.element,
       PropTypes.shape({ uri: PropTypes.string }),
       PropTypes.number,
+      PropTypes.string,
     ]),
     leftIconStyle: ViewPropTypes.style,
     rightIcon: PropTypes.oneOfType([

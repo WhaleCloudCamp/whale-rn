@@ -94,6 +94,7 @@ export default class ModalView extends Component {
   render() {
     this.buildProps();
     let { style, modalOpacity = Theme.opacity_disabled } = this.props;
+console.log(style);
 
     return (
       <View style={styles.globalmodal}>

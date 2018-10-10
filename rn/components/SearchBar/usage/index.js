@@ -1,9 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import SearchBar from '../index';
+import Page from '../../Page';
 
 export default () => (
-  <View>
+  <Page style={{backgroundColor:"#eee"}}>
     <View style={{ marginTop: 20 }}>
       <SearchBar showChoose showCancel />
     </View>
@@ -16,5 +17,5 @@ export default () => (
     <View style={{ marginTop: 20 }}>
       <SearchBar showChoose={false} showCancel={false} />
     </View>
-  </View>
+  </Page>
 );
