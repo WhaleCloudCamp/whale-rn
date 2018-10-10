@@ -43,7 +43,7 @@ export default class Toast {
         ref={v => (this.modalViewTag = v)}
       >
         <View style={styles.viewAround}>
-          <Image source={this.success} style={styles.imageStyle}/>
+          <Image source={this.success} style={styles.imageStyle} />
           <Text style={styles.textWithPic}>{this.text}</Text>
         </View>
       </ModalView>
@@ -93,7 +93,7 @@ export default class Toast {
         ref={v => (this.modalViewTag = v)}
       >
         <View style={styles.viewAround}>
-          <Image source={this.fail} style={styles.imageStyle}/>
+          <Image source={this.fail} style={styles.imageStyle} />
           <Text style={styles.textWithPic}>{this.text}</Text>
         </View>
       </ModalView>
@@ -143,7 +143,7 @@ export default class Toast {
         ref={v => (this.modalViewTag = v)}
       >
         <View style={styles.viewAround}>
-          <Image source={this.warn} style={styles.imageStyle}/>
+          <Image source={this.warn} style={styles.imageStyle} />
           <Text style={styles.textWithPic}>{this.text}</Text>
         </View>
       </ModalView>
