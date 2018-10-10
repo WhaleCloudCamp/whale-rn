@@ -29,10 +29,10 @@ export default class TabBar extends React.Component {
 
   render() {
     const {
+      tabsArray,
       barTintColor = Themes.fill_base,
       tintColor = '#108ee9',
       unselectedTintColor = '#888888',
-      tabsArray,
     } = this.props;
 
     const style = { backgroundColor: barTintColor };
