@@ -4,7 +4,7 @@ import SearchBar from '../index';
 import Page from '../../Page';
 
 export default () => (
-  <Page style={{backgroundColor:"#eee"}}>
+  <Page style={{ backgroundColor: '#eee' }}>
     <View style={{ marginTop: 20 }}>
       <SearchBar showChoose showCancel />
     </View>

@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   textHint: {
     color: 'gray',
     fontSize: 8,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   rightView: {
     position: 'absolute',

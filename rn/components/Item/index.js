@@ -77,7 +77,7 @@ export default class Item extends ItemBasics {
     if (typeof title === 'string' || typeof title === 'number') {
       title = (
         <Text
-        numberOfLines={1}
+          numberOfLines={1}
           style={{
             color: '#333',
             fontSize: 14,
@@ -93,8 +93,7 @@ export default class Item extends ItemBasics {
     if (typeof details === 'string' || typeof details === 'number') {
       details = (
         <Text
-        numberOfLines={1}
-
+          numberOfLines={1}
           style={{
             color: '#888',
             fontSize: 12,
@@ -123,8 +122,7 @@ export default class Item extends ItemBasics {
           }}
         >
           <Text
-          numberOfLines={1}
-
+            numberOfLines={1}
             style={{
               color: '#888',
               fontSize: 13,
