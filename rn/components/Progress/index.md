@@ -16,3 +16,43 @@ Progress组件,可用于展示当前进度百分比
 | 事件 | 返回值 | 说明 |
 |---|---|---|
 | _getProgress |  | 返回进度
+
+```js
+import Progress from 'whale-rn';
+   <View style={styles.main}>
+          <Progress
+            ref={c => {
+              this.progressBar = c;
+            }}
+            style={{
+              marginTop: 10,
+            }}
+          />
+
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <Button title="减掉" onPress={this.remove} />
+            <Button title="增加" onPress={this.add} />
+          </View>
+        </View>
+      </Page>
+
+
+ add = () => {
+    const self = this;
+    self.currProgress += 1;
+    self.progressBar.progress = self.currProgress / 10;
+  };
+
+  remove = () => {
+    const self = this;
+    self.currProgress -= 1;
+    self.progressBar.progress = self.currProgress / 10;
+  };
+
+```

@@ -34,3 +34,46 @@ NavBar组件,用于展示头部标题栏，支持自定义图标及样式
 | onRightLastItemPress |  | 右边第二个图标事件
 | onRightTextPress |  | 右边文本事件
  No newline at end of file
+
+```js
+import NavBar from "whale-rn";
+ <NavBar
+            title="标题" //标题
+            style={{ backgroundColor: '#0C83FF' }} //主样式
+            styleRightText={{ color: 'white' }} //右文本样式
+            styleTitle={{ color: 'white' }} //标题样式
+            isShowBk //是否显示返回键
+            isShowDel //是否显示左边第二个图标
+            isShowFirstRightIcon //是否显示右边第一个图标
+            isShowLastRightIcon //是否显示右边第二个图标
+            // imgBackIcon={require('../img/icon_fh.png')}//左边第一个图标
+            // imgDelIcon={require('../img/icon_fh.png')}//左边第二个图标
+            // imgRightFirstIcon={require('../img/icon_fh.png')}//右边第一个图标
+            // imgRightLasttIcon={require('../img/icon_fh.png')}//右边第二个图标
+
+            onLeftItemPress={
+              //返回点击事件
+              () => {
+                console.warn('返回点击事件');
+              }
+            }
+            onDelPress={
+              //删除事件
+              () => {
+                console.warn('删除事件');
+              }
+            }
+            onRightFirstItemPress={
+              //右边第一个图标事件
+              () => {
+                console.warn('右边第一个图标事件');
+              }
+            }
+            onRightLastItemPress={
+              //右边第二个图标事件
+              () => {
+                console.warn('右边第二个图标事件');
+              }
+            }
+          />
+```

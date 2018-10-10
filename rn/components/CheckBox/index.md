@@ -16,3 +16,21 @@ checkbox组件,在两个互斥对象进行选择。
 | 事件 | 返回值 | 说明 |
 |---|---|---|
 | onChange |  | 点击checkbox改变状态
+
+```js
+import ChcekBox from "whale-rn";
+ <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+         <CheckBox
+            stytles={{ margin: 10 }}
+            disable={false}
+            isChecked
+            checkedImage={require('../../../icons/checkbox_selected_normal.png')}
+            normalImage={require('../../../icons/checkbox_unselected_normal.png')}
+            onChange={ischeck => {
+              console.warn(ischeck);
+            }}
+          />
+
+          <Text> LuCi</Text>
+        </View>
+```
