@@ -6,6 +6,7 @@ import {
   TextInput,
   Image,
   TouchableHighlight,
+  TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import iconRight from '../../icons/icon_right.png';
@@ -123,17 +124,22 @@ export default class AreaAVItem extends React.Component {
         <View style={styles.line} />
 
         <View style={styles.leftView}>
-          <TextInput
-            placeholder={this.props.avInputTint}
+          <TouchableOpacity
+            activeOpacity={1}
             style={[styles.input, this.props.styleAVInput]}
-            maxLength={this.props.avMax}
-            onChangeText={text => {
-              this.props.onAVChange(text);
-              this.setText(text);
-            }}
-            // textAlignVertical="top"
-            multiline
-          />
+            onPress={() => this.TextInput.focus()}
+          >
+            <TextInput
+              ref={textInput => (this.TextInput = textInput)}
+              placeholder={this.props.avInputTint}
+              maxLength={this.props.avMax}
+              onChangeText={text => {
+                this.props.onAVChange(text);
+                this.setText(text);
+              }}
+              multiline
+            />
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -180,6 +186,8 @@ const styles = StyleSheet.create({
   imgBk: {
     marginRight: 10,
     marginLeft: 10,
+    width: 20,
+    height: 20,
   },
   input: {
     width: '100%',

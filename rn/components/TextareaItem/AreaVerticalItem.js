@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import PropTypes from 'prop-types';
 
 export default class AreaAcrossItem extends React.Component {
@@ -39,18 +45,22 @@ export default class AreaAcrossItem extends React.Component {
           {this.props.verticalTitle}
         </Text>
         <View style={styles.leftView}>
-          <TextInput
-            placeholder={this.props.verticalInputTint}
+          <TouchableOpacity
+            activeOpacity={1}
             style={[styles.input, this.props.styleVerticalInput]}
-            maxLength={this.props.verticalMax}
-            onChangeText={text => {
-              this.props.onVerticalChange(text);
-              this.setText(text);
-            }}
-            // textAlignVertical="top"
-            multiline
-          />
-
+            onPress={() => this.TextInput.focus()}
+          >
+            <TextInput
+              placeholder={this.props.verticalInputTint}
+              ref={textInput => (this.TextInput = textInput)}
+              maxLength={this.props.verticalMax}
+              onChangeText={text => {
+                this.props.onVerticalChange(text);
+                this.setText(text);
+              }}
+              multiline
+            />
+          </TouchableOpacity>
           <View style={styles.rightView}>
             <Text style={[styles.textHint, this.props.styleVerticalHint]}>
               {this.state.inputText.length}/{this.props.verticalMax}

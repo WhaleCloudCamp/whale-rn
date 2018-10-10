@@ -74,7 +74,9 @@ export default class RadioDemo extends React.Component {
         <View
           style={{ flexDirection: 'row', alignItems: 'center', margin: 10 }}
         >
-          <Text style={{ flex: 1, color: '#BEBEBE' }}> doctor disabled</Text>
+          <Text style={{ flex: 1, color: '#BEBEBE' }}>
+            disabled 状态下的未选中
+          </Text>
           <Radio
             isChecked={false}
             disabled
@@ -90,8 +92,7 @@ export default class RadioDemo extends React.Component {
           style={{ flexDirection: 'row', alignItems: 'center', margin: 10 }}
         >
           <Text style={{ flex: 1, color: '#BEBEBE' }}>
-            {' '}
-            doctor disabled true
+            disabled 状态下的选中
           </Text>
           <Radio
             isChecked

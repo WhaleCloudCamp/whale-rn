@@ -15,7 +15,7 @@ export default class SteppeerDemo extends React.Component {
               margin: 20,
             }}
           >
-            <Text style={{ flex: 1 }}>Show number value</Text>
+            <Text style={{ flex: 1 }}>设置step累加展示（当前为10）</Text>
             <Stepper
               max={100}
               min={0}
@@ -39,7 +39,7 @@ export default class SteppeerDemo extends React.Component {
               margin: 20,
             }}
           >
-            <Text style={{ flex: 1 }}>Disabled</Text>
+            <Text style={{ flex: 1 }}>Disabled(禁止状态)</Text>
             <Stepper
               max={100}
               min={0}

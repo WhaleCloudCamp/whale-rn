@@ -140,6 +140,8 @@ const stytles = StyleSheet.create({
   },
   img: {
     margin: 5,
+    width: 25,
+    height: 25,
   },
   text: {
     width: 40,

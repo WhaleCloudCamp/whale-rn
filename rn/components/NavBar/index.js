@@ -61,7 +61,7 @@ export default class NavBar extends React.Component {
             >
               <Image
                 source={this.props.imgBackIcon || imgBackIcon}
-                style={[this.stytlesImgBack]}
+                style={[stytles.imgLeftIcom, this.props.imgLeftIcom]}
               />
             </TouchableHighlight>
           ) : null}
@@ -73,7 +73,10 @@ export default class NavBar extends React.Component {
               style={stytles.touch}
               onPress={() => this.props.onDelPress(this)}
             >
-              <Image source={this.props.imgDelIcon || imgDelIcon} />
+              <Image
+                source={this.props.imgDelIcon || imgDelIcon}
+                style={[stytles.imgRightIcom, this.props.imgRightIcom]}
+              />
             </TouchableHighlight>
           ) : null}
         </View>
@@ -87,7 +90,10 @@ export default class NavBar extends React.Component {
               onPress={() => this.props.onRightFirstItemPress(this)}
               ref="firstRightIcon"
             >
-              <Image source={this.props.imgRightFirstIcon || imgDelIcon} />
+              <Image
+                source={this.props.imgRightFirstIcon || imgDelIcon}
+                style={[stytles.imgRightIcom, this.props.imgRightIcom]}
+              />
             </TouchableHighlight>
           ) : null}
 
@@ -99,7 +105,10 @@ export default class NavBar extends React.Component {
               onPress={() => this.props.onRightLastItemPress(this)}
               ref="lastRightIcon"
             >
-              <Image source={this.props.imgRightLasttIcon || imgDelIcon} />
+              <Image
+                source={this.props.imgRightLasttIcon || imgDelIcon}
+                style={[stytles.imgRightIcom, this.props.imgRightIcom]}
+              />
             </TouchableHighlight>
           ) : null}
           {this.props.isShowRightText ? (
@@ -120,6 +129,14 @@ export default class NavBar extends React.Component {
 }
 
 const stytles = StyleSheet.create({
+  imgLeftIcom: {
+    width: 15,
+    height: 25,
+  },
+  imgRightIcom: {
+    width: 20,
+    height: 20,
+  },
   main: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -128,7 +145,7 @@ const stytles = StyleSheet.create({
   },
   touch: {
     height: '100%',
-    width: 30,
+    marginLeft: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
