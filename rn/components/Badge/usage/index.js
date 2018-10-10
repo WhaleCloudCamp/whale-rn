@@ -8,36 +8,36 @@ export default class BadgeExample extends React.Component {
     return (
       <Page>
         <View style={styles.containView}>
-          <Text style={{ fontSize: 21 }}>Default badge</Text>
+          <Text style={{ fontSize: 21 }}>默认设置</Text>
           <Badge />
         </View>
         <View style={styles.lineView} />
         <View style={styles.containView}>
-          <Text style={{ fontSize: 21 }}>Dot badge</Text>
+          <Text style={{ fontSize: 21 }}>小红点Badge</Text>
           <Badge dot />
         </View>
         <View style={styles.lineView} />
         <View style={styles.containView}>
-          <Text style={{ fontSize: 21 }}>Dot badge corner</Text>
+          <Text style={{ fontSize: 21 }}>小红点Badge（角标）</Text>
           <Badge dot>
             <View style={{ height: 35, width: 35, backgroundColor: '#ddd' }} />
           </Badge>
         </View>
         <View style={styles.lineView} />
         <View style={styles.containView}>
-          <Text style={{ fontSize: 21 }}>Number badge corner</Text>
+          <Text style={{ fontSize: 21 }}>数字Badge（角标）</Text>
           <Badge text={42} overflowCount={99}>
             <View style={{ height: 35, width: 35, backgroundColor: '#ddd' }} />
           </Badge>
         </View>
         <View style={styles.lineView} />
         <View style={styles.containView}>
-          <Text style={{ fontSize: 21 }}>Word in badge</Text>
+          <Text style={{ fontSize: 21 }}>文字Badge</Text>
           <Badge text="new" />
         </View>
         <View style={styles.lineView} />
         <View style={styles.containView}>
-          <Text style={{ fontSize: 21 }}>Number in badge</Text>
+          <Text style={{ fontSize: 21 }}>数字Badge</Text>
           <View style={{ flexDirection: 'row' }}>
             <Badge text={103} overflowCount={99} style={{ marginEnd: 10 }} />
             <Badge text={42} overflowCount={99} />
