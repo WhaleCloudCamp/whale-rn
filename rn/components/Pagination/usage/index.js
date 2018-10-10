@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import Pagination from '..';
+import Button from '../../Button';
 
 export default class PaginationDemo extends Component {
   constructor(props) {
@@ -36,12 +37,11 @@ export default class PaginationDemo extends Component {
       >
         <Pagination current={current} total={total} />
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={this.onPreviousPress}
-          >
-            <Text>上一页</Text>
-          </TouchableOpacity>
+          <Button
+            style={{ paddingHorizontal: 8 }}
+            title="上一页"
+            onClick={this.onPreviousPress}
+          />
           <View style={{ paddingHorizontal: 10, backgroundColor: '#0084FF' }}>
             <Pagination
               current={current}
@@ -50,9 +50,11 @@ export default class PaginationDemo extends Component {
               activeColor="#fff"
             />
           </View>
-          <TouchableOpacity style={styles.button} onPress={this.onNextPress}>
-            <Text>下一页</Text>
-          </TouchableOpacity>
+          <Button
+            style={{ paddingHorizontal: 8 }}
+            title="下一页"
+            onClick={this.onNextPress}
+          />
         </View>
       </View>
     );

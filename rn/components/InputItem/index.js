@@ -11,7 +11,7 @@ import {
 import PropTypes from 'prop-types';
 import { Styles } from './style';
 import Input from '../Input';
-import theme from '../../themes/constants';
+import theme from '../../themes';
 
 const styles = Styles;
 
