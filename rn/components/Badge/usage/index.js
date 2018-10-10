@@ -52,7 +52,7 @@ export default class BadgeExample extends React.Component {
 const screenWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   containView: {
-    width: screenWidth,
+    width: 375,
     flexDirection: 'row',
     height: 70,
     justifyContent: 'space-between',
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     paddingEnd: 20,
   },
   lineView: {
-    width: screenWidth,
+    width: 375,
     height: 1,
     backgroundColor: '#333333',
   },
