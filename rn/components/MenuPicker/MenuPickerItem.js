@@ -47,10 +47,10 @@ export default class MenuPickerItem extends Component {
     };
     accessory = (
       <View style={{ paddingLeft: Theme.poppAccessoryPaddingLeft }}>
-        <Image
+        {selected && isSub&&<Image
           style={imageStyle}
-          source={selected && isSub ? require('../../icons/check.png') : null}
-        />
+          source={require('../../icons/check.png')}
+        />}
       </View>
     );
     if (typeof title === 'string' || typeof title === 'number') {
