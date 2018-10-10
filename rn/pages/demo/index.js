@@ -14,12 +14,12 @@ export default class Demo extends Component {
 
     state = {
         dataSource: [
-            { title: 'ActionSheet', routeName: 'ActionSheet'},
+            { title: 'ActionSheet', routeName: 'ActionSheet' },
             { title: 'ActivityIndication', routeName: 'ActivityIndication' },
             { title: 'AreaSelect', routeName: 'AreaSelect' },
             { title: 'Badge', routeName: 'Badge' },
-            { title: 'Button', routeName:'Button'},
-            { title: 'CheckBox', routeName:'CheckBox'},
+            { title: 'Button', routeName: 'Button' },
+            { title: 'CheckBox', routeName: 'CheckBox' },
             { title: 'Input', routeName: 'Input' },
             { title: 'InputItem', routeName: 'InputItem' },
             { title: 'List', routeName: 'List' },
@@ -30,17 +30,18 @@ export default class Demo extends Component {
             { title: 'NoticeBar', routeName: 'NoticeBar' },
             { title: 'Pagination', routeName: 'Pagination' },
             { title: 'Popover', routeName: 'Popover' },
-            { title: 'Progress', routeName:'Progress'},
-            { title: 'Radio', routeName:'Radio'},
-            { title: 'SearchBar', routeName:'SearchBar'},
+            { title: 'Progress', routeName: 'Progress' },
+            { title: 'Radio', routeName: 'Radio' },
+            { title: 'SearchBar', routeName: 'SearchBar' },
             { title: 'Slider', routeName: 'Slider' },
             { title: 'Stepper', routeName: 'Stepper' },
             { title: 'Switch', routeName: 'Switch' },
             { title: 'TabBar', routeName: 'TabBar' },
             { title: 'Tabs', routeName: 'Tabs' },
-            { title: 'Tag', routeName:'Tag'},
-            { title: 'TextareaItem', routeName:'TextareaItem'},
-            { title: 'Toast', routeName:'Toast'},
+            { title: 'Tag', routeName: 'Tag' },
+            { title: 'TextareaItem', routeName: 'TextareaItem' },
+            { title: 'Toast', routeName: 'Toast' },
+            { title: 'ImagePicker', routeName: 'ImagePicker' },
         ]
     }
 

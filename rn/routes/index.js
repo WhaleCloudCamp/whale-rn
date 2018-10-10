@@ -22,9 +22,10 @@ import Switch from '../components/Switch/usage'
 import TabBar from '../components/TabBar/usage';
 import Tabs from '../components/Tabs/usage';
 import Tag from '../components/Tag/usage';
-import TextareaItem from '../components/TextareaItem/usage'
-import Toast from '../components/Toast/usage'
-import Demo from '../pages/demo'
+import TextareaItem from '../components/TextareaItem/usage';
+import Toast from '../components/Toast/usage';
+import ImagePicker from '../components/ImagePicker/usage';
+import Demo from '../pages/demo';
 
 export default routes = {
     Demo: { screen: Demo },
@@ -33,20 +34,20 @@ export default routes = {
     AreaSelect: { screen: AreaSelect },
     Badge: { screen: Badge },
     Button: { screen: Button },
-    CheckBox: {screen:CheckBox},
+    CheckBox: { screen: CheckBox },
     Input: { screen: Input },
     InputItem: { screen: InputItem },
     List: { screen: List },
-    Label: {screen:Label},
-    MenuPicker: {screen:MenuPicker},
+    Label: { screen: Label },
+    MenuPicker: { screen: MenuPicker },
     Modal: { screen: Modal },
-    NavBar: { screen:NavBar },
-    NoticeBar: {screen:NoticeBar},
+    NavBar: { screen: NavBar },
+    NoticeBar: { screen: NoticeBar },
     Pagination: { screen: Pagination },
     Progress: { screen: Progress },
     Radio: { screen: Radio },
     SearchBar: { screen: SearchBar },
-    Slider: {screen:Slider},
+    Slider: { screen: Slider },
     Stepper: { screen: Stepper },
     Switch: { screen: Switch },
     TabBar: { screen: TabBar },
@@ -54,4 +55,5 @@ export default routes = {
     Tag: { screen: Tag },
     TextareaItem: { screen: TextareaItem },
     Toast: { screen: Toast },
+    ImagePicker: { screen: ImagePicker },
 }
