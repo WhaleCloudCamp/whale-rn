@@ -11,7 +11,7 @@ export default class NoticeBarDemo extends React.Component {
           showClose={false}
         />
         <NoticeBar
-          style={{marginTop:10}}
+          style={{ marginTop: 10 }}
           title="这条通告栏带关闭按钮这条通告栏带关闭按钮这条通告栏带关闭按钮"
           showClose
         />
@@ -19,4 +19,3 @@ export default class NoticeBarDemo extends React.Component {
     );
   }
 }
-

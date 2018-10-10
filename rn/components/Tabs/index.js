@@ -52,16 +52,7 @@ export default class TabBar extends React.Component {
         );
       });
 
-    return (
-      <View
-        style={[
-          styles.tabs,
-          style,
-        ]}
-      >
-        {renderTabItems()}
-      </View>
-    );
+    return <View style={[styles.tabs, style]}>{renderTabItems()}</View>;
   }
 }
 
