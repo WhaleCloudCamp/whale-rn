@@ -1,28 +1,44 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image, TouchableHighlight } from 'react-native';
 import AreaSelect from '../index';
 import ModalBasics from '../../ModalBasics';
 import areaDataSouce from '../CityCode';
 import Page from '../../Page';
+import imgBack from '../../../icons/icon_right.png';
 
 export default class AreaSelectDemo extends React.Component {
   constructor(props) {
     super(props);
     this.isCalled = false;
     this.dataSouce = areaDataSouce.CityZoneCode.China;
+    this.state = {
+      address: '请选择地址',
+    };
   }
 
   render() {
     return (
       <Page>
-        <Text
-          onPress={() =>
-            this.HandlerOnceTap(() => this.getView('bottom', false))
-          }
-        >
-          {' '}
-          33333333
-        </Text>
+        <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+          <Text style={{ color: 'black', margin: 10 }}>地区选择：</Text>
+
+          <TouchableHighlight
+            underlayColor="white"
+            activeOpacity={0.5}
+            style={{ flex: 1, justifyContent: 'center' }}
+            onPress={() =>
+              this.HandlerOnceTap(() => this.getView('bottom', false))
+            }
+          >
+            <Text
+              style={{ color: 'gray', marginRight: 10, alignSelf: 'flex-end' }}
+            >
+              {this.state.address}
+            </Text>
+          </TouchableHighlight>
+
+          <Image style={{ margin: 10 }} source={imgBack} />
+        </View>
       </Page>
     );
   }
@@ -58,7 +74,11 @@ export default class AreaSelectDemo extends React.Component {
             .concat('-')
             .concat(this.dataSouce.Province[x1].City[x2].Area[x3].name);
 
+          this.setState({
+            address: area,
+          });
           console.warn(area);
+          this.modalDrawerView && this.modalDrawerView.close();
         }}
       />
     );

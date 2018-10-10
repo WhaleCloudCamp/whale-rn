@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
 import PropTypes from 'prop-types';
 
 export default class AreaAcrrossItem extends React.Component {
@@ -39,17 +45,22 @@ export default class AreaAcrrossItem extends React.Component {
           {this.props.acrossTitle}
         </Text>
         <View style={styles.leftView}>
-          <TextInput
-            placeholder={this.props.acrossInputTint}
+          <TouchableOpacity
+            activeOpacity={1}
             style={[styles.input, this.props.styleAcrossInput]}
-            maxLength={this.props.acrossMax}
-            onChangeText={text => {
-              this.props.onAcrossChange(text);
-              this.setText(text);
-            }}
-            // textAlignVertical="top"
-            multiline
-          />
+            onPress={() => this.TextInput.focus()}
+          >
+            <TextInput
+              ref={textInput => (this.TextInput = textInput)}
+              placeholder={this.props.acrossInputTint}
+              maxLength={this.props.acrossMax}
+              onChangeText={text => {
+                this.props.onAcrossChange(text);
+                this.setText(text);
+              }}
+              multiline
+            />
+          </TouchableOpacity>
 
           <View style={styles.rightView}>
             <Text style={[styles.textHint, this.props.styleAcrossHint]}>

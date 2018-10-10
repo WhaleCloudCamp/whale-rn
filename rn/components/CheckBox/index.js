@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableHighlight, Image } from 'react-native';
+import { TouchableHighlight, Image, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 import checkedImage from '../../icons/checkbox_selected_normal.png';
 import normalImage from '../../icons/checkbox_unselected_normal.png';
@@ -56,7 +56,7 @@ export default class CheckBox extends React.Component {
                 ? this.props.checkedDisableImage || checkedDisableImage
                 : this.props.normalDisableImage || normalDisableImage
             }
-            style={[this.props.stytles]}
+            style={[stytles.img, this.props.stytles]}
           />
         ) : (
           <Image
@@ -65,10 +65,17 @@ export default class CheckBox extends React.Component {
                 ? this.props.checkedImage || checkedImage
                 : this.props.normalImage || normalImage
             }
-            style={[this.props.stytles]}
+            style={[stytles.img, this.props.stytles]}
           />
         )}
       </TouchableHighlight>
     );
   }
 }
+
+const stytles = StyleSheet.create({
+  img: {
+    width: 25,
+    height: 25,
+  },
+});
