@@ -14,3 +14,16 @@ radio组件,支持自定义图标，可设置当前状态，用于在多个备�
 | 事件 | 返回值 | 说明 |
 |---|---|---|
 | onChange |  | 点击checkbox改变状态
+
+```js
+import Radio from 'whale-rn'
+ <Radio
+            stytles={{ margin: 20 }}
+            isChecked={false}
+            disabled={false}
+            normalImage={require('../../../icons/checkbox_selected_normal.png')}
+            checkedImage={require('../../../icons/checkbox_unselected_normal.png')}
+            onChange={ischeck => {
+              console.warn(ischeck);
+            }}
+```

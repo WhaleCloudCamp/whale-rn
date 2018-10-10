@@ -24,3 +24,20 @@ Stepper组件,用作增加或者减少当前数值。
 | onChange |  | 返回当前改变的值
 | getNumber |  | 获取当前的值
 | setNumber |  | 设置当前的值
+
+```js
+import Stepper from 'whale-rn'
+<Stepper
+        max={100}
+        min={0}
+        number={50}
+        disable
+        // addImg={require('../img/rm.png')}
+        // styleImg ={{width: 100}}
+        // styleText ={{width: 100}}
+        step={10}
+        onChange={number => {
+        console.warn(number);
+        }}
+    />
+```
