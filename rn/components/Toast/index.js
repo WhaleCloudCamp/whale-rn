@@ -4,7 +4,7 @@ import ModalBasics from '../ModalBasics';
 import ModalView from '../ModalView';
 
 export default class Toast {
-  static toastSucess(text, time, side) {
+  static toastSuccess(text, time, side) {
     this.text = '成功';
     this.time = 2000;
     this.success = require('../../icons/toast_right.png');

@@ -31,48 +31,48 @@ export default class ActiveDemo extends React.Component {
         <Label
           type="default"
           size="md"
-          text="Without text"
+          text="无文本"
           style={{ marginStart: 20, marginBottom: 10 }}
         />
         <ActivityIndication />
         <Label
           type="default"
           size="md"
-          text="With text"
+          text="带有文本"
           style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }}
         />
         <ActivityIndication text="正在加载" />
         <Label
           type="default"
           size="md"
-          text="With large size"
+          text="大尺寸"
           style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }}
         />
         <ActivityIndication size="large" />
         <Label
           type="default"
           size="md"
-          text="With large size and custom side and text"
+          text="大尺寸并且带有文本"
           style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }}
         />
         <ActivityIndication text="正在加载" size="large" side="column" />
         <Label
           type="default"
           size="md"
-          text="With toast"
+          text="轻消息样式"
           style={{ marginStart: 20, marginTop: 10, marginBottom: 10 }}
         />
         <Button
           type="normal"
           size="big"
-          title="Loading Toast"
+          title="仅加载条"
           onClick={() => this.showModal(1)}
         />
         <Button
           style={{ marginTop: 10 }}
           type="normal"
           size="big"
-          title="Loading Toast Text"
+          title="带有文本"
           onClick={() => this.showModal(2)}
         />
       </Page>
