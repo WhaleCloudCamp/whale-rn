@@ -31,29 +31,29 @@ export default class SliderDemo extends React.Component {
         <Label type="default" size="xl" text="基本" style={{ margin: 20 }} />
 
         <View style={{ marginTop: 5, marginStart: 20, marginEnd: 20 }}>
-          <Label type="default" text="Default settings" />
+          <Label type="default" text="默认样式" />
           <Slider />
         </View>
 
         <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
-          <Label type="default" text="Default value settings" />
+          <Label type="default" text="默认样式（首尾有最大/最小值）" />
           <Slider showValue max={100} step={1} />
         </View>
 
         <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
-          <Label type="default" text="step: 0.25" />
+          <Label type="default" text="步长: 0.25" />
           <Slider step={0.25} value={0.25} />
         </View>
 
         <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
-          <Label type="default" text="disabled" />
+          <Label type="default" text="不可滑动" />
           <Slider disabled defaultValue={0.25} />
         </View>
 
         <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
           <Label
             type="default"
-            text={`onChange value: ${this.state.changingValue}`}
+            text={`onChange值: ${this.state.changingValue}`}
           />
           <Slider
             defaultValue={0.25}
@@ -64,7 +64,7 @@ export default class SliderDemo extends React.Component {
         <View style={{ marginTop: 10, marginStart: 20, marginEnd: 20 }}>
           <Label
             type="default"
-            text={`onAfterChange value: ${this.state.changedValue}`}
+            text={`onAfterChange值: ${this.state.changedValue}`}
           />
           <Slider
             defaultValue={0.15}
