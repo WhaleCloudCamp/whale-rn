@@ -11,8 +11,7 @@ export default class ItemExample extends Component {
       // leftIconStyle: { width: 55, height: 55 },
       title: '标题',
       note: '说明',
-      details:
-        '详情',
+      details: '详情',
     };
     const checkData = {
       onPress: e => console.warn(e),
@@ -20,8 +19,7 @@ export default class ItemExample extends Component {
       rightIcon: 'check',
       title: '标题',
       note: '说明',
-      details:
-        '详情嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷啊嗷嗷啊',
+      details: '详情嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷啊嗷嗷啊',
     };
     return (
       <List header="Item">
