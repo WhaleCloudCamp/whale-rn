@@ -188,7 +188,7 @@ export default class ModalPopoverView extends ModalView {
 
     popoverStyle = [].concat(popoverStyle).concat({
       position: 'absolute',
-      left: px,
+      left: 0,
       top: py,
     });
     if (!showArrow) arrow = 'none';
