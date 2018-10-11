@@ -28,15 +28,6 @@ const pages = [
     path: "/InputItem",
     component: "../../rn/components/InputItem/usage/index.js"
   },
-  { path: "/Item", component: "../../rn/components/Item/usage/index.js" },
-  {
-    path: "/ItemAvatar",
-    component: "../../rn/components/ItemAvatar/usage/index.js"
-  },
-  {
-    path: "/ItemDivider",
-    component: "../../rn/components/ItemDivider/usage/index.js"
-  },
   { path: "/Label", component: "../../rn/components/Label/usage/index.js" },
   { path: "/List", component: "../../rn/components/List/usage/index.js" },
   {
@@ -44,10 +35,6 @@ const pages = [
     component: "../../rn/components/MenuPicker/usage/index.js"
   },
   { path: "/Modal", component: "../../rn/components/Modal/usage/index.js" },
-  {
-    path: "/ModalView",
-    component: "../../rn/components/ModalView/usage/index.js"
-  },
   { path: "/NavBar", component: "../../rn/components/NavBar/usage/index.js" },
   {
     path: "/NoticeBar",
