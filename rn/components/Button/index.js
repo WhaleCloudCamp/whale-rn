@@ -34,158 +34,82 @@ export default class Button extends React.Component {
       textStyle,
     } = this.props;
 
-    if (type === 'normal') {
-      if (size === 'big') {
-        return (
-          <TouchableOpacity
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.normalBig,
-              style,
-            ]}
-            disabled={disabled}
-            onPress={onClick}
-          >
-            <Text style={[styles.titleBig, textStyle]}>{title}</Text>
-          </TouchableOpacity>
-        );
-      } else if (size === 'small') {
-        return (
-          <TouchableOpacity
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.normalSmall,
-              style,
-            ]}
-            disabled={disabled}
-            onPress={onClick}
-          >
-            <Text style={[styles.titleSmall, textStyle]}>{title}</Text>
-          </TouchableOpacity>
-        );
-      }
-    } else if (type === 'normal2') {
-      if (size === 'big') {
-        return (
-          <TouchableOpacity
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.normal2Big,
-              style,
-            ]}
-            disabled={disabled}
-            onPress={onClick}
-          >
-            <Text style={[styles.title2Big, textStyle]}>{title}</Text>
-          </TouchableOpacity>
-        );
-      } else if (size === 'small') {
-        return (
-          <TouchableOpacity
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.normal2Small,
-              style,
-            ]}
-            disabled={disabled}
-            onPress={onClick}
-          >
-            <Text style={[styles.title2Small, textStyle]}>{title}</Text>
-          </TouchableOpacity>
-        );
-      }
-    } else if (type === 'loading') {
-      if (size === 'big') {
-        return (
-          <TouchableOpacity
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.loadingBig,
-              style,
-            ]}
-            disabled
-          >
-            <Activityindicator
-              image={require('../../icons/Button_Loading.png')}
-            />
-            <Text style={[styles.titleBig, textStyle]}>{title}</Text>
-          </TouchableOpacity>
-        );
-      } else if (size === 'small') {
-        return (
-          <TouchableOpacity
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.loadingSmall,
-              style,
-            ]}
-            disabled
-          >
-            <Activityindicator
-              image={require('../../icons/Button_Loading.png')}
-            />
-            <Text style={[styles.titleSmall, textStyle]} />
-          </TouchableOpacity>
-        );
-      }
-    } else if (type === 'disabled') {
-      if (size === 'big') {
-        return (
-          <View
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.disabledBig,
-              style,
-            ]}
-            disabled={disabled}
-          >
-            <Text style={[styles.titleBig, textStyle]}>{title}</Text>
-          </View>
-        );
-      } else if (size === 'small') {
-        return (
-          <View
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.disabledSmall,
-              style,
-            ]}
-            disabled={disabled}
-          >
-            <Text style={[styles.titleSmall, textStyle]}>{title}</Text>
-          </View>
-        );
-      }
-    } else if (type === 'disabled2') {
-      if (size === 'big') {
-        return (
-          <View
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.disabled2Big,
-              style,
-            ]}
-            disabled={disabled}
-          >
-            <Text style={[styles.title3Big, textStyle]}>{title}</Text>
-          </View>
-        );
-      } else if (size === 'small') {
-        return (
-          <View
-            style={[
-              { backgroundColor: color, borderColor: color },
-              styles.disabled2Small,
-              style,
-            ]}
-            disabled={disabled}
-          >
-            <Text style={[styles.title3Small, textStyle]}>{title}</Text>
-          </View>
-        );
-      }
+    let typeStyle;
+    let texTypeStyle;
+    let tmpDisabled;
+    let tmpType = disabled ? 'disabled2' : type;
+
+    switch (tmpType) {
+      case 'normal2':
+        if (size === 'big') {
+          typeStyle = styles.normal2Big;
+          texTypeStyle = styles.title2Big;
+        } else {
+          typeStyle = styles.normal2Small;
+          texTypeStyle = styles.title2Small;
+        }
+        tmpDisabled = false;
+        break;
+      case 'disabled':
+        if (size === 'big') {
+          typeStyle = styles.disabledBig;
+          texTypeStyle = styles.titleBig;
+        } else {
+          typeStyle = styles.disabledSmall;
+          texTypeStyle = styles.titleSmall;
+        }
+        tmpDisabled = true;
+        break;
+      case 'disabled2':
+        if (size === 'big') {
+          typeStyle = styles.disabled2Big;
+          texTypeStyle = styles.title3Big;
+        } else {
+          typeStyle = styles.disabled2Small;
+          texTypeStyle = styles.title3Small;
+        }
+        tmpDisabled = true;
+        break;
+      case 'loading':
+        if (size === 'big') {
+          typeStyle = styles.loadingBig;
+          texTypeStyle = styles.titleBig;
+        } else {
+          typeStyle = styles.loadingSmall;
+          texTypeStyle = styles.titleSmall;
+        }
+        tmpDisabled = true;
+        break;
+      default:
+        if (size === 'big') {
+          typeStyle = styles.normalBig;
+          texTypeStyle = styles.titleBig;
+        } else {
+          typeStyle = styles.normalSmall;
+          texTypeStyle = styles.titleSmall;
+        }
+        tmpDisabled = false;
+        break;
     }
-    return <View />;
+
+    return (
+      <TouchableOpacity
+        style={[
+          { backgroundColor: color, borderColor: color },
+          typeStyle,
+          style,
+        ]}
+        disabled={tmpDisabled}
+        onPress={onClick}
+      >
+        {type === 'loading' ? (
+          <Activityindicator
+            image={require('../../icons/Button_Loading.png')}
+          />
+        ) : null}
+        <Text style={[texTypeStyle, textStyle]}>{title}</Text>
+      </TouchableOpacity>
+    );
   }
 }
 
