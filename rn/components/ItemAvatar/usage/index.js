@@ -24,7 +24,7 @@ export default class ItemExample extends Component {
         '详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊',
     };
     return (
-      <List header="123">
+      <List header="ItemAvatar">
         <ItemAvatar {...data} />
         <ItemAvatar {...data} />
         <ItemAvatar {...data} />
