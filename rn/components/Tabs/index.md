@@ -8,6 +8,7 @@
 ## API
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
+| tabsArray | TabItem数组 | array | - |
 | barTintColor | 标签页背景颜色 | string | - |
 | tintColor    | 选中文字颜色 | string | - |
 | unselectedTintColor | 未选中文字颜色 | string | - |

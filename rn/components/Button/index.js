@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: '#ffffff',
+    borderColor: '#333333',
     backgroundColor: '#ffffff',
   },
   disabledBig: {

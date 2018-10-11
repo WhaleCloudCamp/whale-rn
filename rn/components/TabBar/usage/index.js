@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import TabBar from '../index';
+import Page from '../../Page';
 
 const images = {
   icon: require('../../../icons/TabBar_Friend.png'),
@@ -10,7 +11,7 @@ const images = {
 export default class TabBarDemo extends React.Component {
   render() {
     return (
-      <View>
+      <Page style={{ backgroundColor: '#eee' }}>
         <View style={{ height: 49, marginTop: 20 }}>
           <TabBar
             tabsArray={[
@@ -119,7 +120,7 @@ export default class TabBarDemo extends React.Component {
             ]}
           />
         </View>
-      </View>
+      </Page>
     );
   }
 }
