@@ -58,8 +58,8 @@ buck-out/
 
 
 # umi
-**/.umi
-**/.umi-production/
+.umi
+.umi-production/
 
 #website
 website/

@@ -7,28 +7,30 @@ export default class ItemExample extends Component {
   render() {
     const data = {
       onPress: e => console.warn(e),
-      leftIconStyle: { width: 55, height: 55 },
-      title: '标题标题标题标题标题标题标题标题标题标题',
-      note: '说明说明说明说明说明说明说明说明说明',
+      leftIcon: require('../../../icons/TabBar_Friend_sel.png'),
+      // leftIconStyle: { width: 55, height: 55 },
+      title: '标题',
+      note: '说明',
       details:
-        '详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊',
+        '详情',
     };
     const checkData = {
       onPress: e => console.warn(e),
+      leftIcon: require('../../../icons/TabBar_Friend_sel.png'),
       rightIcon: 'check',
-      title: '标题标题标题标题标题标题标题标题标题标题',
-      note: '说明说明说明说明说明说明说明说明说明',
+      title: '标题',
+      note: '说明',
       details:
-        '详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊',
+        '详情嗷啊嗷嗷啊详情嗷嗷啊嗷嗷啊详情嗷啊嗷嗷啊',
     };
     return (
-      <List header="123">
+      <List header="Item">
         <Item {...data} />
         <Item {...data} />
         <Item {...data} />
         <Item {...checkData} />
         <Item {...checkData}>
-          <Text>12312331321</Text>
+          <Text>说明</Text>
         </Item>
       </List>
     );

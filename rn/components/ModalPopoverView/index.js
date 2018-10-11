@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Dimensions, Platform, StatusBar } from 'react-native';
+import { ViewPropTypes, Dimensions, Platform, StatusBar } from 'react-native';
 
 import ModalView from '../ModalView';
 import Popover from '../Popover';
@@ -8,7 +8,7 @@ import Popover from '../Popover';
 export default class ModalPopoverView extends ModalView {
   static propTypes = {
     ...ModalView.propTypes,
-    popoverStyle: Popover.propTypes.style,
+    popoverStyle: ViewPropTypes.style,
     fromBounds: PropTypes.shape({
       x: PropTypes.number.isRequired,
       y: PropTypes.number.isRequired,
@@ -21,7 +21,7 @@ export default class ModalPopoverView extends ModalView {
     align: PropTypes.oneOf(['start', 'center', 'end']),
     alignInsets: PropTypes.number,
     showArrow: PropTypes.bool,
-    paddingCorner: Popover.propTypes.paddingCorner,
+    paddingCorner: PropTypes.number,
   };
 
   static defaultProps = {

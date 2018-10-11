@@ -7,7 +7,7 @@ import Theme from '../../themes';
 
 export default class Popover extends Component {
   static propTypes = {
-    ...ViewPropTypes,
+    // ...ViewPropTypes,
     arrow: PropTypes.oneOf([
       'none',
       'topLeft',
