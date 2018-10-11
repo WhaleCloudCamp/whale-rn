@@ -6,14 +6,7 @@ export default class ButtonDemo extends React.Component {
   render() {
     return (
       <View>
-        <Button
-          type="normal"
-          size="big"
-          title="主按钮 Normal"
-          onClick={() => {
-            console.log(123);
-          }}
-        />
+        <Button type="normal" size="big" title="主按钮 Normal" />
         <Button type="disabled" size="big" title="主按钮 Disabled" />
         <Button type="loading" size="big" title="主按钮 Loading" />
         <Button type="normal2" size="big" title="次按钮 Normal" />
