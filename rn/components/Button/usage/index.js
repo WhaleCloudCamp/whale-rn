@@ -14,8 +14,11 @@ export default class ButtonDemo extends React.Component {
         <Button type="disabled2" size="big" title="次按钮 Disabled" />
         <View
           style={{
-            justifyContent: 'space-between', flexDirection: 'row', 
-            marginTop: 10, marginLeft: 20, marginRight: 20,
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            marginTop: 10,
+            marginLeft: 20,
+            marginRight: 20,
           }}
         >
           <Button type="normal" size="small" title="按钮" />

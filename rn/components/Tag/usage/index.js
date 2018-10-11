@@ -6,11 +6,13 @@ import Page from '../../Page';
 export default class TagDemo extends React.Component {
   render() {
     return (
-      <Page style={{
+      <Page
+        style={{
           flexDirection: 'row',
           justifyContent: 'space-around',
           marginTop: 10,
-          backgroundColor: '#eee'}}
+          backgroundColor: '#eee',
+        }}
       >
         <Tag selected={false} disabled={false} title="通用标签" />
         <Tag selected disabled={false} title="选中标签" />

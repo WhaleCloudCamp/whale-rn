@@ -11,7 +11,7 @@ const images = {
 export default class TabBarDemo extends React.Component {
   render() {
     return (
-      <Page style={{backgroundColor: '#eee'}}>
+      <Page style={{ backgroundColor: '#eee' }}>
         <View style={{ height: 49, marginTop: 20 }}>
           <TabBar
             tabsArray={[
