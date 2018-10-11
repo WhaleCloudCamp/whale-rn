@@ -58,6 +58,7 @@ export default class NavBar extends React.Component {
               activeOpacity={0.5}
               underlayColor="transparent"
               onPress={() => this.props.onLeftItemPress(this)}
+              ref="imgBackIcon"
             >
               <Image
                 source={this.props.imgBackIcon || imgBackIcon}
