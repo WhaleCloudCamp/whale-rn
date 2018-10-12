@@ -89,7 +89,8 @@
   },
   "dependencies": {
     "events": "^3.0.0",
-    "prop-types": "^15.6.2"
+    "prop-types": "^15.6.2",
+    "react-native-image-zoom-viewer": "^2.2.21"
   },
   "jest": {
     "preset": "react-native"
