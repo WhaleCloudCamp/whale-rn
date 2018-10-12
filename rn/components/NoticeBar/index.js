@@ -66,7 +66,7 @@ export default class NoticeBar extends React.Component {
       </View>
     );
 
-    return !close ? <View>{main()}</View> : <View />;
+    return !close ? <View>{main()}</View> : null;
   }
 }
 

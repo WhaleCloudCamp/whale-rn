@@ -102,11 +102,10 @@ export default class Button extends React.Component {
         disabled={tmpDisabled}
         onPress={onClick}
       >
-        {type === 'loading' ? (
-          <Activityindicator
-            image={require('../../icons/Button_Loading.png')}
-          />
-        ) : null}
+        {type === 'loading' 
+        ? (<Activityindicator 
+          image={require('../../icons/Button_Loading.png')}/>) 
+        : null}
         <Text style={[texTypeStyle, textStyle]}>{title}</Text>
       </TouchableOpacity>
     );

@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Animated, //使用Animated组件
+  Animated,
   Easing,
 } from 'react-native';
 
@@ -14,7 +14,6 @@ export default class Activityindicator extends React.Component {
     //使用Animated.Value设定初始化值（缩放度，角度等等）
     this.state = {
       bounceValue: new Animated.Value(1), //你可以改变这个值看
-      //看效果是什么
       rotateValue: new Animated.Value(0), //旋转角度的初始值
     };
   }
@@ -52,7 +51,7 @@ export default class Activityindicator extends React.Component {
           style={{
             width: 16,
             height: 16,
-            borderRadius: 8, //图片变圆
+            borderRadius: 8,
             transform: [
               //将初始化值绑定到动画目标的style属性上
               { scale: this.state.bounceValue },

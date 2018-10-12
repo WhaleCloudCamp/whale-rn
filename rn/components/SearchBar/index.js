@@ -203,6 +203,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
     fontSize: 14,
     color: '#0084FF',
+    maxWidth: 60,
   },
   chooseIcon: {
     width: 10,

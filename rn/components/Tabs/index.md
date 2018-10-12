@@ -14,11 +14,16 @@
 | unselectedTintColor | 未选中文字颜色 | string | - |
 
 ```js
-    import Tabs from "whale-rn";
+import Tabs from "whale-rn";
 
-    <View>
-        <Tabs />
-    </View>
+<Tabs
+    tabsArray={[
+        { title: '新闻' },
+        { title: '资讯' },
+        { title: '财经' },
+    ]}
+/>
+
 ```
 
 ## TabItem组件
@@ -34,14 +39,13 @@
 | key | 唯一标识 | string | - | ？
 
 ```js
+import tabItem from "./tabItem";
 
-    import tabItem from "./tabItem";
-
-    <TabItem
-        title="选项"
-        selected={this.state.selectedTab === 1}
-        onPress={() => this.onChangeTab(1)}
-        tintColor={tintColor}
-        unselectedTintColor={unselectedTintColor}
-    />
+<TabItem
+    title="选项"
+    selected={this.state.selectedTab === 1}
+    onPress={() => this.onChangeTab(1)}
+    tintColor={tintColor}
+    unselectedTintColor={unselectedTintColor}
+/>
 ```

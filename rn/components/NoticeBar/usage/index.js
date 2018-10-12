@@ -6,7 +6,7 @@ import Page from '../../Page';
 export default class NoticeBarDemo extends React.Component {
   render() {
     return (
-      <Page>
+      <Page style={{ backgroundColor: '#eee' }}>
         <NoticeBar
           title="这条通告栏不带关闭按钮这条通告栏不带关闭按钮这条通告栏不带关闭按钮"
           showClose={false}
