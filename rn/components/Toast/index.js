@@ -243,6 +243,7 @@ const styles = StyleSheet.create({
   },
   textwithoutPic: {
     textAlign: 'center',
+    overflow: 'hidden',
     borderRadius: 5,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     color: 'rgba(255, 255, 255, 1.0)',
