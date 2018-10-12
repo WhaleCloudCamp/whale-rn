@@ -11,7 +11,7 @@ export default class SwtichDemo extends React.Component {
           <View
             style={{ flexDirection: 'row', alignItems: 'center', margin: 10 }}
           >
-            <Text style={{ flex: 1 }}> 开状态</Text>
+            <Text style={{ flex: 1 }}> 关状态</Text>
             <Switch
               checkStatu={false}
               disableStatu={false}
@@ -28,7 +28,7 @@ export default class SwtichDemo extends React.Component {
           <View
             style={{ flexDirection: 'row', alignItems: 'center', margin: 10 }}
           >
-            <Text style={{ flex: 1 }}> 关状态</Text>
+            <Text style={{ flex: 1 }}> 开状态</Text>
             <Switch
               checkStatu
               disableStatu={false}

@@ -51,6 +51,7 @@ export default class AreaAcrossItem extends React.Component {
             onPress={() => this.TextInput.focus()}
           >
             <TextInput
+              style={{ padding: 0 }}
               placeholder={this.props.verticalInputTint}
               ref={textInput => (this.TextInput = textInput)}
               maxLength={this.props.verticalMax}

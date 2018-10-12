@@ -51,6 +51,7 @@ export default class AreaAcrrossItem extends React.Component {
             onPress={() => this.TextInput.focus()}
           >
             <TextInput
+              style={{ padding: 0 }}
               ref={textInput => (this.TextInput = textInput)}
               placeholder={this.props.acrossInputTint}
               maxLength={this.props.acrossMax}

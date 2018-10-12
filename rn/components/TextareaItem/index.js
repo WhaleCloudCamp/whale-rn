@@ -14,7 +14,6 @@ export default class TextAreaItem extends React.Component {
     verticalMax: PropTypes.number,
 
     avTitle: PropTypes.string,
-    avMax: PropTypes.number,
   };
 
   static defaultProps = {
@@ -23,7 +22,6 @@ export default class TextAreaItem extends React.Component {
     acrossTitle: '标题',
     verticalTitle: '标题',
     avTitle: '标题',
-    avMax: 500,
     chooseType: 'accross',
   };
 
@@ -74,7 +72,6 @@ export default class TextAreaItem extends React.Component {
             styleAVImg={this.props.styleAVImg}
             styleAVInput={this.props.styleAVInput}
             avTitle={this.props.avTitle}
-            avMax={this.props.avMax}
             avInputTint={this.props.avInputTint}
             onAVChange={text => {
               this.props.onChangeText(text);
