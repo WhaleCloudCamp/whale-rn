@@ -9,10 +9,10 @@ export default () => (
       <SearchBar showChoose showCancel />
     </View>
     <View style={{ marginTop: 20 }}>
-      <SearchBar showChoose={false} showCancel value="我是输入内容" />
+      <SearchBar showChoose showCancel={false} />
     </View>
     <View style={{ marginTop: 20 }}>
-      <SearchBar showChoose showCancel={false} />
+      <SearchBar showChoose={false} showCancel value="我是输入内容" />
     </View>
     <View style={{ marginTop: 20 }}>
       <SearchBar showChoose={false} showCancel={false} />
