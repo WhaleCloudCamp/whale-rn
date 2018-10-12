@@ -4,14 +4,16 @@
 ## API
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
-| type    | 按钮类型，可选值为`normal`、`normal2`、`loading`、`disabled`、`disabled` | string | - |
+| type    | 按钮类型，可选值为`normal`、`normal2`、`loading`、`disabled`、`disabled2` | string | - |
 | size    | 按钮大小，可选值为`big`、`small` | string | `big`|
 | title   | 按钮标题 | string | - |
-| disabled| 设置禁用 | boolean | false |
+| disabled| 设置禁用 | boolean | false | 
 | onClick | 点击反馈的自定义类名 | (e: Object): void | - |
 | color   | 设置按钮统一背景色和边框色 | string | - |
 | style   | 按钮自定义样式 | Object | - |
 | textStyle | 按钮文字自定义样式 | Object | - |
+
+disabled为true时，样式为disabled2，及灰色背景样式。
 
 ```js
 import Button from "whale-rn";

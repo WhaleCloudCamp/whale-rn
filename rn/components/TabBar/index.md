@@ -40,21 +40,16 @@ import TabBar from "whale-rn";
 ```js
 import TabBarItem from "./tabBarItem";
 
-tabsArray.map((item, index) => {
-    const { title, badge, icon, selectedIcon } = item;
-    return (
-        <TabBarItem
-        key={'r-' + index}
-        title={title}
-        badge={badge}
-        icon={icon}
-        selectedIcon={selectedIcon}
-        selected={this.state.selectedTab === index}
-        onPress={() => this.onChangeTab(index)}
-        tintColor={tintColor}
-        unselectedTintColor={unselectedTintColor}
-        />
-    )
-})
+<TabBarItem
+    key={`r-${index}`}
+    title={title}
+    badge={badge}
+    icon={icon}
+    selectedIcon={selectedIcon}
+    selected={this.state.selectedTab === index}
+    onPress={() => this.onChangeTab(index)}
+    tintColor={tintColor}
+    unselectedTintColor={unselectedTintColor}
+/>
 ```
 
