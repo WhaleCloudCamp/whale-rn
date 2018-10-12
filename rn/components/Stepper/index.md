@@ -7,6 +7,7 @@ Stepper组件,用作增加或者减少当前数值。
 |---|---|---|---|
 |max|number|100|默认最大值|
 |min|number|0|默认最小值|
+|editable|bool|true|是否可编辑
 |disable|bool| false|是否点击|
 |defaultValue|number| |当前值默认值|
 |number|number| defaultValue|当前值|

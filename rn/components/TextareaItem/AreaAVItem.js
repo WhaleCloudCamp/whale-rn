@@ -17,13 +17,11 @@ import ModalBasics from '../ModalBasics/index';
 export default class AreaAVItem extends React.Component {
   static propTypes = {
     avTitle: PropTypes.string,
-    avMax: PropTypes.number,
     avInputTint: PropTypes.string,
   };
 
   static defaultProps = {
     avTitle: '标题',
-    avMax: 500,
     avInputTint: '请输入',
   };
 
@@ -130,9 +128,9 @@ export default class AreaAVItem extends React.Component {
             onPress={() => this.TextInput.focus()}
           >
             <TextInput
+              style={{ padding: 0 }}
               ref={textInput => (this.TextInput = textInput)}
               placeholder={this.props.avInputTint}
-              maxLength={this.props.avMax}
               onChangeText={text => {
                 this.props.onAVChange(text);
                 this.setText(text);

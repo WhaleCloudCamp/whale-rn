@@ -5,6 +5,7 @@ import {
   Image,
   TouchableHighlight,
   Text,
+  TextInput,
 } from 'react-native';
 import PropTypes from 'prop-types';
 import defaultAddPic from '../../icons/create.png';
@@ -20,6 +21,7 @@ export default class Stepper extends React.Component {
     max: PropTypes.number,
     step: PropTypes.number,
     disable: PropTypes.bool,
+    editable: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -28,6 +30,7 @@ export default class Stepper extends React.Component {
     max: 100,
     step: 1,
     disable: false,
+    editable: true,
   };
 
   constructor(props) {
@@ -57,9 +60,39 @@ export default class Stepper extends React.Component {
           />
         </TouchableHighlight>
 
-        <Text style={[stytles.text, this.props.styleText]}>
-          {this.state.number}
-        </Text>
+        <TextInput
+          editable={this.props.editable}
+          style={[
+            {
+              color: this.getTextColor(),
+              width: 40,
+              textAlign: 'center',
+            },
+            this.props.styleText,
+          ]}
+          value={this.state.number.toString()}
+          keyboardType="numeric"
+          onChangeText={text => {
+            const newText = text.replace(/[^\d]+/, '');
+            if (newText === null || newText === '') {
+              this.setState({
+                number: '',
+              });
+            } else {
+              let num = parseInt(text);
+              if (num <= this.props.min) {
+                num = this.props.min;
+              } else if (num >= this.props.max) {
+                num = this.props.max;
+              }
+
+              this.setState({
+                number: num,
+              });
+            }
+          }}
+        />
+
         <TouchableHighlight
           disabled={this.props.disable}
           activeOpacity={0.5}
@@ -97,6 +130,7 @@ export default class Stepper extends React.Component {
       return;
     }
     let numbers;
+
     numbers = this.state.number + this.props.step;
     if (numbers < this.props.max) {
       this.props.onChange(numbers);
@@ -130,6 +164,16 @@ export default class Stepper extends React.Component {
       });
     }
   };
+
+  getTextColor() {
+    if (this.props.editable && !this.props.disable) {
+      return 'black';
+    } else if (!this.props.editable && !this.props.disable) {
+      return 'black';
+    } else {
+      return '#DDDDDD';
+    }
+  }
 }
 
 const stytles = StyleSheet.create({
@@ -142,9 +186,5 @@ const stytles = StyleSheet.create({
     margin: 5,
     width: 25,
     height: 25,
-  },
-  text: {
-    width: 40,
-    textAlign: 'center',
   },
 });

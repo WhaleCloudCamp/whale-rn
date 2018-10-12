@@ -15,7 +15,9 @@ export default class SteppeerDemo extends React.Component {
               margin: 20,
             }}
           >
-            <Text style={{ flex: 1 }}>设置step累加展示（当前为10）</Text>
+            <Text style={{ flex: 1 }}>
+              设置step累加展示（当前为步长10）数值可编辑
+            </Text>
             <Stepper
               max={100}
               min={0}
@@ -31,7 +33,32 @@ export default class SteppeerDemo extends React.Component {
             />
           </View>
           <View style={{ backgroundColor: '#F5F5F5', height: 1 }} />
-
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'center',
+              margin: 20,
+            }}
+          >
+            <Text style={{ flex: 1 }}>
+              设置step累加展示（当前为步长10）数值不可编辑
+            </Text>
+            <Stepper
+              max={100}
+              min={0}
+              number={50}
+              editable={false}
+              //   disable={true}
+              // addImg={require('../img/rm.png')}
+              // styleImg ={{width: 100}}
+              // styleText ={{width: 100}}
+              step={10}
+              onChange={number => {
+                console.warn(number);
+              }}
+            />
+          </View>
+          <View style={{ backgroundColor: '#F5F5F5', height: 1 }} />
           <View
             style={{
               flexDirection: 'row',
@@ -45,9 +72,7 @@ export default class SteppeerDemo extends React.Component {
               min={0}
               number={50}
               disable
-              // addImg={require('../img/rm.png')}
-              // styleImg ={{width: 100}}
-              // styleText ={{width: 100}}
+              editable={false}
               step={10}
               onChange={number => {
                 console.warn(number);

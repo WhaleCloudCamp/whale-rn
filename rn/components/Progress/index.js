@@ -136,10 +136,10 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 10,
     marginRight: 10,
-    backgroundColor: 'white',
+    backgroundColor: '#DDDDDD',
   },
   precent: {
-    color: '#0C83FF',
+    color: '#0084FF',
     width: 30,
     fontSize: 10,
     marginRight: 10,

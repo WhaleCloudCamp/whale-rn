@@ -10,7 +10,6 @@ export default class TextAreaDemo extends React.Component {
         <TextAreaItem
           chooseType="acrossvertical" //accross ||vertical ||acrossvertical
           avTitle="项目名称2"
-          avMax={100}
           avInputTint="请输入项目2"
           styleAVMain={{}}
           styleAVTitleView={{}}

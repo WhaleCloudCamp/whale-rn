@@ -31,7 +31,6 @@ TextAreal组件,文本输入区域，分为三种类型｛accross ||vertical ||a
 | styleAVInput | 同View.style |  |  竖向样式2textArea 输入框样式
 
 | avTitle | string | 默认标题  |  竖向textArea 左侧标题
-| avMax | number | 默认值500  |  竖向textArea 输入框输入最大长度
 | avInputTint | string | 默认值为请输入  |  竖向textArea 输入框提示语
 
 
@@ -46,7 +45,6 @@ import TextareaItem from "whale-rn";
   <TextAreaItem
           chooseType="acrossvertical" //accross ||vertical ||acrossvertical
           avTitle="项目名称2"
-          avMax={100}
           avInputTint="请输入项目2"
           styleAVMain={{}}
           styleAVTitleView={{}}
