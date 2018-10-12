@@ -23,10 +23,13 @@ import Slider from './Slider';
 | value    |  Number  |     | 设置当前取值。 |
 | defaultValue    |  Number   | 0     | 设置初始取值。|
 | disabled    |  Boolean     | false    | 值为 `true` 时，滑块为禁用状态 |
-| maximumTrackTintColor  |  String     | `#108ee9`（RN)    | 底部背景色 |
-| minimumTrackTintColor  |  String     | `#ddd` (RN)   | 当前选中部分的颜色 |
+| maximumTrackTintColor  |  String     | `#108ee9ff`（RN)    | 底部背景色 |
+| minimumTrackTintColor  |  String     | `#ddddddff` (RN)   | 当前选中部分的颜色 |
+| maximumTrackTintDisabledColor  |  String     | `#108ee9aa`（RN)    | disabled为true时底部背景色 |
+| minimumTrackTintDisabledColor  |  String     | `#ddddddaa` (RN)   | disabled为true时当前选中部分的颜色 |
 | showValue | Bool | false | 是否在滑竿两边显示`最大值`和`最小值` |
 | thumbStyle | Style | - | 滑块样式 |
+| thumbStyleDisabled | Style | - | disabled为true时滑块样式 |
 
 ## 事件
 事件 | 返回值 | 说明

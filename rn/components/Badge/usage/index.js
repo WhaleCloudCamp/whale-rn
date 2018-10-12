@@ -45,6 +45,25 @@ export default class BadgeExample extends React.Component {
           </View>
         </View>
         <View style={styles.lineView} />
+        <View style={styles.containView}>
+          <Text style={{ fontSize: 21 }}>自定义样式*</Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Badge
+              text="自定义"
+              overflowCount={99}
+              bkStyle={{
+                paddingVertical: 3,
+                paddingHorizontal: 5,
+                backgroundColor: '#fff',
+                borderRadius: 2,
+                color: '#f19736',
+                borderWidth: 1,
+                borderColor: '#f19736',
+              }}
+            />
+          </View>
+        </View>
+        <View style={styles.lineView} />
       </Page>
     );
   }

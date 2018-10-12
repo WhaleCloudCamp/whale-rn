@@ -23,3 +23,4 @@ text | string\|number | `new` | 展示的数字或文案，当为数字时候，
 corner | boolean | `false` | 置于角落（此版本未实现）
 dot | boolean | `false` | 不展示数字，只有一个小红点
 overflowCount | number | `99` | 展示封顶的数字值
+bkStyle | Object | - | 自定义背景和文字样式（不建议使用）

@@ -15,8 +15,11 @@ export default class WhaleSlider extends React.Component {
     disabled: PropTypes.bool,
     maximumTrackTintColor: PropTypes.string,
     minimumTrackTintColor: PropTypes.string,
+    maximumTrackTintDisabledColor: PropTypes.string,
+    minimumTrackTintDisabledColor: PropTypes.string,
     showValue: PropTypes.bool,
     thumbStyle: PropTypes.object,
+    thumbStyleDisabled: PropTypes.object,
   };
 
   static defaultProps = {
@@ -24,8 +27,10 @@ export default class WhaleSlider extends React.Component {
     onAfterChange() {},
     defaultValue: 0,
     disabled: false,
-    maximumTrackTintColor: '#dddddd',
-    minimumTrackTintColor: '#108ee9',
+    maximumTrackTintColor: '#ddddddff',
+    minimumTrackTintColor: '#108ee9ff',
+    maximumTrackTintDisabledColor: '#ddddddaa',
+    minimumTrackTintDisabledColor: '#108ee9aa',
     showValue: false,
     min: 0,
     max: 1,
@@ -43,14 +48,25 @@ export default class WhaleSlider extends React.Component {
       onAfterChange,
       maximumTrackTintColor,
       minimumTrackTintColor,
+      maximumTrackTintDisabledColor,
+      minimumTrackTintDisabledColor,
       showValue,
       thumbStyle,
+      thumbStyleDisabled,
     } = this.props;
+    let minimumTrackColor = minimumTrackTintColor;
+    let maximumTrackColor = maximumTrackTintColor;
+    let thumb = thumbStyle || styles.thumb;
     let start;
     let end;
     if (showValue) {
       start = <Text style={styles.textStyle}>{min}</Text>;
       end = <Text style={styles.textStyle}>{max}</Text>;
+    }
+    if (disabled) {
+      minimumTrackColor = minimumTrackTintDisabledColor;
+      maximumTrackColor = maximumTrackTintDisabledColor;
+      thumb = thumbStyleDisabled || styles.thumbDisabled;
     }
     return (
       <View style={styles.container}>
@@ -60,12 +76,12 @@ export default class WhaleSlider extends React.Component {
           minimumValue={min}
           maximumValue={max}
           step={step}
-          minimumTrackTintColor={minimumTrackTintColor}
-          maximumTrackTintColor={maximumTrackTintColor}
+          minimumTrackTintColor={minimumTrackColor}
+          maximumTrackTintColor={maximumTrackColor}
           disabled={disabled}
           onValueChange={onChange}
           onSlidingComplete={onAfterChange}
-          thumbStyle={thumbStyle || styles.thumb}
+          thumbStyle={thumb}
           style={showValue ? styles.showValueSlider : styles.normalSlider}
         />
         {end}
@@ -83,7 +99,15 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
     backgroundColor: 'rgb(255, 255, 255)',
-    borderColor: '#0084FF',
+    borderColor: '#0084FFFF',
+    borderWidth: 2,
+    borderRadius: 30,
+  },
+  thumbDisabled: {
+    width: 18,
+    height: 18,
+    backgroundColor: 'rgb(255, 255, 255)',
+    borderColor: '#0084FFAA',
     borderWidth: 2,
     borderRadius: 30,
   },

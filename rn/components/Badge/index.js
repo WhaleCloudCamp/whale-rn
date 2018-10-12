@@ -10,6 +10,7 @@ export default class Badge extends React.Component {
     corner: PropTypes.bool, // 暂时不实现Corner
     dot: PropTypes.bool,
     text: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    style: PropTypes.object,
   };
 
   static defaultProps = {
@@ -26,6 +27,7 @@ export default class Badge extends React.Component {
     let overflowCount = this.props.overflowCount;
     let dot = this.props.dot;
     let children = this.props.children;
+    let bkStyle = this.props.bkStyle;
     let corner = this.props.corner;
     text = typeof text === 'number' && text > overflowCount ? '· · ·' : text;
     // Alert.alert('' + text);
@@ -47,12 +49,14 @@ export default class Badge extends React.Component {
         <View>
           {children}
           <Text
-            style={[
-              styles.text,
-              styles.textDom,
-              { overflow: 'hidden' },
-              children ? styles.textAbsolute : null,
-            ]}
+            style={
+              bkStyle || [
+                styles.text,
+                styles.textDom,
+                { overflow: 'hidden' },
+                children ? styles.textAbsolute : null,
+              ]
+            }
           >
             {text}
           </Text>
