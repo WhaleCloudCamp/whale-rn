@@ -50,7 +50,7 @@ export default class Badge extends React.Component {
             style={[
               styles.text,
               styles.textDom,
-              {overflow: 'hidden'},
+              { overflow: 'hidden' },
               children ? styles.textAbsolute : null,
             ]}
           >
