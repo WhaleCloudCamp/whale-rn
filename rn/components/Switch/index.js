@@ -46,7 +46,7 @@ export default class Switch extends React.Component {
 
   render() {
     return (
-      <View style={{ marginTop: 20 }}>
+      <View>
         <TouchableWithoutFeedback onPress={this._onPress}>
           <View
             ref={ref => {
