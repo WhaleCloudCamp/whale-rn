@@ -13,7 +13,7 @@ export default class MenuPickerExample extends Component {
     };
   }
 
-  showPopover(view) {
+  showPopover(view, align = 'center') {
     view.measure((x, y, width, height, pageX, pageY) => {
       let fromBounds = { x: pageX, y: pageY, width, height };
       // Array<{label: ReactNode, value, disabled?, children<data>?}>
@@ -121,6 +121,7 @@ export default class MenuPickerExample extends Component {
         value: this.state.value,
         height: 200,
         textAlign: 'center',
+        align,
       });
     });
   }
@@ -144,7 +145,7 @@ export default class MenuPickerExample extends Component {
             () => {
               // console.error(this.navBar.refs.imgBackIcon);
 
-              this.showPopover(this.navBar.refs.imgBackIcon);
+              this.showPopover(this.navBar.refs.imgBackIcon, 'start');
             }
           }
           onDelPress={
@@ -159,10 +160,12 @@ export default class MenuPickerExample extends Component {
               console.warn('右边第一个图标事件');
             }
           }
+          isShowLastRightIcon
           onRightLastItemPress={
             //右边第二个图标事件
             () => {
               console.warn('右边第二个图标事件');
+              this.showPopover(this.navBar.refs.lastRightIcon, 'end');
             }
           }
         />

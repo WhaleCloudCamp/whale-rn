@@ -61,7 +61,11 @@ export default class ModalPopoverView extends ModalView {
   buildProps() {
     super.buildProps();
 
-    let { fromBounds = {}, popoverWidth, popoverHeight } = this.state;
+    let {
+      fromBounds = this.props.fromBounds || {},
+      popoverWidth = null,
+      popoverHeight = null,
+    } = this.state;
     if (popoverWidth === null || popoverHeight === null) {
       let { popoverStyle, direction, showArrow, arrow, ...others } = this.props;
       if (!showArrow) arrow = 'none';
@@ -188,7 +192,7 @@ export default class ModalPopoverView extends ModalView {
 
     popoverStyle = [].concat(popoverStyle).concat({
       position: 'absolute',
-      left: 0,
+      left: px,
       top: py,
     });
     if (!showArrow) arrow = 'none';
@@ -209,10 +213,10 @@ export default class ModalPopoverView extends ModalView {
   onPopoverLayout(e) {
     if (
       Platform.OS === 'android' &&
-      (this.state.popoverWidth !== null || this.state.popoverHeight != null)
+      (this.state.popoverWidth !== null || this.state.popoverHeight !== null)
     ) {
       //android calls many times...
-      return;
+      // return;
     }
     let { width, height } = e.nativeEvent.layout;
     if (
@@ -227,9 +231,9 @@ export default class ModalPopoverView extends ModalView {
     let { popoverStyle, arrow, paddingCorner, children } = this.props;
 
     //in react native 0.49, this.props will not reset at rerender, then move opacity=0 to here
-    let { popoverWidth, popoverHeight } = this.state;
+    let { popoverWidth = null, popoverHeight = null } = this.state;
     if (popoverWidth === null || popoverHeight === null) {
-      popoverStyle = popoverStyle.concat({ opacity: 1 });
+      popoverStyle = popoverStyle.concat({ opacity: 0 });
     }
     return (
       <Popover

@@ -22,6 +22,7 @@ export default class MenuPicker extends ModalBasics {
     width,
     style,
     textAlign,
+    align,
   }) {
     return super.show(
       <this.MenuPickerView
@@ -34,6 +35,7 @@ export default class MenuPicker extends ModalBasics {
         width={width}
         popoverStyle={style}
         textAlign={textAlign}
+        align={align}
       />
     );
   }

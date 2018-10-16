@@ -32,6 +32,7 @@ import Tag from "./components/Tag";
 import TextareaItem from "./components/TextareaItem";
 import Toast from "./components/Toast";
 import Themes from "./themes";
+
 const WhaleRN = {
   Themes,
   ActionSheet,
