@@ -46,7 +46,16 @@ export default class MenuPickerItem extends Component {
       tintColor: Theme.poppAccessoryCheckColor,
     };
     accessory = (
-      <View style={{ paddingLeft: Theme.poppAccessoryPaddingLeft }}>
+      <View
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: Theme.poppAccessoryPaddingLeft,
+          bottom: 0,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         {selected &&
           isSub && (
             <Image
@@ -59,7 +68,9 @@ export default class MenuPickerItem extends Component {
     if (typeof title === 'string' || typeof title === 'number') {
       let titleStyle = {
         textAlign,
-        color: Theme.poppItemTitleColor,
+        color: selected
+          ? Theme.poppAccessoryCheckColor
+          : Theme.poppItemTitleColor,
         fontSize: Theme.poppItemFontSize,
         overflow: 'hidden',
         flexGrow: 1,
