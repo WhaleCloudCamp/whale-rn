@@ -10,8 +10,16 @@
 | title   | tag标题 | string | - |
 | selected | tag是否选中 | boolean | false |
 | disabled | tag是否禁用 | Object | false |
-| onClick  | 点击tag的自定义事件 | (e: Object): void | - |
+| disdelectedabled | tag是否显示移除按钮 | Object | false |
+| styleDisabled | 禁止的模式下的自定义样式 | style | disabled |
+| styleDisabledText | 禁止的模式下的自定义文本样式 | style | disabledText |
+| ClosePic | 自定义删除图片 | img |
+| styleSelected | 选中的状态下的自定义样式 | style |  selected|
+| styleNormal | 未选中的状态下的自定义样式 | style |  normal|
+| selectedText | 正常状态下的文本样式 | style |  notmalText|
 
+| onClick  | 点击tag的自定义事件 | (e: Object): void | - |
+| onDelected | 删除tag的自定义事件 | (e: Object): void | - |
 ```js
 import Tag from "whale-rn";
 
