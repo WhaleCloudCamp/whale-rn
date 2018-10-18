@@ -26,6 +26,7 @@ import TextareaItem from '../components/TextareaItem/usage';
 import Toast from '../components/Toast/usage';
 import ImagePicker from '../components/ImagePicker/usage';
 import Demo from '../pages/demo';
+import ItemGridDemo from '../components/ItemGrid/usage';
 
 export default routes = {
     Demo: { screen: Demo },
@@ -56,4 +57,5 @@ export default routes = {
     TextareaItem: { screen: TextareaItem },
     Toast: { screen: Toast },
     ImagePicker: { screen: ImagePicker },
+    ItemGrid:{screen:ItemGridDemo}
 }
