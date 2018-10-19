@@ -27,6 +27,7 @@ import Toast from '../components/Toast/usage';
 import ImagePicker from '../components/ImagePicker/usage';
 import Flex from '../components/Flex/usage';
 import Demo from '../pages/demo';
+import ItemGridDemo from '../components/ItemGrid/usage';
 
 export default routes = {
     Demo: { screen: Demo },
@@ -58,4 +59,5 @@ export default routes = {
     Toast: { screen: Toast },
     ImagePicker: { screen: ImagePicker },
     Flex: { screen: Flex },
+    ItemGrid:{screen:ItemGridDemo}
 }

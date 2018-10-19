@@ -1,38 +1,38 @@
-import React from "react";
-import { View } from "react-native";
-import PropTypes from "prop-types";
+import React from 'react';
+import { View } from 'react-native';
+import PropTypes from 'prop-types';
 
 const alias = {
-  around: "space-around",
-  between: "space-between",
-  end: "flex-end",
-  start: "flex-start",
-  center: "center"
+  around: 'space-around',
+  between: 'space-between',
+  end: 'flex-end',
+  start: 'flex-start',
+  center: 'center',
 };
 export default class Button extends React.Component {
   static propTypes = {
     direction: PropTypes.oneOf([
-      "row",
-      "column",
-      "row-reverse",
-      "column-reverse"
+      'row',
+      'column',
+      'row-reverse',
+      'column-reverse',
     ]),
-    wrap: PropTypes.oneOf(["nowrap", "wrap", "wrap-reverse"]),
+    wrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
     alignItems: PropTypes.oneOf([
-      "start",
-      "end",
-      "center",
-      "stretch",
-      "baseline"
+      'start',
+      'end',
+      'center',
+      'stretch',
+      'baseline',
     ]),
-    align: PropTypes.oneOf(["start", "end", "center", "between", "around"])
+    align: PropTypes.oneOf(['start', 'end', 'center', 'between', 'around']),
   };
 
   static defaultProps = {
-    direction: "row",
-    wrap: "nowrap",
-    alignItems: "center",
-    align: "around"
+    direction: 'row',
+    wrap: 'nowrap',
+    alignItems: 'center',
+    align: 'around',
   };
 
   render() {
@@ -42,7 +42,7 @@ export default class Button extends React.Component {
       flexDirection: direction,
       flexWrap: wrap,
       alignItems: alias[alignItems] || alignItems,
-      justifyContent: alias[align] || align
+      justifyContent: alias[align] || align,
     };
 
     return <View style={styles}>{children}</View>;

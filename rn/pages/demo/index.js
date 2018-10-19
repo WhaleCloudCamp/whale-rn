@@ -43,6 +43,7 @@ export default class Demo extends Component {
             { title: 'Toast', routeName: 'Toast' },
             { title: 'ImagePicker', routeName: 'ImagePicker' },
             { title: 'Flex', routeName: 'Flex' },
+            {title:'ItemGrid',routeName:'ItemGrid'}
         ]
     }
 

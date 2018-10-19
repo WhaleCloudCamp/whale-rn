@@ -113,7 +113,7 @@ class ListItem extends PureComponent {
       <TouchableOpacity
         activeOpacity={0.85}
         style={styles.item}
-        onPress={onPress}
+        onPress={() => onPress()}
       >
         <Image style={styles.itemImage} source={image} />
         <Text style={styles.itemTitle}>{title}</Text>
