@@ -7,6 +7,8 @@
  * 打开浏览器，会自动下载文件 components-description.json
  */
 
+import checkPropTypes from "check-prop-types";
+
 const context = require.context(
   "../rn/components",
   true,
@@ -31,14 +33,48 @@ function download(filename, text) {
 
 const keys = context.keys();
 
-function handlePropTypes(propTypes) {
-  if (!propTypes) return null;
-  const keyArray = Object.keys(propTypes);
+function extractPropType(propTypes, propName) {
+  let fakeProps = {};
+  fakeProps[propName] = "dummy";
+  let error = checkPropTypes(
+    { [propName]: propTypes[propName] },
+    fakeProps,
+    "prop"
+  );
+  if (!error) {
+    return "string";
+  } else {
+    const EXPECTED_TYPE_PATTERN = /expected `?(.*)`?\./i;
+    const matches = error.toString().match(EXPECTED_TYPE_PATTERN);
+    if (matches && matches.length > 1) return matches[1].replace(/`/, "");
+    if (error.toString().includes("flexDirection")) return "style";
+    else return "unknown";
+  }
+}
+
+function extractPropIsRequired(propTypes, propName) {
+  let fakeProps = {};
+  fakeProps[propName] = null;
+  let error = checkPropTypes(propTypes, fakeProps);
+  return !!error;
+}
+
+function extractPropTypes(propTypes) {
+  let propNames = Object.keys(propTypes);
   const temp = {};
-  keyArray.forEach(key => {
-    temp[key] = "";
+  propNames.forEach(propName => {
+    temp[propName] = {
+      // name: propName,
+      type: extractPropType(propTypes, propName),
+      isRequired: extractPropIsRequired(propTypes, propName)
+    };
   });
   return temp;
+}
+
+function handlePropTypes(propTypes) {
+  if (!propTypes) return null;
+  return extractPropTypes(propTypes);
 }
 
 function handleComponent(component, name) {
@@ -62,5 +98,5 @@ keys.forEach(item => {
   const component = require(`../rn/components/${item.slice(2)}`).default;
   results.push(handleComponent(component, name));
 });
-
+// console.log(results);
 download("components-description.json", JSON.stringify(results));
