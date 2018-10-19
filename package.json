@@ -1,6 +1,6 @@
 {
   "name": "whale-rn",
-  "version": "0.0.1-beta.6",
+  "version": "0.0.1-beta.7",
   "description": "yes! this is a react-native components",
   "main": "rn/index.js",
   "directories": {
