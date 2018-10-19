@@ -74,7 +74,7 @@ export default {
       {
         dva: true,
         antd: true,
-        hd: false
+        hd: true
       }
     ]
   ],

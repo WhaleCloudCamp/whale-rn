@@ -146,6 +146,7 @@ const styles = StyleSheet.create({
   },
   normalBig: {
     height: Themes.button_height,
+    marginBottom: 10,
     marginTop: 10,
     marginLeft: 20,
     marginRight: 20,
@@ -158,6 +159,7 @@ const styles = StyleSheet.create({
   },
   normal2Big: {
     height: Themes.button_height,
+    marginBottom: 10,
     marginTop: 10,
     marginLeft: 20,
     marginRight: 20,
@@ -170,6 +172,7 @@ const styles = StyleSheet.create({
   },
   disabledBig: {
     height: Themes.button_height,
+    marginBottom: 10,
     marginTop: 10,
     marginLeft: 20,
     marginRight: 20,
@@ -182,6 +185,7 @@ const styles = StyleSheet.create({
   },
   disabled2Big: {
     height: Themes.button_height,
+    marginBottom: 10,
     marginTop: 10,
     marginLeft: 20,
     marginRight: 20,
@@ -195,6 +199,7 @@ const styles = StyleSheet.create({
   loadingBig: {
     flexDirection: 'row',
     height: Themes.button_height,
+    marginBottom: 10,
     marginTop: 10,
     marginLeft: 20,
     marginRight: 20,
@@ -207,6 +212,7 @@ const styles = StyleSheet.create({
   },
   normalSmall: {
     height: Themes.button_height_sm,
+    marginBottom: 10,
     marginTop: 10,
     paddingLeft: 10,
     paddingRight: 10,
@@ -219,6 +225,7 @@ const styles = StyleSheet.create({
   },
   normal2Small: {
     height: Themes.button_height_sm,
+    marginBottom: 10,
     marginTop: 10,
     paddingLeft: 10,
     paddingRight: 10,
@@ -231,6 +238,7 @@ const styles = StyleSheet.create({
   },
   disabledSmall: {
     height: Themes.button_height_sm,
+    marginBottom: 10,
     marginTop: 10,
     paddingLeft: 10,
     paddingRight: 10,
@@ -243,6 +251,7 @@ const styles = StyleSheet.create({
   },
   disabled2Small: {
     height: Themes.button_height_sm,
+    marginBottom: 10,
     marginTop: 10,
     paddingLeft: 10,
     paddingRight: 10,
@@ -257,6 +266,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: Themes.button_height_sm,
     marginTop: 10,
+    marginBottom: 10,
     paddingLeft: 14,
     paddingRight: 14,
     alignSelf: 'center',

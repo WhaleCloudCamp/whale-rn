@@ -25,6 +25,7 @@ import Tag from '../components/Tag/usage';
 import TextareaItem from '../components/TextareaItem/usage';
 import Toast from '../components/Toast/usage';
 import ImagePicker from '../components/ImagePicker/usage';
+import Flex from '../components/Flex/usage';
 import Demo from '../pages/demo';
 
 export default routes = {
@@ -56,4 +57,5 @@ export default routes = {
     TextareaItem: { screen: TextareaItem },
     Toast: { screen: Toast },
     ImagePicker: { screen: ImagePicker },
+    Flex: { screen: Flex },
 }

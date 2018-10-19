@@ -42,6 +42,7 @@ export default class Demo extends Component {
             { title: 'TextareaItem', routeName: 'TextareaItem' },
             { title: 'Toast', routeName: 'Toast' },
             { title: 'ImagePicker', routeName: 'ImagePicker' },
+            { title: 'Flex', routeName: 'Flex' },
         ]
     }
 
