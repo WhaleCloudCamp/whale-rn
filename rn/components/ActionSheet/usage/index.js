@@ -6,7 +6,7 @@ import {
   TouchableNativeFeedback,
   StyleSheet,
 } from 'react-native';
-import ActionSheet from '..';
+import ActionSheet from '../index';
 import Button from '../../Button';
 import Page from '../../Page';
 
@@ -57,7 +57,12 @@ export default class ActionSheetDemo extends Component {
     ActionSheet.showShareActionSheet({
       shareItems: ShareItems,
       toolItems: ToolItems,
-      callback: item => this.setState({ selectedShareItem: item }),
+      callback: (item, index, items) => {
+        console.warn('位置'.concat(index));
+      },
+      onCancelPress: () => {
+        console.warn('取消');
+      },
     });
   };
 
