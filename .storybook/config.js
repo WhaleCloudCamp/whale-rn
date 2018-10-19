@@ -4,6 +4,9 @@ import centered from './decorator-centered';
 import { configure, addDecorator,storiesOf } from '@storybook/react';
 import ModalTarget from '../rn/components/ModalTarget';
 
+// 运行生成组件库描述文件脚本
+// require('../scripts/create-components-description');
+
 const context = require.context('../rn/components', true, /usage\/index\.js$/);
 
 addDecorator(centered);
