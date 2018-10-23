@@ -34,6 +34,7 @@ export default class Demo extends Component {
             { title: 'Radio', routeName: 'Radio' },
             { title: 'SearchBar', routeName: 'SearchBar' },
             { title: 'Slider', routeName: 'Slider' },
+            {title:'Sliders',routeName:'Sliders'},
             { title: 'Stepper', routeName: 'Stepper' },
             { title: 'Switch', routeName: 'Switch' },
             { title: 'TabBar', routeName: 'TabBar' },

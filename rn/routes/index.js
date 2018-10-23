@@ -28,6 +28,8 @@ import ImagePicker from '../components/ImagePicker/usage';
 import Flex from '../components/Flex/usage';
 import Demo from '../pages/demo';
 import ItemGridDemo from '../components/ItemGrid/usage';
+import SlidesDemo from '../components/Sliders/usage';
+
 
 export default routes = {
     Demo: { screen: Demo },
@@ -59,5 +61,6 @@ export default routes = {
     Toast: { screen: Toast },
     ImagePicker: { screen: ImagePicker },
     Flex: { screen: Flex },
-    ItemGrid:{screen:ItemGridDemo}
+    ItemGrid:{screen:ItemGridDemo},
+    Sliders:{screen:SlidesDemo}
 }
