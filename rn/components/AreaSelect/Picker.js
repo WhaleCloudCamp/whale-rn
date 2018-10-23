@@ -7,7 +7,7 @@
 *  setDataSource(data): 刷新数据
 */
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Platform } from 'react-native';
 import { CSS } from './StyleCss';
 
 export default class Picker extends Component {
@@ -82,7 +82,11 @@ export default class Picker extends Component {
     this.onScrollCount++;
     let y = e.nativeEvent.contentOffset.y;
     if (this._ScrollView2) {
-      this._ScrollView2.scrollTo({ y, animated: false });
+      this._ScrollView2.scrollTo({ y, animated: false })
+      if (Platform.OS !== 'android' && Platform.OS !== 'ios') {
+
+        this._onScrollEnd(y);
+      }
     }
   }
 
